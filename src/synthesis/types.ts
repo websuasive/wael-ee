@@ -70,8 +70,6 @@ export type DirectionCardOutput = {
   meaning_sentence: SlotContent;
   fields: CardField[];
   visual_state: 'named' | 'firing_not_named' | 'not_firing';
-  /** Section 7.17 surfaced finding sentence when architecture surfaces this direction but man did not name it. */
-  surfaced_finding?: string;
 };
 
 /** Section 5.4 — Direction-evidence chart. */

@@ -92,12 +92,6 @@
           </template>
         </template>
       </p>
-      <p
-        v-if="card.surfaced_finding"
-        class="direction-card__surfaced-finding"
-      >
-        {{ card.surfaced_finding }}
-      </p>
     </div>
   </article>
 </template>
@@ -318,8 +312,9 @@ const qualitySegments = computed<TermScanSegment[]>(() =>
 .direction-card__quality {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  margin: 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin: var(--space-sm) 0 0;
 }
 
 .direction-card__expression-space-caption {

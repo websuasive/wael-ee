@@ -478,8 +478,7 @@
             "intensity": null
           }
         ],
-        "visual_state": "named",
-        "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
+        "visual_state": "named"
       },
       {
         "direction_name": "Relationship Rebuilder",
@@ -539,8 +538,7 @@
             "intensity": null
           }
         ],
-        "visual_state": "named",
-        "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
+        "visual_state": "named"
       },
       {
         "direction_name": "Growth Focused",

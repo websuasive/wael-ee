@@ -622,8 +622,7 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing",
-        "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
+        "visual_state": "not_firing"
       }
     ],
     "direction_evidence_chart": {

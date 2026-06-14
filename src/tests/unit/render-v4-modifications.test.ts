@@ -5,7 +5,6 @@ import { describe, it, expect } from 'vitest';
 import { shouldRenderSlot } from '@/ui/render/should_render_slot';
 import type {
   DomainsPanel as DomainsPanelData,
-  DirectionCardOutput,
   SlotContent,
   ReducedDomain,
   DomainsPanelReducedGroup,
@@ -78,35 +77,5 @@ describe('DirectionCard — expression_space_caption slot', () => {
   it('empty expression_space_caption: shouldRenderSlot returns false', () => {
     const caption = makeEmptySlotContent();
     expect(shouldRenderSlot(caption)).toBe(false);
-  });
-
-  it('card with non-empty expression_space_caption renders slot', () => {
-    const mockCard: Partial<DirectionCardOutput> = {
-      direction_name: 'Creator',
-      visual_state: 'firing_not_named',
-      expression_space_caption: makeSlotContent(
-        'No current room for this direction this week.',
-      ),
-      summary: makeSlotContent('Reading as a pull.'),
-    };
-
-    expect(
-      shouldRenderSlot(mockCard.expression_space_caption as SlotContent),
-    ).toBe(true);
-    expect(shouldRenderSlot(mockCard.summary as SlotContent)).toBe(true);
-  });
-
-  it('card with empty expression_space_caption omits slot', () => {
-    const mockCard: Partial<DirectionCardOutput> = {
-      direction_name: 'Freedom',
-      visual_state: 'not_firing',
-      expression_space_caption: makeEmptySlotContent(),
-      summary: makeSlotContent('Not currently reading as a pull.'),
-    };
-
-    expect(
-      shouldRenderSlot(mockCard.expression_space_caption as SlotContent),
-    ).toBe(false);
-    expect(shouldRenderSlot(mockCard.summary as SlotContent)).toBe(true);
   });
 });

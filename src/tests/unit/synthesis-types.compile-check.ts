@@ -25,8 +25,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot('summary'),
     meaning_sentence: slot('meaning'),
     fields: [{ label: 'Pull', value: '65', intensity: 65 }],
-    held_attributed_line: 'held attributed',
-    expression_space_caption: slot(''),
     visual_state: 'named',
   },
   {
@@ -35,8 +33,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot('summary'),
     meaning_sentence: { interpretive_text: 'interp', token_text: 'token' },
     fields: [],
-    held_attributed_line: null,
-    expression_space_caption: slot(''),
     visual_state: 'firing_not_named',
   },
   {
@@ -45,8 +41,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot(''),
     meaning_sentence: slot(''),
     fields: [],
-    held_attributed_line: null,
-    expression_space_caption: slot(''),
     visual_state: 'not_firing',
   },
   {
@@ -55,8 +49,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot('g'),
     meaning_sentence: slot('g'),
     fields: [{ label: 'Movement', value: '40', intensity: null }],
-    held_attributed_line: null,
-    expression_space_caption: slot(''),
     visual_state: 'named',
   },
   {
@@ -65,8 +57,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot('m'),
     meaning_sentence: slot('m'),
     fields: [],
-    held_attributed_line: null,
-    expression_space_caption: slot(''),
     visual_state: 'firing_not_named',
   },
   {
@@ -75,8 +65,6 @@ const directionCards: DirectionCardOutput[] = [
     summary: slot('r'),
     meaning_sentence: slot('r'),
     fields: [],
-    held_attributed_line: null,
-    expression_space_caption: slot(''),
     visual_state: 'not_firing',
   },
 ];

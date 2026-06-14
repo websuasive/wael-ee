@@ -305,13 +305,6 @@ export function computeDirectionCards(
         ? 'firing_not_named'
         : 'not_firing';
 
-    // §7.17 surfaced finding: populate when direction is surfaced (in firing set)
-    // AND not in the man's named list (not excluded by direction anchors).
-    const isSurfaced = d.surfaced && !excludedDirections.has(d.direction);
-    const surfaced_finding = isSurfaced
-      ? 'You didn\'t name this one, but the architecture reads it firing.'
-      : undefined;
-
     const card: DirectionCardOutput = {
       direction_name: DIRECTION_DISPLAY_NAMES[d.direction],
       direction_engine_name: d.direction,
@@ -320,11 +313,6 @@ export function computeDirectionCards(
       fields: buildFields(d, input),
       visual_state,
     };
-
-    // Only add surfaced_finding if it has a value
-    if (surfaced_finding !== undefined) {
-      card.surfaced_finding = surfaced_finding;
-    }
 
     return card;
   });
