@@ -125,6 +125,17 @@ function cardSentenceById(): string | null {
   return null;
 }
 
+// CARD DISPLAY IS DELIBERATELY MINIMAL.
+// These engine fields are computed but intentionally NOT shown on the card:
+//   - felt_cost (cost band)      - reserved for the planned LLM content layer
+//   - anticipation               - reserved for the LLM layer
+//   - quadrant movement nuance   - card shows the quality state-sentence only; finer
+//                                  active/quiet/habit shades are for the LLM to express
+//   - expression_space captions, held_attributed lines - cut (see SYNTHESIS.md)
+// These are NOT dropped or broken - they are inputs the planned LLM personalisation layer
+// is intended to use. Do NOT re-surface them as terse on-card tokens (that was tried and
+// proved unreadable). See SYNTHESIS.md, "LLM content layer (planned)".
+
 /**
  * Card state-sentence: maps quality x quadrant to plain explanatory sentence.
  * Replaces Tier 2 one-word token with human-readable state description.

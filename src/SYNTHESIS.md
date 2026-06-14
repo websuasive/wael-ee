@@ -304,6 +304,10 @@ The render layer maps these to visual treatments (full card with marker, minimis
 
 **Render order in the card:** meaning_sentence first (serif, larger), then fields table, then expression_space_caption (when present), then summary (italic, muted), then held_attributed_line (when present), then surfaced_finding (when present, italic).
 
+### 5.3.1 LLM content layer (planned)
+
+The direction cards currently show: a generic type description (the same for everyone with that direction), the wants-it / had-it bars, and one plain quality state-sentence (e.g. "A real want, but there's no room for it right now."). Several engine signals are deliberately NOT surfaced on the card: felt_cost, anticipation, fine quadrant movement nuance, and the expression-space / held-attributed detail. Compressing these into terse on-card tokens proved unreadable, so they were cut from display. They remain computed and are intended as inputs to a future LLM layer that will write specific, personal card content. Until that exists the card is intentionally a skeleton (type description + bars + state-sentence). Do not re-add the cut signals as tokens.
+
 ### 5.4 direction_evidence_chart
 
 ```typescript
