@@ -432,7 +432,7 @@
       "situation_text": null
     },
     "recognition_paragraph": {
-      "interpretive_text": "You need to be making something real, with people who challenge you in the process, and feeling yourself get sharper through the doing.",
+      "interpretive_text": "You need to be making something that's genuinely yours, with a few people who really know you, and getting sharper, being tested. What you can't settle for is only ever consuming, people who stay on the surface, or standing still.",
       "token_text": "Creator, Relationship Rebuilder, and Growth Focused."
     },
     "pattern_paragraph": {
@@ -448,7 +448,7 @@
           "token_text": "real, active."
         },
         "meaning_sentence": {
-          "interpretive_text": "You need to be making something that's genuinely yours: not contributing to someone else's project, not assisting, actually building.",
+          "interpretive_text": "The pull is to make things that are yours - to write, build, play, cook, shape something that wasn't there before and has your hand in it. For a lot of men this one got quietly buried under the career and the years of doing what needed doing, and what's left is a sense of producing nothing of your own. It isn't about being good at it or being seen; it's the difference between a life you consume and a life you make something in. When you've got something on the go, there's a quiet satisfaction underneath everything else. Without it, the days fill up but nothing has your name on it.",
           "token_text": ""
         },
         "fields": [
@@ -493,7 +493,7 @@
           "token_text": "real, quiet."
         },
         "meaning_sentence": {
-          "interpretive_text": "What you're missing is depth: not more people, not networking, but a small number of people who actually know you.",
+          "interpretive_text": "The pull is toward depth - a few people who actually know you, not a wider circle or more contacts. For a lot of men the close relationships have quietly gone functional over the years: the marriage runs, the mates are good for a pint, but somewhere the real talk stopped. What you're after isn't more company; it's being properly known by someone, and knowing them back. Surface is easy and everywhere. What leaves you cold is people you never get past the weather with - and a life where nobody quite knows what's going on with you.",
           "token_text": ""
         },
         "fields": [
@@ -538,7 +538,7 @@
           "token_text": ""
         },
         "meaning_sentence": {
-          "interpretive_text": "You need to feel like you're getting sharper: learning something real, becoming more capable at something that matters. Coasting feels like dying.",
+          "interpretive_text": "The pull is to keep getting sharper - to be tested, to push against something real, to feel capable rather than just competent. Part of it is age: the wish to feel as able as you once did. Part of it is plainer than that - you come alive when something stretches you, and you go flat when nothing does. It isn't about courses or self-improvement for its own sake. It's the difference between rising to something and ticking over. Coasting might look like rest, but for you it reads as standing still, and standing still doesn't sit right.",
           "token_text": ""
         },
         "fields": [
@@ -583,7 +583,7 @@
           "token_text": ""
         },
         "meaning_sentence": {
-          "interpretive_text": "You can tolerate almost anything if you chose it. What you can't tolerate is feeling owned by obligations you never fully agreed to.",
+          "interpretive_text": "The pull is to run your own life - your time, your decisions, your terms. It isn't that you hate work; it's that you can't stand work, or anyone else, taking up the whole of it. Underneath it is a simple thing: you can put up with almost anything as long as you chose it. What grates is the sense of a life arranged by other people's claims, where the days get spent on what's expected rather than what you'd pick. When enough of it is yours, you can carry a lot. When almost none of it is, even a good life starts to feel like something happening to you.",
           "token_text": ""
         },
         "fields": [
@@ -628,7 +628,7 @@
           "token_text": "not yet reading as a pull, habit."
         },
         "meaning_sentence": {
-          "interpretive_text": "You need your work to matter beyond the transaction: not prestige, not appreciation, but the knowledge that something you did genuinely helped.",
+          "interpretive_text": "The pull is to be useful in a way that actually counts - to know that something you did genuinely helped, mattered to someone, left things better than you found them. It isn't about the thanks or the credit; if anything those get in the way. Often it comes from competence with nowhere good to point it: you're good at things, and you want that to land on someone who needed it. When your effort makes a real difference, the work feels worth doing. When it's just motion - busy, billed, forgotten - it goes hollow, however much of it there is.",
           "token_text": ""
         },
         "fields": [
@@ -674,7 +674,7 @@
           "token_text": "not yet reading as a pull, quiet."
         },
         "meaning_sentence": {
-          "interpretive_text": "You move through life through range: different contexts, new things, the feeling of being genuinely in it. That's been narrowing.",
+          "interpretive_text": "The pull is toward newness - new places, new things, the feeling of being properly in your life rather than watching it pass. Underneath it, usually, is time: the sense that the years are going and you don't want to use them up on repetition. It isn't restlessness for its own sake. It's that you come alive in the unfamiliar, and a life that's become the same week on repeat starts to feel like it's narrowing around you. Variety isn't a luxury for you; it's most of how you know you're still living.",
           "token_text": ""
         },
         "fields": [

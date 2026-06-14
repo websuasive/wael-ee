@@ -19,7 +19,7 @@ import {
   pullBand,
   feltCostBand,
 } from './data/tokens';
-import { recognitionSentences } from './data/recognition_sentences';
+import { directionDescriptions } from './data/recognition_sentences';
 import { shapeSentences } from './data/shape_sentences';
 import type { SlotContent } from './types';
 import { SELF_REPORT_ITEMS } from './data/self_report_items';
@@ -247,7 +247,7 @@ function buildMeaningSentence(d: DirectionOutput): {
   token_text: string;
 } {
   const typeKey = DIRECTION_TO_TYPE_KEY[d.direction];
-  const sentence = recognitionSentences[typeKey];
+  const sentence = directionDescriptions[typeKey];
   return {
     interpretive_text: sentence ?? null,
     token_text: '',
