@@ -444,8 +444,8 @@
         "direction_name": "Creator",
         "direction_engine_name": "creator",
         "summary": {
-          "interpretive_text": "Wanting and doing reading together.",
-          "token_text": "real, active."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to make things that are yours - to write, build, play, cook, shape something that wasn't there before and has your hand in it. For a lot of men this one got quietly buried under the career and the years of doing what needed doing, and what's left is a sense of producing nothing of your own. It isn't about being good at it or being seen; it's the difference between a life you consume and a life you make something in. When you've got something on the go, there's a quiet satisfaction underneath everything else. Without it, the days fill up but nothing has your name on it.",
@@ -463,34 +463,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "high",
-            "intensity": 85
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "real, active.",
+            "value": "A real want, and you're acting on it.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": "Something specific held in this direction.",
         "visual_state": "named"
       },
       {
         "direction_name": "Relationship Rebuilder",
         "direction_engine_name": "relationship_rebuilder",
         "summary": {
-          "interpretive_text": "Real but quiet; neither pressing nor moving much.",
-          "token_text": "real, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward depth - a few people who actually know you, not a wider circle or more contacts. For a lot of men the close relationships have quietly gone functional over the years: the marriage runs, the mates are good for a pint, but somewhere the real talk stopped. What you're after isn't more company; it's being properly known by someone, and knowing them back. Surface is easy and everywhere. What leaves you cold is people you never get past the weather with - and a life where nobody quite knows what's going on with you.",
@@ -508,26 +493,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
@@ -553,26 +523,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
@@ -598,34 +553,19 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "firing_not_named"
       },
       {
         "direction_name": "Contributor",
         "direction_engine_name": "contributor",
         "summary": {
-          "interpretive_text": "Movement reading without a wanting underneath.",
-          "token_text": "not yet reading as a pull, habit."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to be useful in a way that actually counts - to know that something you did genuinely helped, mattered to someone, left things better than you found them. It isn't about the thanks or the credit; if anything those get in the way. Often it comes from competence with nowhere good to point it: you're good at things, and you want that to land on someone who needed it. When your effort makes a real difference, the work feels worth doing. When it's just motion - busy, billed, forgotten - it goes hollow, however much of it there is.",
@@ -643,26 +583,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, habit.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing",
         "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
       },
@@ -670,8 +595,8 @@
         "direction_name": "Experience Seeker",
         "direction_engine_name": "experience_seeker",
         "summary": {
-          "interpretive_text": "Not reading as a direction here.",
-          "token_text": "not yet reading as a pull, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward newness - new places, new things, the feeling of being properly in your life rather than watching it pass. Underneath it, usually, is time: the sense that the years are going and you don't want to use them up on repetition. It isn't restlessness for its own sake. It's that you come alive in the unfamiliar, and a life that's become the same week on repeat starts to feel like it's narrowing around you. Variety isn't a luxury for you; it's most of how you know you're still living.",
@@ -689,26 +614,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       }
     ],

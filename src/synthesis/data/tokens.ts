@@ -100,6 +100,34 @@ export const QUADRANT_TOKENS: Record<QuadrantValue, string> = {
 };
 
 /* ------------------------------------------------------------------ */
+/* 6.2.6 — Plain quality rendering (Tier 2 simplified status line)     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Plain rendering of pull quality for simplified card status line.
+ * Returns the first quality in plain form; multiple qualities are rare
+ * and the first is always the primary signal.
+ */
+export function plainQualityRender(quality: PullQualityValue): string {
+  switch (quality) {
+    case 'real':
+      return 'real';
+    case 'suppressed':
+      return 'pushed down';
+    case 'saturated':
+      return 'gone stale';
+    case 'behaviourally_divergent':
+      return 'named, not lived';
+    case 'phantom':
+      return 'wanted, never had';
+    case 'phantom_partial':
+      return 'wanted, never had';
+    case 'ghost':
+      return 'ghost';
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* 6.3 — Constraint band tokens and display names                     */
 /* ------------------------------------------------------------------ */
 

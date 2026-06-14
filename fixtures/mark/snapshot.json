@@ -448,8 +448,8 @@
         "direction_name": "Creator",
         "direction_engine_name": "creator",
         "summary": {
-          "interpretive_text": "Wanting and doing reading together.",
-          "token_text": "real, active."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to make things that are yours - to write, build, play, cook, shape something that wasn't there before and has your hand in it. For a lot of men this one got quietly buried under the career and the years of doing what needed doing, and what's left is a sense of producing nothing of your own. It isn't about being good at it or being seen; it's the difference between a life you consume and a life you make something in. When you've got something on the go, there's a quiet satisfaction underneath everything else. Without it, the days fill up but nothing has your name on it.",
@@ -467,34 +467,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "high",
-            "intensity": 85
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "real, active.",
+            "value": "A real want, and you're acting on it.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": "Something specific held in this direction.",
         "visual_state": "named"
       },
       {
         "direction_name": "Freedom Designer",
         "direction_engine_name": "freedom_designer",
         "summary": {
-          "interpretive_text": "Stated wanting reading; the chosen direction is elsewhere.",
-          "token_text": "stated but moving elsewhere, blocked."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to run your own life - your time, your decisions, your terms. It isn't that you hate work; it's that you can't stand work, or anyone else, taking up the whole of it. Underneath it is a simple thing: you can put up with almost anything as long as you chose it. What grates is the sense of a life arranged by other people's claims, where the days get spent on what's expected rather than what you'd pick. When enough of it is yours, you can carry a lot. When almost none of it is, even a good life starts to feel like something happening to you.",
@@ -512,26 +497,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "high",
-            "intensity": 85
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "stated but moving elsewhere, blocked.",
+            "value": "You name this one, but your energy actually goes elsewhere.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": "Something specific held in this direction.",
         "visual_state": "named"
       },
       {
@@ -557,34 +527,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "stated but moving elsewhere, blocked.",
+            "value": "You name this one, but your energy actually goes elsewhere.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week reads narrow around this.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
         "direction_name": "Growth Focused",
         "direction_engine_name": "growth_focused",
         "summary": {
-          "interpretive_text": "Real but quiet; neither pressing nor moving much.",
-          "token_text": "real, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to keep getting sharper - to be tested, to push against something real, to feel capable rather than just competent. Part of it is age: the wish to feel as able as you once did. Part of it is plainer than that - you come alive when something stretches you, and you go flat when nothing does. It isn't about courses or self-improvement for its own sake. It's the difference between rising to something and ticking over. Coasting might look like rest, but for you it reads as standing still, and standing still doesn't sit right.",
@@ -602,26 +557,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week reads no channel for this.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "firing_not_named"
       },
       {
@@ -647,34 +587,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The contact for this is not in the week.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "firing_not_named"
       },
       {
         "direction_name": "Contributor",
         "direction_engine_name": "contributor",
         "summary": {
-          "interpretive_text": "Movement reading without a wanting underneath.",
-          "token_text": "not yet reading as a pull, habit."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to be useful in a way that actually counts - to know that something you did genuinely helped, mattered to someone, left things better than you found them. It isn't about the thanks or the credit; if anything those get in the way. Often it comes from competence with nowhere good to point it: you're good at things, and you want that to land on someone who needed it. When your effort makes a real difference, the work feels worth doing. When it's just motion - busy, billed, forgotten - it goes hollow, however much of it there is.",
@@ -692,26 +617,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, habit.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing",
         "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
       }
@@ -921,9 +831,9 @@
     "closing_lines": [
       {
         "id": "closing_stopped_expecting",
-        "direction_engine_name": "experience_seeker",
+        "direction_engine_name": null,
         "text": {
-          "interpretive_text": "Quietly stopped expecting in experience.",
+          "interpretive_text": "Quietly stopped expecting much in experience.",
           "token_text": "Stopped expecting firing on Experience Seeker."
         }
       }

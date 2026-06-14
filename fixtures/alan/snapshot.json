@@ -445,8 +445,8 @@
         "direction_name": "Relationship Rebuilder",
         "direction_engine_name": "relationship_rebuilder",
         "summary": {
-          "interpretive_text": "Real but quiet; neither pressing nor moving much.",
-          "token_text": "real, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward depth - a few people who actually know you, not a wider circle or more contacts. For a lot of men the close relationships have quietly gone functional over the years: the marriage runs, the mates are good for a pint, but somewhere the real talk stopped. What you're after isn't more company; it's being properly known by someone, and knowing them back. Surface is easy and everywhere. What leaves you cold is people you never get past the weather with - and a life where nobody quite knows what's going on with you.",
@@ -464,26 +464,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The contact for this is not in the week.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named",
         "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
       },
@@ -491,8 +476,8 @@
         "direction_name": "Growth Focused",
         "direction_engine_name": "growth_focused",
         "summary": {
-          "interpretive_text": "Not reading as a direction here.",
-          "token_text": "not yet reading as a pull, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to keep getting sharper - to be tested, to push against something real, to feel capable rather than just competent. Part of it is age: the wish to feel as able as you once did. Part of it is plainer than that - you come alive when something stretches you, and you go flat when nothing does. It isn't about courses or self-improvement for its own sake. It's the difference between rising to something and ticking over. Coasting might look like rest, but for you it reads as standing still, and standing still doesn't sit right.",
@@ -510,26 +495,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -555,26 +525,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -600,26 +555,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week has no current room for this.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
@@ -645,26 +585,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -690,26 +615,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       }
     ],
@@ -928,9 +838,9 @@
     "closing_lines": [
       {
         "id": "closing_stopped_expecting",
-        "direction_engine_name": "growth_focused",
+        "direction_engine_name": null,
         "text": {
-          "interpretive_text": "Quietly stopped expecting in growth.",
+          "interpretive_text": "Quietly stopped expecting much in growth.",
           "token_text": "Stopped expecting firing on Growth Focused."
         }
       }

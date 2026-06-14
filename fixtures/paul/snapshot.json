@@ -464,34 +464,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "high",
-            "intensity": 85
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "stated but moving elsewhere, blocked.",
+            "value": "You name this one, but your energy actually goes elsewhere.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week has no current room for this.",
-          "token_text": ""
-        },
-        "held_attributed_line": "Something specific held in this direction, with no current room for it.",
         "visual_state": "named"
       },
       {
         "direction_name": "Relationship Rebuilder",
         "direction_engine_name": "relationship_rebuilder",
         "summary": {
-          "interpretive_text": "Real pull, movement held back.",
-          "token_text": "real, blocked."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward depth - a few people who actually know you, not a wider circle or more contacts. For a lot of men the close relationships have quietly gone functional over the years: the marriage runs, the mates are good for a pint, but somewhere the real talk stopped. What you're after isn't more company; it's being properly known by someone, and knowing them back. Surface is easy and everywhere. What leaves you cold is people you never get past the weather with - and a life where nobody quite knows what's going on with you.",
@@ -509,26 +494,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "real, blocked.",
+            "value": "A real want, but there's no room for it right now.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The contact for this is not in the week.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named",
         "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
       },
@@ -536,8 +506,8 @@
         "direction_name": "Contributor",
         "direction_engine_name": "contributor",
         "summary": {
-          "interpretive_text": "Movement reading without a wanting underneath.",
-          "token_text": "not yet reading as a pull, habit."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to be useful in a way that actually counts - to know that something you did genuinely helped, mattered to someone, left things better than you found them. It isn't about the thanks or the credit; if anything those get in the way. Often it comes from competence with nowhere good to point it: you're good at things, and you want that to land on someone who needed it. When your effort makes a real difference, the work feels worth doing. When it's just motion - busy, billed, forgotten - it goes hollow, however much of it there is.",
@@ -555,26 +525,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, habit.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing",
         "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
       },
@@ -582,8 +537,8 @@
         "direction_name": "Freedom Designer",
         "direction_engine_name": "freedom_designer",
         "summary": {
-          "interpretive_text": "Not reading as a direction here.",
-          "token_text": "not yet reading as a pull, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to run your own life - your time, your decisions, your terms. It isn't that you hate work; it's that you can't stand work, or anyone else, taking up the whole of it. Underneath it is a simple thing: you can put up with almost anything as long as you chose it. What grates is the sense of a life arranged by other people's claims, where the days get spent on what's expected rather than what you'd pick. When enough of it is yours, you can carry a lot. When almost none of it is, even a good life starts to feel like something happening to you.",
@@ -601,26 +556,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -646,26 +586,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -691,26 +616,11 @@
             "intensity": 10
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       }
     ],
@@ -929,9 +839,9 @@
     "closing_lines": [
       {
         "id": "closing_stopped_expecting",
-        "direction_engine_name": "creator",
+        "direction_engine_name": null,
         "text": {
-          "interpretive_text": "Quietly stopped expecting in making.",
+          "interpretive_text": "Quietly stopped expecting much in making.",
           "token_text": "Stopped expecting firing on Creator."
         }
       }

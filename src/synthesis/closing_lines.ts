@@ -114,16 +114,44 @@ export function computeClosingLines(
     );
   }
 
-  // 4. closing_stopped_expecting — per-direction, regardless of firing-set membership, no dedup
-  for (const d of sortedByPullDesc(output.directions)) {
-    if (!d.pull_state.includes('stopped_expecting')) continue;
+  // 4. closing_stopped_expecting — combined into one line for all directions
+  const stoppedExpectingDirections = sortedByPullDesc(output.directions)
+    .filter((d) => d.pull_state.includes('stopped_expecting'))
+    .map((d) => d.direction);
+  if (stoppedExpectingDirections.length > 0) {
+    let context: Record<string, string>;
+    if (stoppedExpectingDirections.length === 1) {
+      // Single direction: use display name for byte-identical output
+      const dir = stoppedExpectingDirections[0]!;
+      context = {
+        direction_lower: DIRECTION_LOWERCASE_FORM[dir],
+        direction_display: DIRECTION_DISPLAY_NAMES[dir],
+      };
+    } else {
+      // Multiple directions: use lowercase list for both sentence and token
+      const directionLabels = stoppedExpectingDirections.map(
+        (dir) => DIRECTION_LOWERCASE_FORM[dir],
+      );
+      let directionList: string;
+      if (directionLabels.length === 2) {
+        directionList = `${directionLabels[0]!} and ${directionLabels[1]!}`;
+      } else {
+        const last = directionLabels[directionLabels.length - 1]!;
+        const rest = directionLabels.slice(0, -1).join(', ');
+        directionList = `${rest} and ${last}`;
+      }
+      context = {
+        direction_lower: directionList,
+        direction_display: directionList,
+      };
+    }
     result.push(
       buildLine(
         'closing_stopped_expecting',
-        perDirectionContext(d),
+        context,
         output,
         input,
-        d.direction,
+        null,
       ),
     );
   }

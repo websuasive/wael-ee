@@ -78,11 +78,6 @@
           </dd>
         </div>
       </dl>
-      <p class="direction-card__inline-meta">
-        <span>{{ feltCostValue }} cost</span>
-        <span class="direction-card__inline-meta-separator">·</span>
-        <span>{{ anticipationValue }}</span>
-      </p>
       <p class="direction-card__quality">
         <template
           v-for="(seg, i) in qualitySegments"
@@ -96,46 +91,6 @@
             {{ seg.value }}
           </template>
         </template>
-      </p>
-      <p
-        v-if="shouldRenderSlot(card.expression_space_caption)"
-        class="direction-card__expression-space-caption"
-      >
-        <template
-          v-for="(seg, i) in expressionSpaceCaptionSegments"
-          :key="i"
-        >
-          <TermIndicator
-            v-if="seg.kind === 'term'"
-            :term="seg.value"
-          />
-          <template v-else>
-            {{ seg.value }}
-          </template>
-        </template>
-      </p>
-      <p
-        v-if="shouldRenderSlot(card.summary)"
-        class="direction-card__summary"
-      >
-        <template
-          v-for="(seg, i) in summarySegments"
-          :key="i"
-        >
-          <TermIndicator
-            v-if="seg.kind === 'term'"
-            :term="seg.value"
-          />
-          <template v-else>
-            {{ seg.value }}
-          </template>
-        </template>
-      </p>
-      <p
-        v-if="card.held_attributed_line"
-        class="direction-card__held"
-      >
-        {{ card.held_attributed_line }}
       </p>
       <p
         v-if="card.surfaced_finding"
@@ -197,24 +152,12 @@ const meaningSegments = computed<TermScanSegment[]>(() => {
   return scanTermsInString(text);
 });
 
-const summarySegments = computed<TermScanSegment[]>(() => {
-  const text =
-    props.card.summary.interpretive_text ?? props.card.summary.token_text;
-  return scanTermsInString(text);
-});
-
 function fieldByLabel(label: string): CardField | undefined {
   return props.card.fields.find((f) => f.label === label);
 }
 
 const pullValue = computed<string>(() => fieldByLabel('Pull')?.value ?? '');
 const pastValue = computed<string>(() => fieldByLabel('Past')?.value ?? '');
-const feltCostValue = computed<string>(
-  () => fieldByLabel('Felt cost')?.value ?? '',
-);
-const anticipationValue = computed<string>(
-  () => fieldByLabel('Anticipation')?.value ?? '',
-);
 const qualityValue = computed<string>(
   () => fieldByLabel('Quality')?.value ?? '',
 );
@@ -235,13 +178,6 @@ const barFillColor = computed<string>(() =>
 const qualitySegments = computed<TermScanSegment[]>(() =>
   scanTermsInString(qualityValue.value),
 );
-
-const expressionSpaceCaptionSegments = computed<TermScanSegment[]>(() => {
-  const text =
-    props.card.expression_space_caption.interpretive_text ??
-    props.card.expression_space_caption.token_text;
-  return scanTermsInString(text);
-});
 
 </script>
 

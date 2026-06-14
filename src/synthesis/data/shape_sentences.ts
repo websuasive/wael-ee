@@ -650,7 +650,7 @@ export const shapeSentences: ShapeSentence[] = [
       existsDirection(output, input, (d) =>
         d.pull_state.includes('stopped_expecting'),
       ),
-    sentence: 'Quietly stopped expecting in {direction_lower}.',
+    sentence: 'Quietly stopped expecting much in {direction_lower}.',
   },
   {
     id: 'closing_phantom',

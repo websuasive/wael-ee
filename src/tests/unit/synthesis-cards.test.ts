@@ -132,52 +132,8 @@ describe('computeDirectionCards — Past field', () => {
   });
 });
 
-describe('computeDirectionCards — Felt cost field', () => {
-  function feltCostFor(value: number): string {
-    const out = makeEngineOutput({
-      directions: [{ direction: 'creator', pull: 0 }],
-    });
-    const inp = makeInputMap({
-      directions: { creator: { felt_cost: value } },
-    });
-    const card = findCard(
-      computeDirectionCards(out, inp, computeFiringSet(out)),
-      'Creator',
-    )!;
-    return card.fields.find((f) => f.label === 'Felt cost')!.value;
-  }
-
-  it('boundary band values', () => {
-    expect(feltCostFor(0)).toBe('low');
-    expect(feltCostFor(30)).toBe('moderate');
-    expect(feltCostFor(60)).toBe('high');
-  });
-});
-
-describe('computeDirectionCards — Anticipation field', () => {
-  function anticipationFor(value: 'none' | 'mild' | 'quickening'): string {
-    const out = makeEngineOutput({
-      directions: [{ direction: 'creator', pull: 0 }],
-    });
-    const inp = makeInputMap({
-      directions: { creator: { anticipation: value } },
-    });
-    const card = findCard(
-      computeDirectionCards(out, inp, computeFiringSet(out)),
-      'Creator',
-    )!;
-    return card.fields.find((f) => f.label === 'Anticipation')!.value;
-  }
-
-  it('all three values render verbatim', () => {
-    expect(anticipationFor('none')).toBe('none');
-    expect(anticipationFor('mild')).toBe('mild');
-    expect(anticipationFor('quickening')).toBe('quickening');
-  });
-});
-
-describe('computeDirectionCards — Quality composite field', () => {
-  it('real + active', () => {
+describe('computeDirectionCards — Quality field (state-sentences)', () => {
+  it('real + active → "A real want, and you\'re acting on it."', () => {
     const out = makeEngineOutput({
       directions: [
         {
@@ -190,11 +146,11 @@ describe('computeDirectionCards — Quality composite field', () => {
     });
     const card = findCard(buildAndCompute(out), 'Creator')!;
     expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
-      'real, active.',
+      "A real want, and you're acting on it.",
     );
   });
 
-  it('empty quality + quiet → empty token + quiet', () => {
+  it('empty quality + quiet → "Not really reading as one of yours."', () => {
     const out = makeEngineOutput({
       directions: [
         {
@@ -207,7 +163,126 @@ describe('computeDirectionCards — Quality composite field', () => {
     });
     const card = findCard(buildAndCompute(out), 'Creator')!;
     expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
-      'not yet reading as a pull, quiet.',
+      'Not really reading as one of yours.',
+    );
+  });
+
+  it('suppressed + blocked → "You\'ve pushed this one down - you\'ve had it before, but it\'s low now."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['suppressed'],
+          quadrant: 'blocked',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "You've pushed this one down - you've had it before, but it's low now.",
+    );
+  });
+
+  it('real + blocked → "A real want, but there\'s no room for it right now."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['real'],
+          quadrant: 'blocked',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "A real want, but there's no room for it right now.",
+    );
+  });
+
+  it('real + quiet → "A real want that\'s gone quiet - there, but not pushing."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['real'],
+          quadrant: 'quiet',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "A real want that's gone quiet - there, but not pushing.",
+    );
+  });
+
+  it('real + habit → "A real want, though it\'s running on habit now."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['real'],
+          quadrant: 'habit',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "A real want, though it's running on habit now.",
+    );
+  });
+
+  it('saturated → "This one\'s gone stale - the wanting\'s worn out."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['saturated'],
+          quadrant: 'active',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "This one's gone stale - the wanting's worn out.",
+    );
+  });
+
+  it('behaviourally_divergent → "You name this one, but your energy actually goes elsewhere."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['behaviourally_divergent'],
+          quadrant: 'active',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      'You name this one, but your energy actually goes elsewhere.',
+    );
+  });
+
+  it('phantom → "Wanted, but it hasn\'t turned into anything yet."', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 0,
+          pull_quality: ['phantom'],
+          quadrant: 'active',
+        },
+      ],
+    });
+    const card = findCard(buildAndCompute(out), 'Creator')!;
+    expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
+      "Wanted, but it hasn't turned into anything yet.",
     );
   });
 
@@ -223,8 +298,9 @@ describe('computeDirectionCards — Quality composite field', () => {
       ],
     });
     const card = findCard(buildAndCompute(out), 'Creator')!;
+    // First quality is 'suppressed', quadrant is 'blocked'
     expect(card.fields.find((f) => f.label === 'Quality')!.value).toBe(
-      'suppressed, blocked.',
+      "You've pushed this one down - you've had it before, but it's low now.",
     );
   });
 });
@@ -234,21 +310,19 @@ describe('computeDirectionCards — Quality composite field', () => {
 /* ------------------------------------------------------------------ */
 
 describe('computeDirectionCards — fields shape', () => {
-  it('every card has exactly 5 fields', () => {
+  it('every card has exactly 3 fields', () => {
     const cards = buildAndCompute(makeEngineOutput());
     for (const c of cards) {
-      expect(c.fields.length).toBe(5);
+      expect(c.fields.length).toBe(3);
     }
   });
 
-  it('field order is Pull, Past, Felt cost, Anticipation, Quality', () => {
+  it('field order is Pull, Past, Quality', () => {
     const cards = buildAndCompute(makeEngineOutput());
     for (const c of cards) {
       expect(c.fields.map((f) => f.label)).toEqual([
         'Pull',
         'Past',
-        'Felt cost',
-        'Anticipation',
         'Quality',
       ]);
     }
@@ -259,60 +333,8 @@ describe('computeDirectionCards — fields shape', () => {
     expect(card.fields.map((f) => f.label)).toEqual([
       'Pull',
       'Past',
-      'Felt cost',
-      'Anticipation',
       'Quality',
     ]);
-  });
-});
-
-/* ------------------------------------------------------------------ */
-/* E — held_attributed_line                                           */
-/* ------------------------------------------------------------------ */
-
-describe('computeDirectionCards — held_attributed_line', () => {
-  it('pull_state includes held_attributed → set', () => {
-    const out = makeEngineOutput({
-      directions: [
-        { direction: 'creator', pull: 0, pull_state: ['held_attributed_with_expression'] },
-      ],
-    });
-    const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.held_attributed_line).toBe(
-      'Something specific held in this direction.',
-    );
-  });
-
-  it('pull_state empty → null', () => {
-    const out = makeEngineOutput();
-    const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.held_attributed_line).toBeNull();
-  });
-
-  it('pull_state has stopped_expecting only → null', () => {
-    const out = makeEngineOutput({
-      directions: [
-        { direction: 'creator', pull: 0, pull_state: ['stopped_expecting'] },
-      ],
-    });
-    const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.held_attributed_line).toBeNull();
-  });
-
-  it('pull_state contains held_attributed alongside others → set', () => {
-    const out = makeEngineOutput({
-      directions: [
-        {
-          direction: 'creator',
-          pull: 0,
-          pull_state: ['held_attributed_with_expression', 'capacity_strain'],
-        },
-      ],
-    });
-    const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.held_attributed_line).toBe(
-      'Something specific held in this direction.',
-    );
   });
 });
 
@@ -389,7 +411,8 @@ describe('computeDirectionCards — summary token_text', () => {
       ],
     });
     const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.summary.token_text).toBe('real, active.');
+    // Summary slot shows state-sentence; token_text stays empty
+    expect(card.summary.token_text).toBe('');
   });
 
   it('empty + quiet (claimed-id sibling) → summary slot suppressed', () => {
@@ -419,7 +442,8 @@ describe('computeDirectionCards — summary token_text', () => {
       ],
     });
     const card = findCard(buildAndCompute(out), 'Creator')!;
-    expect(card.summary.token_text).toBe('desired direction, active.');
+    // Summary slot shows state-sentence; token_text stays empty
+    expect(card.summary.token_text).toBe('');
   });
 });
 
@@ -439,9 +463,11 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
         },
       ],
     });
+    // Tier 2: summary slot stays empty (interpretive lines removed).
+    // State-sentence now in Quality field via cardStateSentence.
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Wanting and doing reading together.');
+    ).toBeNull();
   });
 
   it('card_real_active_moderate (real + active + pull < 70)', () => {
@@ -457,7 +483,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Real pull and movement, both reading present.');
+    ).toBeNull();
   });
 
   it('card_suppressed_blocked (suppressed + blocked)', () => {
@@ -473,7 +499,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Past presence with stated wanting low; conditions unfavourable.');
+    ).toBeNull();
   });
 
   it('card_real_habit (real + habit)', () => {
@@ -489,7 +515,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Movement without strong pull underneath.');
+    ).toBeNull();
   });
 
   it('card_phantom (phantom_partial)', () => {
@@ -504,9 +530,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe(
-      "A desired direction; the wanting is named, the action hasn't yet followed.",
-    );
+    ).toBeNull();
   });
 
   it('card_phantom (phantom)', () => {
@@ -517,9 +541,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe(
-      "A desired direction; the wanting is named, the action hasn't yet followed.",
-    );
+    ).toBeNull();
   });
 
   it('card_saturated', () => {
@@ -530,7 +552,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('The wanting has soured.');
+    ).toBeNull();
   });
 
   it('card_real_blocked (real + blocked)', () => {
@@ -546,7 +568,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Real pull, movement held back.');
+    ).toBeNull();
   });
 
   it('card_real_quiet (real + quiet)', () => {
@@ -562,7 +584,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Real but quiet; neither pressing nor moving much.');
+    ).toBeNull();
   });
 
   it('card_suppressed_active (suppressed + active)', () => {
@@ -578,7 +600,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Activity reading high; the wanting underneath reads suppressed.');
+    ).toBeNull();
   });
 
   it('card_suppressed_habit (suppressed + habit)', () => {
@@ -594,7 +616,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Movement still reading; the wanting underneath has gone quiet.');
+    ).toBeNull();
   });
 
   it('card_suppressed_quiet (suppressed + quiet)', () => {
@@ -610,7 +632,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Past presence reading, current pressure absent.');
+    ).toBeNull();
   });
 
   it('card_behaviourally_divergent', () => {
@@ -625,7 +647,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Stated wanting reading; the chosen direction is elsewhere.');
+    ).toBeNull();
   });
 
   it('card_empty_habit (empty pull_quality + habit)', () => {
@@ -641,7 +663,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Movement reading without a wanting underneath.');
+    ).toBeNull();
   });
 
   it('card_empty_quiet (empty pull_quality + quiet)', () => {
@@ -661,7 +683,7 @@ describe('computeDirectionCards — summary interpretive_text per shape', () => 
     });
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Not reading as a direction here.');
+    ).toBeNull();
   });
 });
 
@@ -697,16 +719,11 @@ describe('computeDirectionCards — first-fire rule', () => {
     const making = findCard(cards, 'Creator')!;
     const freedom = findCard(cards, 'Freedom Designer')!;
     const experience = findCard(cards, 'Experience Seeker')!;
-    expect(making.summary.interpretive_text).toBe(
-      'Past presence with stated wanting low; conditions unfavourable.',
-    );
+    // Tier 2: summary slot stays empty (interpretive lines removed).
+    expect(making.summary.interpretive_text).toBeNull();
     expect(freedom.summary.interpretive_text).toBeNull();
     expect(experience.summary.interpretive_text).toBeNull();
-    // The claimer (making) keeps its composite token_text as a graceful-
-    // degradation backup. Suppressed siblings emit empty SlotContent so the
-    // render layer drops the summary line; the Quality field still carries
-    // the composite via its own fields[] entry.
-    expect(making.summary.token_text).toBe('suppressed, blocked.');
+    expect(making.summary.token_text).toBe('');
     expect(freedom.summary.token_text).toBe('');
     expect(experience.summary.token_text).toBe('');
   });
@@ -728,12 +745,9 @@ describe('computeDirectionCards — first-fire rule', () => {
       ],
     });
     const cards = buildAndCompute(out);
-    expect(findCard(cards, 'Creator')!.summary.interpretive_text).toBe(
-      'Wanting and doing reading together.',
-    );
-    expect(findCard(cards, 'Freedom Designer')!.summary.interpretive_text).toBe(
-      "A desired direction; the wanting is named, the action hasn't yet followed.",
-    );
+    // Tier 2: summary slot stays empty (interpretive lines removed).
+    expect(findCard(cards, 'Creator')!.summary.interpretive_text).toBeNull();
+    expect(findCard(cards, 'Freedom Designer')!.summary.interpretive_text).toBeNull();
   });
 
   it('two of same shape + one of different shape → first-fire only on dup, both shapes fire once', () => {
@@ -762,18 +776,10 @@ describe('computeDirectionCards — first-fire rule', () => {
     const making = findCard(cards, 'Creator')!;
     const freedom = findCard(cards, 'Freedom Designer')!;
     const experience = findCard(cards, 'Experience Seeker')!;
-    // making (pull 80, strong) fires card_real_active_strong.
-    expect(making.summary.interpretive_text).toBe(
-      'Wanting and doing reading together.',
-    );
-    // freedom (pull 60, moderate) candidate is card_real_active_moderate — different ID, fires.
-    expect(freedom.summary.interpretive_text).toBe(
-      'Real pull and movement, both reading present.',
-    );
-    // experience phantom — different shape, fires.
-    expect(experience.summary.interpretive_text).toBe(
-      "A desired direction; the wanting is named, the action hasn't yet followed.",
-    );
+    // Tier 2: summary slot stays empty (interpretive lines removed).
+    expect(making.summary.interpretive_text).toBeNull();
+    expect(freedom.summary.interpretive_text).toBeNull();
+    expect(experience.summary.interpretive_text).toBeNull();
   });
 });
 
@@ -793,12 +799,13 @@ describe('computeDirectionCards — predicate order', () => {
         },
       ],
     });
+    // Tier 2: summary slot stays empty (interpretive lines removed).
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Wanting and doing reading together.');
+    ).toBeNull();
   });
 
-  it('pull_quality with both real and phantom + active + pull >= 70 → real_active_strong wins (listed earlier)', () => {
+  it('pull_quality with both real and phantom + active + pull >= 70 → real wins (first element)', () => {
     const out = makeEngineOutput({
       directions: [
         {
@@ -809,9 +816,10 @@ describe('computeDirectionCards — predicate order', () => {
         },
       ],
     });
+    // Tier 2: summary slot stays empty (interpretive lines removed).
     expect(
       findCard(buildAndCompute(out), 'Creator')!.summary.interpretive_text,
-    ).toBe('Wanting and doing reading together.');
+    ).toBeNull();
   });
 });
 
@@ -945,26 +953,6 @@ describe('computeDirectionCards — field intensity', () => {
   it('Past intensity: absent → 10', () => {
     const fields = fieldsFor(0, { past_presence: 'no' });
     expect(fields.find((f) => f.label === 'Past')!.intensity).toBe(10);
-  });
-
-  it('Felt cost intensity: high → 85', () => {
-    const fields = fieldsFor(0, { felt_cost: 80 });
-    expect(fields.find((f) => f.label === 'Felt cost')!.intensity).toBe(85);
-  });
-
-  it('Felt cost intensity: low → 20', () => {
-    const fields = fieldsFor(0, { felt_cost: 10 });
-    expect(fields.find((f) => f.label === 'Felt cost')!.intensity).toBe(20);
-  });
-
-  it('Anticipation intensity: quickening → 80', () => {
-    const fields = fieldsFor(0, { anticipation: 'quickening' });
-    expect(fields.find((f) => f.label === 'Anticipation')!.intensity).toBe(80);
-  });
-
-  it('Anticipation intensity: none → 0', () => {
-    const fields = fieldsFor(0, { anticipation: 'none' });
-    expect(fields.find((f) => f.label === 'Anticipation')!.intensity).toBe(0);
   });
 
   it('Quality intensity is null', () => {

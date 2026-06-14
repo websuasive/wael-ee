@@ -12,16 +12,9 @@ import {
   DIRECTION_DISPLAY_NAMES,
   DIRECTION_TO_TYPE_KEY,
   PAST_PRESENCE_TOKENS,
-  ANTICIPATION_TOKENS,
-  PULL_QUALITY_TOKENS,
-  EMPTY_PULL_QUALITY_TOKEN,
-  QUADRANT_TOKENS,
   pullBand,
-  feltCostBand,
 } from './data/tokens';
 import { directionDescriptions } from './data/recognition_sentences';
-import { shapeSentences } from './data/shape_sentences';
-import type { SlotContent } from './types';
 import { SELF_REPORT_ITEMS } from './data/self_report_items';
 
 type CardPredicate = (d: DirectionOutput) => boolean;
@@ -126,18 +119,73 @@ const CARD_PREDICATES: ReadonlyArray<{ id: string; predicate: CardPredicate }> =
   },
 ];
 
-function cardSentenceById(id: string): string | null {
-  const entry = shapeSentences.find(
-    (s) => s.id === id && s.slot === 'direction_card_summary',
-  );
-  return entry ? entry.sentence : null;
+function cardSentenceById(): string | null {
+  // Tier 2: summary slot stays empty (interpretive lines removed).
+  // State-sentence now in Quality field via cardStateSentence.
+  return null;
 }
 
-function compositeQualityToken(d: DirectionOutput): string {
+/**
+ * Card state-sentence: maps quality x quadrant to plain explanatory sentence.
+ * Replaces Tier 2 one-word token with human-readable state description.
+ */
+function cardStateSentence(d: DirectionOutput): string {
   const first = d.pull_quality[0];
-  const qualityToken =
-    first === undefined ? EMPTY_PULL_QUALITY_TOKEN : PULL_QUALITY_TOKENS[first];
-  return `${qualityToken}, ${QUADRANT_TOKENS[d.quadrant]}.`;
+  const quadrant = d.quadrant;
+
+  // Empty quality
+  if (first === undefined) {
+    return 'Not really reading as one of yours.';
+  }
+
+  // real - quadrant selects among four
+  if (first === 'real') {
+    if (quadrant === 'active') {
+      return "A real want, and you're acting on it.";
+    }
+    if (quadrant === 'blocked') {
+      return "A real want, but there's no room for it right now.";
+    }
+    if (quadrant === 'quiet') {
+      return "A real want that's gone quiet - there, but not pushing.";
+    }
+    if (quadrant === 'habit') {
+      return "A real want, though it's running on habit now.";
+    }
+  }
+
+  // suppressed - two variants
+  if (first === 'suppressed') {
+    if (quadrant === 'active' || quadrant === 'habit') {
+      return 'Still going through the motions, but the wanting underneath has gone quiet.';
+    }
+    if (quadrant === 'blocked' || quadrant === 'quiet') {
+      return "You've pushed this one down - you've had it before, but it's low now.";
+    }
+  }
+
+  // saturated - same sentence regardless of quadrant
+  if (first === 'saturated') {
+    return "This one's gone stale - the wanting's worn out.";
+  }
+
+  // behaviourally_divergent - same sentence regardless of quadrant
+  if (first === 'behaviourally_divergent') {
+    return 'You name this one, but your energy actually goes elsewhere.';
+  }
+
+  // phantom / phantom_partial - same sentence regardless of quadrant
+  if (first === 'phantom' || first === 'phantom_partial') {
+    return "Wanted, but it hasn't turned into anything yet.";
+  }
+
+  // ghost - suppressed from display, should not reach here
+  if (first === 'ghost') {
+    return 'ghost';
+  }
+
+  // Fallback for any unexpected quality
+  return 'Not really reading as one of yours.';
 }
 
 function pastIntensity(value: string): number {
@@ -157,89 +205,17 @@ function pastIntensity(value: string): number {
   }
 }
 
-function costIntensity(value: string): number {
-  switch (value) {
-    case 'high':
-      return 85;
-    case 'moderate':
-      return 50;
-    case 'low':
-      return 20;
-    case 'none':
-      return 5;
-    default:
-      return 0;
-  }
-}
-
-function anticipationIntensity(value: string): number {
-  switch (value) {
-    case 'quickening':
-      return 80;
-    case 'mild':
-      return 35;
-    case 'none':
-      return 0;
-    default:
-      return 0;
-  }
-}
-
 function buildFields(
   d: DirectionOutput,
   input: InputMap,
 ): CardField[] {
   const inp = input.directions[d.direction];
   const pastValue = PAST_PRESENCE_TOKENS[inp.past_presence];
-  const costValue = feltCostBand(inp.felt_cost);
-  const anticipationValue = ANTICIPATION_TOKENS[inp.anticipation];
   return [
     { label: 'Pull', value: pullBand(d.pull), intensity: d.pull },
     { label: 'Past', value: pastValue, intensity: pastIntensity(pastValue) },
-    {
-      label: 'Felt cost',
-      value: costValue,
-      intensity: costIntensity(costValue),
-    },
-    {
-      label: 'Anticipation',
-      value: anticipationValue,
-      intensity: anticipationIntensity(anticipationValue),
-    },
-    { label: 'Quality', value: compositeQualityToken(d), intensity: null },
+    { label: 'Quality', value: cardStateSentence(d), intensity: null },
   ];
-}
-
-/** §5.3 modification — held_attributed_line dispatches on Pull state value. */
-function buildHeldAttributedLine(d: DirectionOutput): string | null {
-  if (d.pull_state.includes('held_attributed_with_expression')) {
-    return 'Something specific held in this direction.';
-  }
-  if (d.pull_state.includes('held_attributed_unexpressed')) {
-    return 'Something specific held in this direction, with no current room for it.';
-  }
-  return null;
-}
-
-/**
- * §5.3 + §7.7 — expression_space_caption per direction.
- *
- * Asymmetric by design: fires only when expression_space === "no_space" AND
- * direction materially reading (pull >= 30 OR pull_quality non-empty). The
- * has_space case (and the not-materially-reading case) produces an empty
- * SlotContent so the render layer drops the slot.
- */
-function buildExpressionSpaceCaption(d: DirectionOutput): SlotContent {
-  const empty: SlotContent = { interpretive_text: null, token_text: '' };
-  if (d.expression_space !== 'no_space') return empty;
-  const materiallyReading = d.pull >= 30 || d.pull_quality.length > 0;
-  if (!materiallyReading) return empty;
-  const id = `expression_space_${d.direction}_no`;
-  const entry = shapeSentences.find(
-    (s) => s.id === id && s.slot === 'expression_space_caption',
-  );
-  if (entry === undefined) return empty;
-  return { interpretive_text: entry.sentence, token_text: '' };
 }
 
 function buildMeaningSentence(d: DirectionOutput): {
@@ -299,21 +275,16 @@ export function computeDirectionCards(
     const candidateId = findCardCandidate(d);
     let interpretive_text: string | null = null;
     if (candidateId !== null && !claimed.has(candidateId)) {
-      const sentence = cardSentenceById(candidateId);
+      const sentence = cardSentenceById();
       if (sentence !== null) {
         interpretive_text = sentence;
         claimed.add(candidateId);
       }
     }
 
-    // When no authored sentence fires (or the predicate id was claimed by a
-    // higher-pull sibling under the first-fire rule), suppress token_text so
-    // shouldRenderSlot drops the summary slot entirely. This avoids visible
-    // duplication with the Quality field (which carries the same composite
-    // quality string in its own row). When a sentence is present, token_text
-    // continues to carry the composite as graceful-degradation backup.
-    const token_text =
-      interpretive_text !== null ? compositeQualityToken(d) : '';
+    // Summary slot stays empty (Tier 2: interpretive lines removed).
+    // State-sentence now in Quality field via cardStateSentence.
+    const token_text = '';
 
     const visual_state: DirectionCardOutput['visual_state'] = namedSet.has(
       d.direction,
@@ -336,8 +307,6 @@ export function computeDirectionCards(
       summary: { interpretive_text, token_text },
       meaning_sentence: buildMeaningSentence(d),
       fields: buildFields(d, input),
-      expression_space_caption: buildExpressionSpaceCaption(d),
-      held_attributed_line: buildHeldAttributedLine(d),
       visual_state,
     };
 

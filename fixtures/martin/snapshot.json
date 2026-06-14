@@ -473,34 +473,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "high",
-            "intensity": 85
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "stated but moving elsewhere, blocked.",
+            "value": "You name this one, but your energy actually goes elsewhere.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week has no current room for this.",
-          "token_text": ""
-        },
-        "held_attributed_line": "Something specific held in this direction, with no current room for it.",
         "visual_state": "named"
       },
       {
         "direction_name": "Experience Seeker",
         "direction_engine_name": "experience_seeker",
         "summary": {
-          "interpretive_text": "Stated wanting reading; the chosen direction is elsewhere.",
-          "token_text": "stated but moving elsewhere, blocked."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward newness - new places, new things, the feeling of being properly in your life rather than watching it pass. Underneath it, usually, is time: the sense that the years are going and you don't want to use them up on repetition. It isn't restlessness for its own sake. It's that you come alive in the unfamiliar, and a life that's become the same week on repeat starts to feel like it's narrowing around you. Variety isn't a luxury for you; it's most of how you know you're still living.",
@@ -518,34 +503,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "quickening",
-            "intensity": 80
-          },
-          {
             "label": "Quality",
-            "value": "stated but moving elsewhere, blocked.",
+            "value": "You name this one, but your energy actually goes elsewhere.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The week reads narrow around this.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
         "direction_name": "Relationship Rebuilder",
         "direction_engine_name": "relationship_rebuilder",
         "summary": {
-          "interpretive_text": "Real but quiet; neither pressing nor moving much.",
-          "token_text": "real, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is toward depth - a few people who actually know you, not a wider circle or more contacts. For a lot of men the close relationships have quietly gone functional over the years: the marriage runs, the mates are good for a pint, but somewhere the real talk stopped. What you're after isn't more company; it's being properly known by someone, and knowing them back. Surface is easy and everywhere. What leaves you cold is people you never get past the weather with - and a life where nobody quite knows what's going on with you.",
@@ -563,34 +533,19 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "real, quiet.",
+            "value": "A real want that's gone quiet - there, but not pushing.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": "The contact for this is not in the week.",
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "named"
       },
       {
         "direction_name": "Freedom Designer",
         "direction_engine_name": "freedom_designer",
         "summary": {
-          "interpretive_text": "Not reading as a direction here.",
-          "token_text": "not yet reading as a pull, quiet."
+          "interpretive_text": null,
+          "token_text": ""
         },
         "meaning_sentence": {
           "interpretive_text": "The pull is to run your own life - your time, your decisions, your terms. It isn't that you hate work; it's that you can't stand work, or anyone else, taking up the whole of it. Underneath it is a simple thing: you can put up with almost anything as long as you chose it. What grates is the sense of a life arranged by other people's claims, where the days get spent on what's expected rather than what you'd pick. When enough of it is yours, you can carry a lot. When almost none of it is, even a good life starts to feel like something happening to you.",
@@ -608,26 +563,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "moderate",
-            "intensity": 50
-          },
-          {
-            "label": "Anticipation",
-            "value": "mild",
-            "intensity": 35
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -653,26 +593,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       },
       {
@@ -698,26 +623,11 @@
             "intensity": 90
           },
           {
-            "label": "Felt cost",
-            "value": "low",
-            "intensity": 20
-          },
-          {
-            "label": "Anticipation",
-            "value": "none",
-            "intensity": 0
-          },
-          {
             "label": "Quality",
-            "value": "not yet reading as a pull, quiet.",
+            "value": "Not really reading as one of yours.",
             "intensity": null
           }
         ],
-        "expression_space_caption": {
-          "interpretive_text": null,
-          "token_text": ""
-        },
-        "held_attributed_line": null,
         "visual_state": "not_firing"
       }
     ],
@@ -944,26 +854,10 @@
       },
       {
         "id": "closing_stopped_expecting",
-        "direction_engine_name": "creator",
+        "direction_engine_name": null,
         "text": {
-          "interpretive_text": "Quietly stopped expecting in making.",
-          "token_text": "Stopped expecting firing on Creator."
-        }
-      },
-      {
-        "id": "closing_stopped_expecting",
-        "direction_engine_name": "experience_seeker",
-        "text": {
-          "interpretive_text": "Quietly stopped expecting in experience.",
-          "token_text": "Stopped expecting firing on Experience Seeker."
-        }
-      },
-      {
-        "id": "closing_stopped_expecting",
-        "direction_engine_name": "freedom_designer",
-        "text": {
-          "interpretive_text": "Quietly stopped expecting in freedom.",
-          "token_text": "Stopped expecting firing on Freedom Designer."
+          "interpretive_text": "Quietly stopped expecting much in making, experience and freedom.",
+          "token_text": "Stopped expecting firing on making, experience and freedom."
         }
       }
     ],

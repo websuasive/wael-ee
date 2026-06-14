@@ -69,9 +69,6 @@ export type DirectionCardOutput = {
   summary: SlotContent;
   meaning_sentence: SlotContent;
   fields: CardField[];
-  /** Section 5.3 modification. Fires only when expression_space === "no_space" AND direction materially reading. Otherwise interpretive_text=null, token_text=''. */
-  expression_space_caption: SlotContent;
-  held_attributed_line: string | null;
   visual_state: 'named' | 'firing_not_named' | 'not_firing';
   /** Section 7.17 surfaced finding sentence when architecture surfaces this direction but man did not name it. */
   surfaced_finding?: string;
