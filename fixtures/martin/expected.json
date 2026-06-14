@@ -1,0 +1,13 @@
+{
+  "directions": {
+    "experience_seeker": { "surfaced": true }
+  },
+  "domains": {
+    "felt_aliveness": { "fires": true },
+    "making": { "fires": true },
+    "friendship": { "fires": true },
+    "conversation_depth": { "fires": true },
+    "being_known": { "fires": true }
+  }
+}
+

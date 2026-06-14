@@ -1,0 +1,10 @@
+{
+  "domains": {
+    "body_physical_aliveness": { "fires": true },
+    "felt_aliveness": { "fires": true },
+    "energy_as_resource": { "fires": true },
+    "making": { "fires": true },
+    "friendship": { "fires": true }
+  }
+}
+

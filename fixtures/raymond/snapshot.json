@@ -1,0 +1,1187 @@
+{
+  "input_map": {
+    "directions": {
+      "contributor": {
+        "stated_strength": 0,
+        "felt_cost": 25,
+        "anticipation": "none",
+        "current_movement": 100,
+        "recent_action": "recent",
+        "past_presence": "yes",
+        "specificity": "none",
+        "would_reach_for": "no",
+        "saturation": "yes",
+        "stopped_expecting": "no",
+        "stated_allocation": 28.57142857142857
+      },
+      "experience_seeker": {
+        "stated_strength": 36,
+        "felt_cost": 70,
+        "anticipation": "mild",
+        "current_movement": 0,
+        "recent_action": "none",
+        "past_presence": "yes",
+        "specificity": "strong",
+        "would_reach_for": "no",
+        "saturation": "no",
+        "stopped_expecting": "yes",
+        "stated_allocation": 0
+      },
+      "freedom_designer": {
+        "stated_strength": 30,
+        "felt_cost": 40,
+        "anticipation": "mild",
+        "current_movement": 0,
+        "recent_action": "none",
+        "past_presence": "yes",
+        "specificity": "none",
+        "would_reach_for": "no",
+        "saturation": "no",
+        "stopped_expecting": "no",
+        "stated_allocation": 0
+      },
+      "growth_focused": {
+        "stated_strength": 0,
+        "felt_cost": 25,
+        "anticipation": "none",
+        "current_movement": 0,
+        "recent_action": "none",
+        "past_presence": "yes",
+        "specificity": "none",
+        "would_reach_for": "no",
+        "saturation": "no",
+        "stopped_expecting": "yes",
+        "stated_allocation": 0
+      },
+      "creator": {
+        "stated_strength": 36,
+        "felt_cost": 70,
+        "anticipation": "mild",
+        "current_movement": 0,
+        "recent_action": "none",
+        "past_presence": "yes",
+        "specificity": "strong",
+        "would_reach_for": "no",
+        "saturation": "no",
+        "stopped_expecting": "yes",
+        "stated_allocation": 21.428571428571427
+      },
+      "relationship_rebuilder": {
+        "stated_strength": 30,
+        "felt_cost": 40,
+        "anticipation": "mild",
+        "current_movement": 33,
+        "recent_action": "some",
+        "past_presence": "yes",
+        "specificity": "none",
+        "would_reach_for": "no",
+        "saturation": "no",
+        "stopped_expecting": "no",
+        "stated_allocation": 0
+      }
+    },
+    "cross_direction": {
+      "direction_chosen": "rest",
+      "reach_retrospective": "rest",
+      "reach_counterfactual": "creator",
+      "capacity_strain": "no",
+      "life_shape_duration": "long",
+      "week_shape": {
+        "work_dominates": true,
+        "weekends_consumed": true,
+        "weekly_activity": false,
+        "sees_people": false,
+        "makes_things": false,
+        "active_body": false,
+        "belongs_to_group": true,
+        "solo_practice": false,
+        "varied_week": false
+      },
+      "life_stage": "enduring",
+      "sociality_default": "solitary_by_default",
+      "paid_work_relationship": "defining",
+      "primary_load": "paid_work",
+      "psychological_filtering": "filters_pervasively",
+      "role_consolidation": "role_inflected",
+      "attention_pattern": "autopilot",
+      "relational_presence": "partial"
+    },
+    "domains": {
+      "time_as_yours": {
+        "current_state": 20,
+        "past_presence": "yes",
+        "peace_discriminator": "still_misses"
+      },
+      "energy_as_resource": {
+        "current_state": 25,
+        "past_presence": "yes",
+        "peace_discriminator": "still_misses"
+      },
+      "felt_aliveness": {
+        "current_state": 20,
+        "past_presence": "yes",
+        "peace_discriminator": "still_misses"
+      },
+      "body_physical_aliveness": {
+        "current_state": 30,
+        "past_presence": "yes",
+        "peace_discriminator": "still_misses"
+      },
+      "curiosity": {
+        "current_state": 25,
+        "past_presence": "yes",
+        "wanting": "wants",
+        "peace_discriminator": "still_misses"
+      },
+      "making": {
+        "current_state": 10,
+        "past_presence": "yes",
+        "wanting": "wants",
+        "peace_discriminator": "still_misses"
+      },
+      "conversation_depth": {
+        "current_state": 75,
+        "past_presence": "yes",
+        "wanting": "wants",
+        "peace_discriminator": "still_misses"
+      },
+      "being_known": {
+        "current_state": 80,
+        "past_presence": "yes",
+        "wanting": "wants"
+      },
+      "friendship": {
+        "current_state": 15,
+        "past_presence": "yes",
+        "wanting": "wants",
+        "peace_discriminator": "still_misses"
+      },
+      "intimacy": {
+        "current_state": 45,
+        "past_presence": "yes",
+        "wanting": "wants",
+        "peace_discriminator": "still_misses"
+      },
+      "mattering": {
+        "current_state": 70,
+        "past_presence": "yes",
+        "wanting": "wants"
+      },
+      "spiritual": {
+        "current_state": 50,
+        "past_presence": "yes",
+        "wanting": "wants"
+      }
+    },
+    "constraints": {
+      "energy_availability": 10,
+      "time_availability": 20,
+      "body_capacity": 45,
+      "permission": 45,
+      "permission_sub_shape": "act_block"
+    },
+    "cross_cutting": {
+      "recent_life_shape_change": "no",
+      "replacement_structure_exists": "no",
+      "recent_reaching": "no_current_reaching"
+    },
+    "self_report": {
+      "named_absences": [
+        "more_energy",
+        "getting_back_in_shape",
+        "something_just_for_me"
+      ]
+    }
+  },
+  "engine_output": {
+    "directions": [
+      {
+        "direction": "creator",
+        "surfaced": false,
+        "pull": 44.8,
+        "movement": 0,
+        "quadrant": "quiet",
+        "past_relationship": "was_once",
+        "was_once_renders": true,
+        "specificity": "strong",
+        "pull_quality": [
+          "suppressed"
+        ],
+        "pull_state": [
+          "held_attributed_unexpressed",
+          "stopped_expecting"
+        ],
+        "expression_space": "no_space"
+      },
+      {
+        "direction": "experience_seeker",
+        "surfaced": false,
+        "pull": 44.8,
+        "movement": 0,
+        "quadrant": "quiet",
+        "past_relationship": "was_once",
+        "was_once_renders": true,
+        "specificity": "strong",
+        "pull_quality": [
+          "suppressed"
+        ],
+        "pull_state": [
+          "held_attributed_unexpressed",
+          "stopped_expecting"
+        ],
+        "expression_space": "no_space"
+      },
+      {
+        "direction": "relationship_rebuilder",
+        "surfaced": false,
+        "pull": 37,
+        "movement": 33,
+        "quadrant": "quiet",
+        "past_relationship": "was_once",
+        "was_once_renders": true,
+        "specificity": "none",
+        "pull_quality": [
+          "real"
+        ],
+        "pull_state": [],
+        "expression_space": "no_space"
+      },
+      {
+        "direction": "freedom_designer",
+        "surfaced": false,
+        "pull": 27,
+        "movement": 0,
+        "quadrant": "quiet",
+        "past_relationship": "was_once",
+        "was_once_renders": true,
+        "specificity": "none",
+        "pull_quality": [],
+        "pull_state": [],
+        "expression_space": "no_space"
+      },
+      {
+        "direction": "contributor",
+        "surfaced": true,
+        "pull": 25,
+        "movement": 100,
+        "quadrant": "habit",
+        "past_relationship": "was_once",
+        "was_once_renders": false,
+        "specificity": "none",
+        "pull_quality": [],
+        "pull_state": [],
+        "expression_space": "has_space"
+      },
+      {
+        "direction": "growth_focused",
+        "surfaced": false,
+        "pull": 5,
+        "movement": 0,
+        "quadrant": "quiet",
+        "past_relationship": "was_once",
+        "was_once_renders": true,
+        "specificity": "none",
+        "pull_quality": [],
+        "pull_state": [
+          "stopped_expecting"
+        ],
+        "expression_space": "no_space"
+      }
+    ],
+    "domains": [
+      {
+        "domain": "time_as_yours",
+        "current_state": 20,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "energy_as_resource",
+        "current_state": 25,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "felt_aliveness",
+        "current_state": 20,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "body_physical_aliveness",
+        "current_state": 30,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "curiosity",
+        "current_state": 25,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "making",
+        "current_state": 10,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "conversation_depth",
+        "current_state": 75,
+        "fires": false,
+        "value": "intact"
+      },
+      {
+        "domain": "being_known",
+        "current_state": 80,
+        "fires": false,
+        "value": "intact"
+      },
+      {
+        "domain": "friendship",
+        "current_state": 15,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "intimacy",
+        "current_state": 45,
+        "fires": true,
+        "value": "reduced_wants_back"
+      },
+      {
+        "domain": "mattering",
+        "current_state": 70,
+        "fires": false,
+        "value": "intact"
+      },
+      {
+        "domain": "spiritual",
+        "current_state": 50,
+        "fires": true,
+        "value": "reduced_wants_back"
+      }
+    ],
+    "constraints": {
+      "sustained_constraint_intensity": 67,
+      "energy": {
+        "value": 10,
+        "band": "heavy_depletion",
+        "fires": true
+      },
+      "time": {
+        "value": 20,
+        "band": "heavy_time_pressure",
+        "fires": true
+      },
+      "body_capacity": {
+        "value": 45,
+        "band": "shifted",
+        "fires": true
+      },
+      "permission": {
+        "value": 45,
+        "band": "partial",
+        "sub_shape": "act_block",
+        "fires": true
+      }
+    },
+    "cross_cutting": [
+      {
+        "output": "between_shapes",
+        "fires": false
+      },
+      {
+        "output": "mid_process",
+        "fires": false
+      }
+    ],
+    "cross_direction": {
+      "life_stage": "enduring",
+      "sociality_default": "solitary_by_default",
+      "paid_work_relationship": "defining",
+      "primary_load": "paid_work",
+      "psychological_filtering": "filters_pervasively",
+      "role_consolidation": "role_inflected",
+      "attention_pattern": "autopilot",
+      "relational_presence": "partial",
+      "week_shape": {
+        "work_dominates": true,
+        "weekends_consumed": true,
+        "weekly_activity": false,
+        "sees_people": false,
+        "makes_things": false,
+        "active_body": false,
+        "belongs_to_group": true,
+        "solo_practice": false,
+        "varied_week": false
+      },
+      "life_texture_band": "mixed",
+      "structural_narrowing_band": "high",
+      "experiential_narrowing_band": "moderate",
+      "psychological_narrowing_band": "high",
+      "identity_narrowing_band": "high",
+      "energetic_narrowing_band": "high",
+      "relational_narrowing_band": "moderate",
+      "attention_narrowing_band": "high",
+      "reach_state": "buried_but_alive",
+      "reach_confidence": "low"
+    }
+  },
+  "synthesis_output": {
+    "headline": {
+      "direction_names": [
+        "Creator",
+        "Experience Seeker",
+        "Relationship Rebuilder"
+      ],
+      "direction_engine_names": [
+        "creator",
+        "experience_seeker",
+        "relationship_rebuilder"
+      ],
+      "situation_text": null
+    },
+    "recognition_paragraph": {
+      "interpretive_text": "You need to be making something real, out in the world doing it, with at least one person who genuinely understands what you're trying to build.",
+      "token_text": "Creator, Experience Seeker, and Relationship Rebuilder."
+    },
+    "pattern_paragraph": {
+      "interpretive_text": null,
+      "token_text": "3 directions reading materially. Constraint pattern: heavy. Life shape duration: long."
+    },
+    "direction_cards": [
+      {
+        "direction_name": "Creator",
+        "direction_engine_name": "creator",
+        "summary": {
+          "interpretive_text": null,
+          "token_text": ""
+        },
+        "meaning_sentence": {
+          "interpretive_text": "You need to be making something that's genuinely yours: not contributing to someone else's project, not assisting, actually building.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "moderate",
+            "intensity": 44.8
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "high",
+            "intensity": 85
+          },
+          {
+            "label": "Anticipation",
+            "value": "mild",
+            "intensity": 35
+          },
+          {
+            "label": "Quality",
+            "value": "suppressed, quiet.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": "The week has no current room for this.",
+          "token_text": ""
+        },
+        "held_attributed_line": "Something specific held in this direction, with no current room for it.",
+        "visual_state": "named"
+      },
+      {
+        "direction_name": "Experience Seeker",
+        "direction_engine_name": "experience_seeker",
+        "summary": {
+          "interpretive_text": "Past presence reading, current pressure absent.",
+          "token_text": "suppressed, quiet."
+        },
+        "meaning_sentence": {
+          "interpretive_text": "You move through life through range: different contexts, new things, the feeling of being genuinely in it. That's been narrowing.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "moderate",
+            "intensity": 44.8
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "high",
+            "intensity": 85
+          },
+          {
+            "label": "Anticipation",
+            "value": "mild",
+            "intensity": 35
+          },
+          {
+            "label": "Quality",
+            "value": "suppressed, quiet.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": "The week reads narrow around this.",
+          "token_text": ""
+        },
+        "held_attributed_line": "Something specific held in this direction, with no current room for it.",
+        "visual_state": "named"
+      },
+      {
+        "direction_name": "Relationship Rebuilder",
+        "direction_engine_name": "relationship_rebuilder",
+        "summary": {
+          "interpretive_text": "Real but quiet; neither pressing nor moving much.",
+          "token_text": "real, quiet."
+        },
+        "meaning_sentence": {
+          "interpretive_text": "What you're missing is depth: not more people, not networking, but a small number of people who actually know you.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "moderate",
+            "intensity": 37
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "moderate",
+            "intensity": 50
+          },
+          {
+            "label": "Anticipation",
+            "value": "mild",
+            "intensity": 35
+          },
+          {
+            "label": "Quality",
+            "value": "real, quiet.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": "The contact for this is not in the week.",
+          "token_text": ""
+        },
+        "held_attributed_line": null,
+        "visual_state": "named"
+      },
+      {
+        "direction_name": "Freedom Designer",
+        "direction_engine_name": "freedom_designer",
+        "summary": {
+          "interpretive_text": "Not reading as a direction here.",
+          "token_text": "not yet reading as a pull, quiet."
+        },
+        "meaning_sentence": {
+          "interpretive_text": "You can tolerate almost anything if you chose it. What you can't tolerate is feeling owned by obligations you never fully agreed to.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "low",
+            "intensity": 27
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "moderate",
+            "intensity": 50
+          },
+          {
+            "label": "Anticipation",
+            "value": "mild",
+            "intensity": 35
+          },
+          {
+            "label": "Quality",
+            "value": "not yet reading as a pull, quiet.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": null,
+          "token_text": ""
+        },
+        "held_attributed_line": null,
+        "visual_state": "not_firing"
+      },
+      {
+        "direction_name": "Contributor",
+        "direction_engine_name": "contributor",
+        "summary": {
+          "interpretive_text": "Movement reading without a wanting underneath.",
+          "token_text": "not yet reading as a pull, habit."
+        },
+        "meaning_sentence": {
+          "interpretive_text": "You need your work to matter beyond the transaction: not prestige, not appreciation, but the knowledge that something you did genuinely helped.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "low",
+            "intensity": 25
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "low",
+            "intensity": 20
+          },
+          {
+            "label": "Anticipation",
+            "value": "none",
+            "intensity": 0
+          },
+          {
+            "label": "Quality",
+            "value": "not yet reading as a pull, habit.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": null,
+          "token_text": ""
+        },
+        "held_attributed_line": null,
+        "visual_state": "not_firing",
+        "surfaced_finding": "You didn't name this one, but the architecture reads it firing."
+      },
+      {
+        "direction_name": "Growth Focused",
+        "direction_engine_name": "growth_focused",
+        "summary": {
+          "interpretive_text": null,
+          "token_text": ""
+        },
+        "meaning_sentence": {
+          "interpretive_text": "You need to feel like you're getting sharper: learning something real, becoming more capable at something that matters. Coasting feels like dying.",
+          "token_text": ""
+        },
+        "fields": [
+          {
+            "label": "Pull",
+            "value": "low",
+            "intensity": 5
+          },
+          {
+            "label": "Past",
+            "value": "present",
+            "intensity": 90
+          },
+          {
+            "label": "Felt cost",
+            "value": "low",
+            "intensity": 20
+          },
+          {
+            "label": "Anticipation",
+            "value": "none",
+            "intensity": 0
+          },
+          {
+            "label": "Quality",
+            "value": "not yet reading as a pull, quiet.",
+            "intensity": null
+          }
+        ],
+        "expression_space_caption": {
+          "interpretive_text": null,
+          "token_text": ""
+        },
+        "held_attributed_line": null,
+        "visual_state": "not_firing"
+      }
+    ],
+    "direction_evidence_chart": {
+      "bubbles": [
+        {
+          "direction_name": "Creator",
+          "direction_engine_name": "creator",
+          "pull": 44.8,
+          "movement": 0,
+          "specificity_size": 1,
+          "surfaced": false,
+          "pull_quality_state": "suppressed",
+          "is_desired_direction": false,
+          "is_named_in_headline": true
+        },
+        {
+          "direction_name": "Experience Seeker",
+          "direction_engine_name": "experience_seeker",
+          "pull": 44.8,
+          "movement": 0,
+          "specificity_size": 1,
+          "surfaced": false,
+          "pull_quality_state": "suppressed",
+          "is_desired_direction": false,
+          "is_named_in_headline": true
+        },
+        {
+          "direction_name": "Relationship Rebuilder",
+          "direction_engine_name": "relationship_rebuilder",
+          "pull": 37,
+          "movement": 33,
+          "specificity_size": 0.3,
+          "surfaced": false,
+          "pull_quality_state": "real",
+          "is_desired_direction": false,
+          "is_named_in_headline": true
+        },
+        {
+          "direction_name": "Freedom Designer",
+          "direction_engine_name": "freedom_designer",
+          "pull": 27,
+          "movement": 0,
+          "specificity_size": 0.3,
+          "surfaced": false,
+          "pull_quality_state": "empty",
+          "is_desired_direction": false,
+          "is_named_in_headline": false
+        },
+        {
+          "direction_name": "Contributor",
+          "direction_engine_name": "contributor",
+          "pull": 25,
+          "movement": 100,
+          "specificity_size": 0.3,
+          "surfaced": true,
+          "pull_quality_state": "empty",
+          "is_desired_direction": false,
+          "is_named_in_headline": false
+        },
+        {
+          "direction_name": "Growth Focused",
+          "direction_engine_name": "growth_focused",
+          "pull": 5,
+          "movement": 0,
+          "specificity_size": 0.3,
+          "surfaced": false,
+          "pull_quality_state": "empty",
+          "is_desired_direction": false,
+          "is_named_in_headline": false
+        }
+      ],
+      "caption": {
+        "interpretive_text": null,
+        "token_text": "3 directions reading materially. Movement varies."
+      }
+    },
+    "domains_panel": {
+      "summary": {
+        "interpretive_text": null,
+        "token_text": "9 domains reduced; 3 intact."
+      },
+      "reduced_groups": [
+        {
+          "value_label": "Reduced, wants back",
+          "value_engine_name": "reduced_wants_back",
+          "domains": [
+            {
+              "domain_name": "Time as yours",
+              "intensity": 80
+            },
+            {
+              "domain_name": "Energy as resource",
+              "intensity": 75
+            },
+            {
+              "domain_name": "Felt aliveness",
+              "intensity": 80
+            },
+            {
+              "domain_name": "Body",
+              "intensity": 70
+            },
+            {
+              "domain_name": "Curiosity",
+              "intensity": 75
+            },
+            {
+              "domain_name": "Making",
+              "intensity": 90
+            },
+            {
+              "domain_name": "Friendship",
+              "intensity": 85
+            },
+            {
+              "domain_name": "Intimacy",
+              "intensity": 55
+            },
+            {
+              "domain_name": "Spiritual",
+              "intensity": 50
+            }
+          ],
+          "domain_engine_names": [
+            "time_as_yours",
+            "energy_as_resource",
+            "felt_aliveness",
+            "body_physical_aliveness",
+            "curiosity",
+            "making",
+            "friendship",
+            "intimacy",
+            "spiritual"
+          ]
+        }
+      ],
+      "intact_callout": {
+        "interpretive_text": "Mattering reading intact alongside multiple reductions.",
+        "token_text": "Conversation depth, Being known, Mattering."
+      }
+    },
+    "constraints_panel": {
+      "summary": {
+        "interpretive_text": null,
+        "token_text": ""
+      },
+      "constraint_lines": [
+        {
+          "constraint_name": "Energy",
+          "constraint_engine_name": "energy",
+          "band_label": "heavy depletion",
+          "intensity": 10
+        },
+        {
+          "constraint_name": "Time",
+          "constraint_engine_name": "time",
+          "band_label": "heavy time pressure",
+          "intensity": 20
+        },
+        {
+          "constraint_name": "Body",
+          "constraint_engine_name": "body_capacity",
+          "band_label": "shifted",
+          "intensity": 45
+        },
+        {
+          "constraint_name": "Permission",
+          "constraint_engine_name": "permission",
+          "band_label": "partial",
+          "intensity": 45
+        }
+      ],
+      "sustained_constraint_intensity": 67,
+      "intact_callout": {
+        "interpretive_text": null,
+        "token_text": ""
+      },
+      "permission_sub_shape_text": {
+        "interpretive_text": "Wanting something thought about but not acted on.",
+        "token_text": "Wanting something thought about but not acted on."
+      }
+    },
+    "cross_cutting_panel": {
+      "outputs": [
+        {
+          "name": "Between shapes",
+          "output_engine_name": "between_shapes",
+          "fires": false
+        },
+        {
+          "name": "Mid-process",
+          "output_engine_name": "mid_process",
+          "fires": false
+        }
+      ]
+    },
+    "closing_lines": [
+      {
+        "id": "closing_stopped_expecting",
+        "direction_engine_name": "creator",
+        "text": {
+          "interpretive_text": "Quietly stopped expecting in making.",
+          "token_text": "Stopped expecting firing on Creator."
+        }
+      },
+      {
+        "id": "closing_stopped_expecting",
+        "direction_engine_name": "experience_seeker",
+        "text": {
+          "interpretive_text": "Quietly stopped expecting in experience.",
+          "token_text": "Stopped expecting firing on Experience Seeker."
+        }
+      },
+      {
+        "id": "closing_stopped_expecting",
+        "direction_engine_name": "growth_focused",
+        "text": {
+          "interpretive_text": "Quietly stopped expecting in growth.",
+          "token_text": "Stopped expecting firing on Growth Focused."
+        }
+      }
+    ],
+    "experience_candidate_directions": [
+      {
+        "direction_name": "Creator",
+        "direction_engine_name": "creator",
+        "priority": "firing",
+        "pull": 44.8
+      },
+      {
+        "direction_name": "Experience Seeker",
+        "direction_engine_name": "experience_seeker",
+        "priority": "firing",
+        "pull": 44.8
+      },
+      {
+        "direction_name": "Relationship Rebuilder",
+        "direction_engine_name": "relationship_rebuilder",
+        "priority": "firing",
+        "pull": 37
+      },
+      {
+        "direction_name": "Freedom Designer",
+        "direction_engine_name": "freedom_designer",
+        "priority": "past_presence_only",
+        "pull": 27
+      },
+      {
+        "direction_name": "Contributor",
+        "direction_engine_name": "contributor",
+        "priority": "past_presence_only",
+        "pull": 25
+      },
+      {
+        "direction_name": "Growth Focused",
+        "direction_engine_name": "growth_focused",
+        "priority": "past_presence_only",
+        "pull": 5
+      }
+    ],
+    "life_texture_panel": {
+      "summary": {
+        "interpretive_text": "Some texture across the week. The same pattern, repeating.",
+        "token_text": "Week reads as Mixed."
+      },
+      "band_label": "Mixed",
+      "flags_present": [
+        "Belongs to a group"
+      ],
+      "flags_absent": [
+        "Weekly activity",
+        "Sees people",
+        "Makes things",
+        "Active body",
+        "Solo practice"
+      ],
+      "load_state_label": "Loaded (work and weekends)",
+      "pattern_note": {
+        "interpretive_text": "The same shape week after week.",
+        "token_text": ""
+      }
+    },
+    "life_context_panel": {
+      "life_stage_summary": {
+        "interpretive_text": "The architecture is in place. Carrying what he carries.",
+        "token_text": "Life-stage reading: Enduring."
+      },
+      "work_load_summary": {
+        "interpretive_text": "Paid work defines the shape. The work is who he is, not what he does.",
+        "token_text": "Paid work reading: Defining. Primary load: Paid work."
+      },
+      "sociality_summary": {
+        "interpretive_text": null,
+        "token_text": "Sociality reading: Solitary by default."
+      }
+    },
+    "comparison_surface_panel": {
+      "summary": {
+        "interpretive_text": "What's named reads in the architecture. Other readings sit alongside.",
+        "token_text": "What's named and what the architecture reads."
+      },
+      "summary_id": "comparison_confirmed_and_surfaced",
+      "confirmed": [
+        {
+          "sentence": {
+            "interpretive_text": "More energy. Architecture reads Energy as resource as reduced.",
+            "token_text": ""
+          },
+          "source": "self_report",
+          "reference": {
+            "kind": "self_report_item",
+            "id": "more_energy"
+          }
+        },
+        {
+          "sentence": {
+            "interpretive_text": "Getting back in shape. Architecture reads Body as reduced.",
+            "token_text": ""
+          },
+          "source": "self_report",
+          "reference": {
+            "kind": "self_report_item",
+            "id": "getting_back_in_shape"
+          }
+        },
+        {
+          "sentence": {
+            "interpretive_text": "Something just for me (a hobby, an interest). Architecture reads Experience Seeker firing.",
+            "token_text": ""
+          },
+          "source": "self_report",
+          "reference": {
+            "kind": "self_report_item",
+            "id": "something_just_for_me"
+          }
+        }
+      ],
+      "quiet": [],
+      "surfaced": [
+        {
+          "sentence": {
+            "interpretive_text": "Architecture reads Relationship Rebuilder firing. Not in the named list.",
+            "token_text": ""
+          },
+          "source": "architecture",
+          "reference": {
+            "kind": "engine_reading",
+            "reading_type": "firing_direction",
+            "target": "relationship_rebuilder"
+          }
+        },
+        {
+          "sentence": {
+            "interpretive_text": "Architecture reads Making reduced.",
+            "token_text": ""
+          },
+          "source": "architecture",
+          "reference": {
+            "kind": "engine_reading",
+            "reading_type": "reduced_domain",
+            "target": "making"
+          }
+        },
+        {
+          "sentence": {
+            "interpretive_text": "Architecture reads Friendship reduced.",
+            "token_text": ""
+          },
+          "source": "architecture",
+          "reference": {
+            "kind": "engine_reading",
+            "reading_type": "reduced_domain",
+            "target": "friendship"
+          }
+        }
+      ]
+    },
+    "the_narrowings_panel": {
+      "bands": [
+        {
+          "band_field": "structural",
+          "display_name": "Structural",
+          "full_name": "Structural Narrowing",
+          "character_name": "The Yes Man",
+          "band": "high",
+          "intensity": 100,
+          "observation": "Days disappear into work and obligations. The diary fills itself; one thing follows the next."
+        },
+        {
+          "band_field": "experiential",
+          "display_name": "Experiential",
+          "full_name": "Experiential Narrowing",
+          "character_name": "The Shrunk Man",
+          "band": "moderate",
+          "intensity": 66,
+          "observation": "The week has some texture, but a lot of it repeats."
+        },
+        {
+          "band_field": "psychological",
+          "display_name": "Psychological",
+          "full_name": "Psychological Narrowing",
+          "character_name": "The Reasonable Man",
+          "band": "high",
+          "intensity": 100,
+          "observation": "Wants and desires get heavily filtered. They often get ignored or set aside."
+        },
+        {
+          "band_field": "identity",
+          "display_name": "Identity",
+          "full_name": "Identity Narrowing",
+          "character_name": "The Cast Man",
+          "band": "high",
+          "intensity": 100,
+          "observation": "The role at work has become who he is everywhere. Old friends, family, on his own. The same person across all of them."
+        },
+        {
+          "band_field": "energetic",
+          "display_name": "Energetic",
+          "full_name": "Energetic Narrowing",
+          "character_name": "The Dimmed Man",
+          "band": "high",
+          "intensity": 100,
+          "observation": "Running on fumes. The body is depleted and the aliveness has gone quiet."
+        },
+        {
+          "band_field": "relational",
+          "display_name": "Relational",
+          "full_name": "Relational Narrowing",
+          "character_name": "The Stranger",
+          "band": "moderate",
+          "intensity": 66,
+          "observation": "Some relationships have presence; others are more about keeping things ticking over."
+        },
+        {
+          "band_field": "attention",
+          "display_name": "Attention",
+          "full_name": "Attention Narrowing",
+          "character_name": "The Surface Man",
+          "band": "high",
+          "intensity": 100,
+          "observation": "Attention is on the next thing, the task list, what needs doing. Days pass without much registering."
+        }
+      ],
+      "summary": {
+        "interpretive_text": "Several dimensions reading high; others moderate or low.",
+        "token_text": "Bands reading: 5 high, 2 moderate."
+      }
+    }
+  },
+  "assembler_meta": {
+    "reach_confidence": "low",
+    "consistency_flags": [
+      {
+        "code": "tired_or_blocked_pull",
+        "severity": "tension",
+        "note": "filtered: pull only surfaces when consequences removed"
+      },
+      {
+        "code": "hollow_mattering",
+        "severity": "tension"
+      }
+    ]
+  }
+}

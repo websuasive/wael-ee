@@ -1,0 +1,107 @@
+{
+  "domain_current_state": {
+    "time_as_yours": 20,
+    "energy_as_resource": 40,
+    "felt_aliveness": 20,
+    "body_physical_aliveness": 50,
+    "curiosity": 20,
+    "making": 10,
+    "conversation_depth": 25,
+    "being_known": 25,
+    "friendship": 15,
+    "intimacy": 20,
+    "mattering": 70,
+    "spiritual": 15
+  },
+  "past_presence_selection": [
+    "time_as_yours",
+    "energy_as_resource",
+    "felt_aliveness",
+    "body_physical_aliveness",
+    "curiosity",
+    "conversation_depth",
+    "being_known",
+    "friendship",
+    "intimacy",
+    "mattering"
+  ],
+  "peace_discriminator": {
+    "time_as_yours": "still_misses",
+    "energy_as_resource": "still_misses",
+    "felt_aliveness": "still_misses",
+    "curiosity": "still_misses",
+    "conversation_depth": "still_misses",
+    "being_known": "still_misses",
+    "friendship": "still_misses",
+    "intimacy": "still_misses"
+  },
+  "q70_allocation": {
+    "contributor": 25,
+    "relationship_rebuilder": 20
+  },
+  "per_direction_card_a": {
+    "contributor": "d",
+    "experience_seeker": "a",
+    "freedom_designer": "b",
+    "growth_focused": "a",
+    "creator": "a",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_b": {
+    "contributor": "a",
+    "experience_seeker": "a",
+    "freedom_designer": "b",
+    "growth_focused": "a",
+    "creator": "a",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_c": {
+    "contributor": "skipped",
+    "experience_seeker": "skipped",
+    "freedom_designer": "c",
+    "growth_focused": "skipped",
+    "creator": "skipped",
+    "relationship_rebuilder": "b"
+  },
+  "q8_past_presence_ticked": [
+    "contributor",
+    "freedom_designer",
+    "growth_focused",
+    "relationship_rebuilder"
+  ],
+  "q9_stopped_expecting_ticked": [
+    "freedom_designer",
+    "relationship_rebuilder"
+  ],
+  "q10_direction_chosen": "none",
+  "q10b_retrospective": "none",
+  "q10c_counterfactual": "freedom_designer",
+  "q4_life_shape_duration": "c",
+  "q5_recent_life_shape_change": "a",
+  "q29_recent_reaching": "d",
+  "q2_primary_load": "a",
+  "q3_paid_work_relationship": "c",
+  "q7_sociality_default": "a",
+  "q11a_spare_resource": "c",
+  "q11b_footprint": "c",
+  "q11c_small_wants": "c",
+  "q31_role_consolidation": "a",
+  "q32_attention_pattern": "c",
+  "q33_relational_presence": "c",
+  "q_friendship_count": "a",
+  "q_depth_known": "a",
+  "q6_capacity_strain": "b",
+  "q1_week_shape_ticked": ["a", "e", "g", "h"],
+  "q25_energy_availability": "a",
+  "q26_time_availability": 20,
+  "q27_body_capacity": "b",
+  "q30_permission": "d",
+  "q34_self_report": {
+    "kind": "named",
+    "items": [
+      "something_just_for_me",
+      "proper_conversation",
+      "something_to_look_forward_to"
+    ]
+  }
+}

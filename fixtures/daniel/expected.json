@@ -1,0 +1,14 @@
+{
+  "directions": {
+    "creator": {
+      "surfaced": true,
+      "past_relationship": "returning",
+      "specificity": "strong",
+      "pull_quality": { "equals": ["real"] }
+    }
+  },
+  "domains": {
+    "being_known": { "fires": true },
+    "friendship": { "fires": true }
+  }
+}

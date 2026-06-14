@@ -1,0 +1,148 @@
+# Windsurf rules for the WAEL project
+
+This file is read by Windsurf at the start of every interaction in this codebase. The rules apply across all work.
+
+Project-specific architectural context lives in the spec files (`ARCHITECTURE.md`, `src/ENGINE.md`, `src/SYNTHESIS.md`, `src/RENDER.md`, `src/EXPERIENCE.md`) and is referenced from per-chunk prompts. This file is the *how*; the spec files are the *what*; per-chunk prompts are the *this time*.
+
+## When in doubt
+
+When uncertain whether an action falls inside or outside the chunk's scope, default to surfacing the question in the report rather than acting. The orchestrator can authorise scope expansion in seconds; reversing unwanted work takes hours.
+
+Every other rule below is an instance of this principle.
+
+## Spec discipline
+
+The following files are locked. Do not modify them in implementation chunks. Spec revisions happen in dedicated chunks with explicit authorisation:
+
+- `ARCHITECTURE.md` (cross-cutting orientation)
+- `src/ENGINE.md`
+- `src/SYNTHESIS.md`
+- `src/RENDER.md`
+- `src/EXPERIENCE.md`
+
+If implementing a spec reveals an architectural concern, surface it in the report rather than redesigning to address it. Architectural changes are orchestrator scope, not implementer scope.
+
+Spec-versus-code mismatches do not auto-mean "fix code to match spec." Surface the mismatch and let the orchestrator dispose. Render-layer decisions made during demo prep may have legitimately superseded spec text; the orchestrator decides which moves.
+
+## Architectural context
+
+`ARCHITECTURE.md` is the high-level map: what WAEL is, the four-layer architecture, data flow, state and routing, design system, voice and register, and the project's non-goals (§14).
+
+Read it when:
+
+- A chunk touches cross-layer behaviour or integration points.
+- A chunk requires understanding the voice and register the system speaks in (`ARCHITECTURE.md §13` is canonical).
+- A chunk implies a capability that needs checking against the system's non-goals (e.g., LLM calls, machine learning, retention mechanics, Tailwind, dynamic generation are all out by architectural decision).
+
+Per-chunk prompts may reference `ARCHITECTURE.md` without re-stating its contents.
+
+## Style constraints (mechanical)
+
+These are the most operationally-violated constraints. Enforce inline; full register doctrine in `ARCHITECTURE.md §13`.
+
+- No em-dashes anywhere. In code, comments, generated prose, error messages, test descriptions, commit messages.
+- No en-dashes anywhere. Use hyphens for compound modifiers; full stops, colons, commas, semicolons for separation.
+- British English spellings throughout. "Realised" not "realized." "Behaviour" not "behavior." "Colour" not "color."
+- Sentence case on headings and labels, not Title Case.
+- Plain register: observational rather than prescriptive.
+- No second-person ("you") in synthesis-layer prose unless explicitly addressing the reader on a specific finding. The experience layer specifically does not address the reader directly.
+
+Run an em-dash and en-dash scan on every changed file before reporting. Report scan results explicitly.
+
+## Style constraints (register)
+
+The full voice and register doctrine is in `ARCHITECTURE.md §13`. Summary of the most-violated patterns:
+
+- Recognition not diagnosis. The system reads what's there; it does not tell the man what's wrong.
+- No therapy speak ("you might be experiencing," "your inner self," "authenticity").
+- No self-help language ("transform your life," "best self," "find your purpose").
+- No coach voice ("ready to take action?", "you've got this," imperatives).
+- No clichés ("live intentionally," "follow your heart," "midlife crisis").
+- No hype. No exclamation marks. No urgency. No promises.
+- Sceptical and adult tone. The reader is a peer who has lived a life.
+
+When generating or editing user-facing prose, sentence libraries, term explanations, or static copy: read `ARCHITECTURE.md §13` first.
+
+## Architectural non-goals
+
+`ARCHITECTURE.md §14` lists the system's non-goals. These are architectural constraints, not preferences. Do not introduce:
+
+- LLM calls in any layer's algorithm path.
+- Machine learning anywhere in the system.
+- Preference-learning from status flags (flags exclude, not train).
+- Retention mechanics (streaks, notifications, "you haven't checked in").
+- Animation or dramatic transitions (fade-ins, celebratory micro-interactions). The dashboard renders instantly.
+- Tailwind, CSS-in-JS, or utility frameworks. Plain CSS only, consumed via design tokens.
+- Dynamic content generation. All prose is from curated data files, synthesis output, or static copy.
+- Tight coupling between layers. Each layer is a pure function over its inputs.
+
+If a chunk's instructions imply one of these and the chunk does not explicitly carve out an exception, surface it in the report and pause.
+
+## Discipline: data capture and reporting
+
+When tests fail and the failure output contains the data needed, copy from the failure output verbatim into the report. Do not run tests a second time with modifications to capture the same data.
+
+If failure output is insufficient: add minimal `console.log` to existing code (not a new file), run once, copy output, remove the `console.log` before finishing.
+
+Do not write standalone scripts to capture data. Do not refactor existing code to make data capture cleaner. Do not write throwaway tests. Do not use `it.skip` to extract behaviour from a test.
+
+The test infrastructure is the data-capture mechanism. Use it.
+
+## Discipline: tooling friction
+
+When tooling friction surfaces (TypeScript/ESM compatibility, test runner config, build setup, module resolution): match the existing project's pattern.
+
+If no existing pattern exists: stop work on that step, document the situation in the report as an escalation, and continue with other steps that don't depend on it. Do not build new infrastructure.
+
+"Ask the orchestrator" means: stop, write findings into the report, surface as escalation. There is no synchronous mechanism to query the orchestrator mid-chunk.
+
+## Discipline: audits
+
+Audit chunks are read-only. No edits during audit chunks, even if a "small fix" looks obvious. The audit's job is to surface findings; the orchestrator disposes the fix into a separate chunk.
+
+Audits should be precise about evidence: file paths, line numbers, code excerpts. Avoid confident-sounding conclusions without specific code citations. When an audit's finding seems to contradict visible behaviour or other evidence, flag the contradiction rather than picking one side.
+
+## Discipline: pre-existing failures
+
+Pre-existing test failures, type errors, lint warnings, or em-dash hits are not blockers for new work. Report them and continue.
+
+The chunk's deliverable is what the prompt specifies, not a clean slate everywhere. Surface pre-existing issues distinctly from issues introduced by the chunk.
+
+## Discipline: snapshots and assertions
+
+Do not silently update snapshots, fixtures, regression test data, or test assertions when behaviour changes.
+
+When a test fails because behaviour intentionally changed: surface the old expected value, the new actual value, and the rationale. The orchestrator authorises the snapshot update (or alternative disposition) in a follow-up.
+
+This applies to:
+
+- Vitest snapshot files (`.snap`).
+- Hardcoded expected values in test assertions.
+- Fixture regression data (`fixtures/*/expected.json` or equivalent).
+- Any other persisted regression baseline.
+
+## Reporting format
+
+Every chunk ends with a structured report. The report includes:
+
+- **Per-step findings.** What was done, with file paths and line numbers.
+- **Before/after code snippets** for substantive changes.
+- **Em-dash and en-dash scan** on every changed file. Confirm zero in new code; flag pre-existing hits distinctly.
+- **TypeScript compilation status.** Error count before and after. Distinguish pre-existing errors (e.g., Vue module resolution) from new errors.
+- **Test suite status.** Pass/fail counts. List of failures with one-line descriptions.
+- **Clear separation of:**
+  - In-scope work (what the chunk did).
+  - Out-of-scope items deliberately not addressed (with reason).
+  - Deferred items (work that needs doing but in a separate chunk).
+  - Escalated items (decisions the orchestrator needs to make before proceeding).
+
+Avoid burying findings in narrative prose. The report is the orchestrator's working document; structure matters.
+
+## Reporting language
+
+The report is internal documentation, not user-facing prose, so it can be slightly looser in register than user-facing surfaces. But:
+
+- No em-dashes or en-dashes.
+- British English spellings.
+- Avoid hype and overstatement ("perfect!", "all tests pass beautifully!"). State what happened factually.
+- Don't claim work landed correctly without evidence. Cite the test results, the tsc output, the grep results that demonstrate it.

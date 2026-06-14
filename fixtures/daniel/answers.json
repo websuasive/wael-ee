@@ -1,0 +1,99 @@
+{
+  "domain_current_state": {
+    "time_as_yours": 55,
+    "energy_as_resource": 45,
+    "felt_aliveness": 55,
+    "body_physical_aliveness": 40,
+    "curiosity": 65,
+    "making": 55,
+    "conversation_depth": 75,
+    "being_known": 40,
+    "friendship": 50,
+    "intimacy": 55,
+    "mattering": 55,
+    "spiritual": 20
+  },
+  "past_presence_selection": [
+    "time_as_yours",
+    "energy_as_resource",
+    "felt_aliveness",
+    "body_physical_aliveness",
+    "curiosity",
+    "making",
+    "conversation_depth",
+    "being_known",
+    "friendship",
+    "intimacy",
+    "mattering"
+  ],
+  "peace_discriminator": {
+    "conversation_depth": "made_peace",
+    "being_known": "still_misses"
+  },
+  "q70_allocation": {
+    "creator": 30,
+    "contributor": 20
+  },
+  "per_direction_card_a": {
+    "contributor": "d",
+    "experience_seeker": "a",
+    "freedom_designer": "b",
+    "growth_focused": "b",
+    "creator": "c",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_b": {
+    "contributor": "a",
+    "experience_seeker": "a",
+    "freedom_designer": "b",
+    "growth_focused": "b",
+    "creator": "c",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_c": {
+    "contributor": "skipped",
+    "experience_seeker": "skipped",
+    "freedom_designer": "a",
+    "growth_focused": "a",
+    "creator": "c",
+    "relationship_rebuilder": "b"
+  },
+  "q8_past_presence_ticked": [
+    "contributor",
+    "growth_focused",
+    "creator",
+    "relationship_rebuilder"
+  ],
+  "q9_stopped_expecting_ticked": [],
+  "q10_direction_chosen": "creator",
+  "q10b_retrospective": "creator",
+  "q10c_counterfactual": "creator",
+  "q4_life_shape_duration": "c",
+  "q5_recent_life_shape_change": "a",
+  "q29_recent_reaching": "a",
+  "q2_primary_load": "a",
+  "q3_paid_work_relationship": "a",
+  "q7_sociality_default": "a",
+  "q11a_spare_resource": "a",
+  "q11b_footprint": "b",
+  "q11c_small_wants": "b",
+  "q31_role_consolidation": "c",
+  "q32_attention_pattern": "b",
+  "q33_relational_presence": "b",
+  "q_friendship_count": "b",
+  "q_depth_known": "b",
+  "q6_capacity_strain": "a",
+  "q1_week_shape_ticked": ["a", "b", "c", "f", "h"],
+  "q25_energy_availability": "c",
+  "q26_time_availability": 30,
+  "q27_body_capacity": "b",
+  "q30_permission": "c",
+  "q34_self_report": {
+    "kind": "named",
+    "items": [
+      "something_just_for_me",
+      "proper_conversation",
+      "building_or_making"
+    ]
+  }
+}

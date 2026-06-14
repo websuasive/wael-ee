@@ -1,0 +1,64 @@
+ FAIL  src/tests/engine.test.ts > engine fixtures (against /fixtures/) > fixture: 'daniel' > parses, runs the engine, and passes all assertions
+ FAIL  src/tests/engine.test.ts > engine fixtures (against /fixtures/) > fixture: 'mark' > parses, runs the engine, and passes all assertions
+ FAIL  src/tests/synthesis.test.ts > synthesis fixtures (against /fixtures/) > fixture: 'daniel' > parses, runs engine + synthesis, and passes all synthesis assertions
+ FAIL  src/tests/synthesis.test.ts > synthesis fixtures (against /fixtures/) > fixture: 'mark' > parses, runs engine + synthesis, and passes all synthesis assertions
+ FAIL  src/tests/unit/direction.test.ts > N. Pull-quality branches in isolation > Phantom alone
+ FAIL  src/tests/unit/direction.test.ts > N. Pull-quality branches in isolation > Phantom (partial) alone
+ FAIL  src/tests/unit/direction.test.ts > O. Phantom one-off failure tests > baseline fires phantom
+ FAIL  src/tests/unit/direction.test.ts > O. Phantom one-off failure tests > stated_strength=69 → not phantom (becomes phantom_partial)
+ FAIL  src/tests/unit/direction.test.ts > O. Phantom partial one-off failure tests > baseline fires phantom_partial
+ FAIL  src/tests/unit/direction.test.ts > O. Phantom partial one-off failure tests > stated_strength=70 → not phantom_partial (becomes phantom)
+ FAIL  src/tests/unit/direction.test.ts > P. Pull-quality co-firing > Saturated + Phantom (in push order)
+ FAIL  src/tests/unit/direction.test.ts > P. Pull-quality co-firing > Saturated + Phantom (partial)
+ FAIL  src/tests/unit/direction.test.ts > P. Pull-quality co-firing > Saturated + Phantom blocks Behaviourally divergent
+ FAIL  src/tests/unit/direction.test.ts > Q. Phantom / Phantom-partial mutual exclusivity > stated_strength=65 → phantom_partial only
+ FAIL  src/tests/unit/direction.test.ts > Q. Phantom / Phantom-partial mutual exclusivity > stated_strength=75 → phantom only
+ FAIL  src/tests/unit/experience-direction-mapping.test.ts > direction_mapping: inventory tag map > covers every direction tag actually used in the inventory
+ FAIL  src/tests/unit/experience-diversify-direction-overlap.test.ts > diversify: direction-overlap mechanism > no violation when three consecutive experiences share no common direction
+ FAIL  src/tests/unit/experience-diversify-direction-overlap.test.ts > diversify: direction-overlap mechanism > violation fires when three consecutive experiences share a common direction
+ FAIL  src/tests/unit/experience-diversify-direction-overlap.test.ts > diversify: direction-overlap mechanism > halfTopScore floor blocks below-floor swap-ins
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: no-three-in-a-row > swaps position 3 (zero-indexed: 2) when first three share primary direction
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: no-three-in-a-row > leaves violation in place when no candidate meets score floor
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: no-three-in-a-row > skips swap when no different-direction candidate exists at all
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread targets > experience_types: brings in the first missing value in canonical order
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread targets > scale spread: brings in a missing scale band when top12 is uniform
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread targets > cost_tier spread: brings in a missing cost band
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread targets > does not swap if pool candidate falls below score floor
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread targets > single-shot per target: a failed earlier target does not block a later target
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: spread preservation predicate > does not swap out a uniquely-valued entry for a target facet
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: edge cases > exactly 12 candidates: returns all 12
+ FAIL  src/tests/unit/experience-diversify.test.ts > diversify: edge cases > between 12 and 24 candidates: algorithm runs against what exists
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: AND across facets, OR within a facet > empty state returns all
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: AND across facets, OR within a facet > AND across facets: friction=low AND scale=micro
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: AND across facets, OR within a facet > OR within a facet: friction=low OR friction=medium
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: direction translation > inventory tag "creation" matches engine direction "making"
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: direction translation > inventory tag "closeness" matches engine direction "relationship_rebuilder"
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: direction translation > OR within direction: making OR experience returns both
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: status > unflagged returns experiences with no flag
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: status > saved returns only saved
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: status > OR within status: saved OR done
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: setting facet (E.6) > single value: setting=outdoors returns experiences whose venue.setting includes outdoors
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: setting facet (E.6) > OR within facet: setting=outdoors OR urban returns either
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: setting facet (E.6) > matches when one of multiple venue.setting values overlaps the selection
+ FAIL  src/tests/unit/experience-filter.test.ts > filterExperiences: setting facet (E.6) > computeFilterCounts surfaces every setting value present in inventory
+ FAIL  src/tests/unit/experience-filter.test.ts > sortExperiences > cost_asc: ascending by cost_max_gbp, ties by id
+ FAIL  src/tests/unit/experience-filter.test.ts > sortExperiences > friction_asc: low, medium, high
+ FAIL  src/tests/unit/experience-filter.test.ts > sortExperiences > scale_asc: micro, day, anchor
+ FAIL  src/tests/unit/experience-filter.test.ts > sortExperiences > default without a score map preserves input order
+ FAIL  src/tests/unit/experience-filter.test.ts > sortExperiences > default with a score map sorts by score desc, ties by id
+ FAIL  src/tests/unit/experience-filter.test.ts > computeFilterCounts > with no filters, each value counts every experience that has it
+ FAIL  src/tests/unit/experience-filter.test.ts > computeFilterCounts > count for facet F excludes F own selections (faceted-search invariant)
+ FAIL  src/tests/unit/experience-filter.test.ts > computeFilterCounts > cross-facet: scale counts respect active friction filter
+ FAIL  src/tests/unit/experience-recommend.test.ts > Body-capacity exclusion > full: nothing excluded
+ FAIL  src/tests/unit/experience-recommend.test.ts > Body-capacity exclusion > shifted: physical + high friction excluded; physical + low friction kept
+ FAIL  src/tests/unit/experience-recommend.test.ts > Body-capacity exclusion > limited: any physical excluded regardless of friction
+ FAIL  src/tests/unit/experience-recommend.test.ts > Status flag exclusion > not_interested and done removed; saved and booked retained
+ FAIL  src/tests/unit/experience-recommend.test.ts > Sort and tiebreak > ties broken by id ascending (lexicographic)
+ FAIL  src/tests/unit/experience-recommend.test.ts > Sort and tiebreak > higher score precedes lower score
+ FAIL  src/tests/unit/experience-recommend.test.ts > Full pipeline integration > body-capacity exclusion runs before scoring
+ FAIL  src/tests/unit/experience-recommend.test.ts > Full pipeline integration > limited body band excludes all physical experiences
+ FAIL  src/tests/unit/experience-scoring.test.ts > E2 scoring: worked example from spec > matches the exact scenario in EXPERIENCE.md section 3.2
+ FAIL  src/tests/unit/experience-scoring.test.ts > E2 scoring: body_capacity exclusion (shifted) > removes physical + high-friction experiences when body_capacity is shifted
+ FAIL  src/tests/unit/experience-scoring.test.ts > E2 scoring: body_capacity exclusion (limited) > removes all physical experiences when body_capacity is limited
+ FAIL  src/tests/unit/experience-scoring.test.ts > E2 scoring: multi-direction tier rule > assigns firing tier when any direction is firing (highest tier wins)
+ FAIL  src/tests/unit/experience-scoring.test.ts > E2 scoring: untagged narrowings > scores 0 on narrowing_fit when narrowings field is absent

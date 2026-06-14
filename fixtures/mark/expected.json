@@ -1,0 +1,20 @@
+{
+  "directions": {
+    "creator": {
+      "surfaced": true,
+      "past_relationship": "returning",
+      "specificity": "strong",
+      "pull_quality": { "equals": ["real"] }
+    },
+    "freedom_designer": { "surfaced": true },
+    "experience_seeker": { "surfaced": true },
+    "contributor": { "pull_quality": { "equals": [] } }
+  },
+  "domains": {
+    "making": { "fires": false, "value": "intact" },
+    "time_as_yours": { "fires": true, "value": "reduced_wants_back" },
+    "being_known": { "fires": true, "value": "reduced_wants_back" },
+    "spiritual": { "fires": true, "value": "never_been_part_of_his_life" }
+  }
+}
+

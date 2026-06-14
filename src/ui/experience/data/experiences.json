@@ -1,0 +1,3365 @@
+{
+  "library_version": "3",
+  "notes": "Spec v3 build (incl. 4a-4b richness, 5e exertion). Added per-variant exertion (1-5 absolute bodily demand), kept independent of friction. Earlier passes: cousins deduped, single-occasion adaptations, protocol-appropriate pitch richness.",
+  "activities": [
+    {
+      "activity_id": "cold_water",
+      "label": "Cold water, no easing in",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.outdoorswimmingsociety.com"
+      ],
+      "directions": [
+        "experience",
+        "growth"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "cold_water_stir_small",
+          "protocol": "stir",
+          "pitch": "Thirty seconds tonight, full cold, no easing in - just under. The breath catches, the skin screams, and the running commentary in your head simply stops; there's no room for it. You towel off ten seconds later with your heart going and your eyes wide, more awake standing on the bathmat than you've felt all week.",
+          "instruction": "Finish tonight's shower on full cold for 30 seconds. Don't ease in.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        },
+        {
+          "variant_id": "cold_water_stir_big",
+          "protocol": "stir",
+          "pitch": "A lake or the sea at first light, wade in to the shoulders, ten seconds. The gasp is involuntary, the whole body lights up at once, and then you're out on the bank steaming gently in the cold air with everything switched right on. You walk back to the car different from the man who walked down to the water.",
+          "instruction": "Find a safe lake, river or sea spot at dawn and get in to the shoulders. Ten seconds is plenty.",
+          "who_with": [
+            "solo",
+            "with_friends"
+          ],
+          "magnitude": "big",
+          "friction": 4,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "face_in_iced_water",
+      "label": "Bowl of iced water, face in",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "face_in_iced_water_stir",
+          "protocol": "stir",
+          "pitch": "Bowl, cold tap, a tray of ice, and your whole face under for ten seconds. Something old and animal takes over - the pulse drops, the noise stops, the day goes quiet. You come up gasping at the kitchen sink with the morning suddenly sharp and close.",
+          "instruction": "Fill a bowl with iced water. Hold your face in it for about ten seconds.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "sharp_taste_hit",
+      "label": "A shock of sour or heat",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "sharp_taste_hit_stir",
+          "protocol": "stir",
+          "pitch": "Bite straight into a raw lemon, or load a fork with real horseradish and take it up the nose. The whole face fires at once - eyes streaming, sinuses wide open, a two-second electrocution of pure sour or heat. You're laughing and blinking and entirely, undeniably here.",
+          "instruction": "Bite a raw lemon, or take a proper hit of real wasabi/horseradish, or a spoon of sharp sherbet. Take it head-on.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "hottest_curry",
+      "label": "The hottest curry on the menu",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "hottest_curry_stir",
+          "protocol": "stir",
+          "pitch": "Order the phall, the one the waiter checks you meant. The sweat comes up on your scalp, the lips go, the heart picks up, and for twenty minutes you are nowhere but inside your own roaring body. You leave red-faced and grinning, properly switched on by a plate of food.",
+          "instruction": "Go for the hottest thing on the menu and finish it. No milk run.",
+          "who_with": [
+            "solo",
+            "with_friends"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "one_song_loud",
+      "label": "One song, full volume, body in it",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "one_song_loud_stir",
+          "protocol": "stir",
+          "pitch": "Not the tasteful choice - the one that does something to your chest. Loud enough to feel in the ribs, nobody home, and you let the body move however it wants with no one watching. Three minutes later you're breathing hard in the kitchen, daft and alive, wondering why you ration this.",
+          "instruction": "Pick the song that hits hardest. Play it loud, in the kitchen or the car, and let the body move however it wants.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "live_comedy_night",
+      "label": "A live comedy night",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "live_comedy_night_stir",
+          "protocol": "stir",
+          "pitch": "A low room, a sharp act, and the laugh that takes you over - the helpless kind that folds you in half and won't stop. Your cheeks ache, your eyes run, the bloke beside you is gone too. You spill out onto the pavement afterwards lighter than you've been in weeks.",
+          "instruction": "Book a seat at a live comedy night and go. Sit near the front.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_partner"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "stand_in_a_storm",
+      "label": "Out in the weather, deliberately",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "stand_in_a_storm_stir",
+          "protocol": "stir",
+          "pitch": "Next real gale or downpour, go out and stand in it instead of watching through glass. Rain down the collar, wind shoving you off your line, the whole sky enormous and indifferent. Five minutes and you're back inside soaked and laughing, scoured clean and oddly clear-headed.",
+          "instruction": "Next time it really blows or pours, go out and stand in it for a few minutes. Don't shelter.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "barefoot_frost",
+      "label": "Barefoot on frosty grass at dawn",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "barefoot_frost_stir",
+          "protocol": "stir",
+          "pitch": "First frost of the year, out onto the grass barefoot before anyone's up. The cold drives straight up through your soles and the whole body snaps to attention in a heartbeat. A minute, ridiculous and entirely awake, and the day starts on a different footing.",
+          "instruction": "On a frosty morning, step out barefoot onto the grass for a minute.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "flat_out_sprint",
+      "label": "A flat-out sprint",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "growth"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "flat_out_sprint_stir",
+          "protocol": "stir",
+          "pitch": "Pick a clear stretch and run it flat out - everything you've got, the way you haven't since you were a boy. Lungs burning, legs hammering, that animal blur of going as fast as the body still can. You pull up gasping and grinning, having found an edge you'd forgotten was in there.",
+          "instruction": "Find a safe clear stretch and sprint flat out for about 15 seconds. Once.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 5
+        }
+      ]
+    },
+    {
+      "activity_id": "loud_gig",
+      "label": "A gig where the bass hits your chest",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "loud_gig_stir",
+          "protocol": "stir",
+          "pitch": "Get down the front where the bass thumps in your sternum and the whole floor moves as one body. Not a seated, tasteful affair - loud, physical, the sound coming up through your feet. You come out into the night ears ringing, half-deaf and wide awake.",
+          "instruction": "Get a ticket to a loud live gig and stand near the front. Feel it rather than assess it.",
+          "who_with": [
+            "solo",
+            "with_friends"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "sauna_cold_plunge",
+      "label": "Hot sauna straight into cold plunge",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "growth",
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "sauna_cold_plunge_stir",
+          "protocol": "stir",
+          "pitch": "Cook yourself soft in the heat, then drop into the cold plunge with no pause to think. The slam empties your head in an instant; what follows is a clean, buzzing, scrubbed-out calm. Climb out, do it twice, and walk away feeling rebuilt from the inside.",
+          "instruction": "In a sauna with a cold plunge, get properly hot then go straight into the cold. No hesitating on the edge.",
+          "who_with": [
+            "solo",
+            "with_friends"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "scare_maze",
+      "label": "A live scare maze",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "scare_maze_stir",
+          "protocol": "stir",
+          "pitch": "Into the dark knowing something's coming, and you let it. The real jolt of fear - heart slamming, a yell half-turning to a laugh, the hand grabbing the nearest arm. Twenty minutes of pure adrenaline, and you come out the far end buzzing like a kid let off the leash.",
+          "instruction": "Go to a live scare maze and walk it. Let yourself actually be scared.",
+          "who_with": [
+            "with_friends",
+            "with_teenagers"
+          ],
+          "magnitude": "big",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "the_different_route",
+      "label": "The slower, more interesting way",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_different_route_loophole",
+          "protocol": "loophole",
+          "pitch": "Take the way home you never take because it's slower. No reason, no payoff - just the road you've always been faintly curious about. Half an hour of tolerating the unnecessary, seeing what's down there.",
+          "instruction": "Take the more interesting, less efficient route home. Once.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "the_shop_you_pass",
+      "label": "The shop you always pass",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "experience"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "the_shop_you_pass_loophole",
+          "protocol": "loophole",
+          "pitch": "The place you've meant to go in for years and never have, because there's never a reason. That's the reason. Ten minutes, no purpose, buy something small or nothing. The only point is a quiet bit of you always fancied a look.",
+          "instruction": "Go into the place you always mean to and never do. Look round slowly. Buy something small or nothing.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "follow_the_sign",
+      "label": "Follow a sign to somewhere you've never been",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience",
+        "freedom"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "follow_the_sign_loophole",
+          "protocol": "loophole",
+          "pitch": "The brown sign, or the village name you've passed a hundred times. Today, turn off. No plan for what's there, no idea if it's worth it - that's the appeal. Let a small daft curiosity win for once.",
+          "instruction": "Follow a sign or turning you've always passed, with no idea what's there. Go and see. Once.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_better_version",
+      "label": "Order the better version, once",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_better_version_loophole",
+          "protocol": "loophole",
+          "pitch": "The good steak instead of the sensible one. The nice olive oil you always put back. No occasion, no reason - just the small guilty pleasure of letting yourself have the better thing because you fancied it.",
+          "instruction": "Once, pick the better version of something small for no reason. Don't justify it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "pointless_thing_you_eye",
+      "label": "Buy the pointless thing you keep looking at",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "pointless_thing_you_eye_loophole",
+          "protocol": "loophole",
+          "pitch": "The thing you keep half-noticing and talking yourself out of - too daft, no need. Buy it. The whole value is that there's no value: you wanted it, faintly, and let that be enough.",
+          "instruction": "Buy the small pointless thing you keep looking at and never get. No reason needed.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "out_again_after_dinner",
+      "label": "Out again after dinner, no reason",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "out_again_after_dinner_loophole",
+          "protocol": "loophole",
+          "pitch": "You're in for the night - and instead you put your coat back on and go out. Nowhere in particular. The streets are different after dark and you've nothing to do out there, which is the point.",
+          "instruction": "After dinner, when you'd normally settle in, put your coat on and go out for a wander. No errand.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "off_the_bus_early",
+      "label": "Off the bus a stop early, and wander",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "off_the_bus_early_loophole",
+          "protocol": "loophole",
+          "pitch": "Get off a stop or two before yours and walk the rest through streets you only see from the window. No reason, you'll be home a bit later. Just the small pleasure of stepping off the rail you run on every day.",
+          "instruction": "Get off the bus a stop or two early and wander the rest of the way home. Once.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "menu_thing_you_cant_identify",
+      "label": "Order the thing you can't identify",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "menu_thing_you_cant_identify_loophole",
+          "protocol": "loophole",
+          "pitch": "The dish you can't quite place and would normally skip for the safe option. Order it instead. You don't know what's coming and there's nothing to win - just the small thrill of not knowing, at no real cost.",
+          "instruction": "Order the menu item you can't identify rather than your usual. Once.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "pudding_first",
+      "label": "Pudding first",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "pudding_first_loophole",
+          "protocol": "loophole",
+          "pitch": "Have the pudding before the meal. No reason, breaks a rule nobody's enforcing, and that's the appeal. A tiny, daft, out-of-order bit of living - and the quiet grin of finding you're still allowed.",
+          "instruction": "Have pudding before the main, once. For no reason at all.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "record_film_by_cover",
+      "label": "Pick a record or film purely on the cover",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "experience"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "music_and_performance"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "record_film_by_cover_loophole",
+          "protocol": "loophole",
+          "pitch": "Pick something - a record, a film, a book - on the cover alone. No reviews, nothing you've heard of. A shot in the dark for the small pleasure of choosing by feel for once. Might be terrible. Doesn't matter.",
+          "instruction": "Choose a record or film purely on its cover, with no other information. Take it home.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "flowers_no_occasion",
+      "label": "Buy flowers for no occasion",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "flowers_no_occasion_loophole",
+          "protocol": "loophole",
+          "pitch": "Buy flowers when there's nothing to mark - no anniversary, no apology. Just because you passed them and fancied having them in the house. The pointlessness is the whole of it.",
+          "instruction": "Buy flowers for no occasion and put them where you'll see them. No reason.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "pottery_taster",
+      "label": "One-off pottery taster session",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "making_and_craft"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "pottery_taster_slip",
+          "protocol": "slip",
+          "pitch": "For one hour, be the worst in the room - the one thing you're never allowed to be anywhere else. Hands slick with clay, a pot collapsing sideways on the wheel, the bloke next to you no better. No competence to defend, nobody keeping score, and you walk out with wet sleeves and a wonky thing that's yours and a grin you didn't expect.",
+          "instruction": "Book a single pottery taster and go once, as a total novice. No commitment to return.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "life_drawing_evening",
+      "label": "Life-drawing evening",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "making_and_craft"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "life_drawing_evening_slip",
+          "protocol": "slip",
+          "pitch": "An evening drawing a body you've no earthly skill to draw, in a room of people equally hopeless and equally unbothered. Charcoal everywhere, proportions all wrong, quiet snorts of laughter at your own page. The careful, capable man has no job here - and you can feel him put his feet up.",
+          "instruction": "Go to a drop-in life-drawing evening once. Draw badly and don't apologise for it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "adult_ball_pit",
+      "label": "Adult ball-pit night",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "adult_ball_pit_slip",
+          "protocol": "slip",
+          "pitch": "A whole room of grown adults flinging themselves into a sea of plastic balls, not one of them dignified. That's the point - everyone's daft at once, so nobody's the prat. Wade in, go under, lob a few at your mates. You'll come up laughing the way you'd genuinely forgotten you could.",
+          "instruction": "Go to an adult ball-pit night and properly get in - don't perch at the edge. Throw yourself about for an hour.",
+          "who_with": [
+            "with_friends",
+            "with_partner"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "roller_disco",
+      "label": "Roller disco",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games",
+        "music_and_performance"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "roller_disco_slip",
+          "protocol": "slip",
+          "pitch": "Skates on, lights down, and zero chance of looking cool - everyone's wobbling, clutching the rail, going down in heaps and howling about it. The dignity you carry round all week has nowhere to stand on eight wheels. An hour of legs-out-from-under-you daftness, and not a soul there to judge.",
+          "instruction": "Go to a roller disco session and get out on the floor. Falling over is allowed.",
+          "who_with": [
+            "with_friends",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "come_and_sing_evening",
+      "label": "Come-and-sing evening",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "come_and_sing_evening_slip",
+          "protocol": "slip",
+          "pitch": "One evening, a room of strangers, everyone bellowing the same song whether they can hold a tune or not. No audition, no audience, nobody picking you out. The wall that won't let you be heard being rubbish at something just comes down - and there's a daft, full-chested joy waiting on the other side of it.",
+          "instruction": "Go to a one-off come-and-sing evening and actually sing out. Once, no joining anything.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 4,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "karaoke_booth",
+      "label": "Private karaoke booth",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "karaoke_booth_slip",
+          "protocol": "slip",
+          "pitch": "A private booth, your lot only, and the song you'd never admit to in daylight. No stage, no strangers - so the only thing holding you back is you, and tonight it doesn't. Commit to the big one, do the hand actions, miss the high note spectacularly. The man who never makes a show of himself gets the night off.",
+          "instruction": "Book a private karaoke booth and actually go for it - pick the big song and commit.",
+          "who_with": [
+            "with_friends",
+            "with_partner"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_bold_thing_you_stopped_wearing",
+      "label": "Wear the bold thing you quietly stopped wearing",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_bold_thing_you_stopped_wearing_slip",
+          "protocol": "slip",
+          "pitch": "The jacket, the colour, the thing you quietly retired because it wasn't 'sensible you' any more. Put it back on and walk out the door in it. Feel the little flinch that says people will look - then watch the day go by and clock that the only one who ever policed it was you.",
+          "instruction": "Wear the bolder thing you stopped wearing, out of the house, for a day. Notice the flinch and ignore it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_swallowed_impulse",
+      "label": "Let the off-script impulse through",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_swallowed_impulse_slip",
+          "protocol": "slip",
+          "pitch": "The keen thing you'd normally swallow - the genuine 'oh, I love this', the daft idea, the bit of you that's too enthusiastic to look cool. Next time it rises, let it out instead of filing it down. The room doesn't fall silent. Usually it warms half a degree, and you've a little more air in your chest.",
+          "instruction": "Once, when you'd normally edit an enthusiastic or off-script thing down, say it as it comes. Let it through.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "trampoline_park",
+      "label": "Trampoline park session",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games",
+        "family_and_relationships"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "trampoline_park_slip_young",
+          "protocol": "slip",
+          "pitch": "An hour bouncing off the walls with your kids, where being undignified is the whole activity and nobody gets to be the sensible one. The dad who holds the coats doesn't exist in here. Big daft jumps, blown landings, the lot - and they'll carry the picture of you in it, not watching from the side.",
+          "instruction": "Book an open session and get on the trampolines with your young kids. Don't sit it out.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "soft_play_with_kids",
+      "label": "Soft play, and you actually play",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games",
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "soft_play_with_kids_slip_young",
+          "protocol": "slip",
+          "pitch": "Not the dad nursing a coffee at the rail - in the frame, down the slide, wedged in the tunnel with them. Faintly ridiculous for a grown man, which is exactly the gift: with your own small kids, daft is allowed, even wanted. They get the version of you that climbs in, and you get an hour off being the careful one.",
+          "instruction": "At soft play, actually get in and play with your young kids. Don't watch from the café.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "crazy_golf",
+      "label": "Crazy golf, properly competitive",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "crazy_golf_slip",
+          "protocol": "slip",
+          "pitch": "Take the windmill hole deadly seriously. The whole charm is committing - loudly - to something that could not matter less: the trash talk, the wronged-man outrage at a bad bounce, the little victory shuffle. Everyone's a clown together, so you get to be one too, with the lid off the self-seriousness for once.",
+          "instruction": "Play crazy golf and actually compete - banter, celebrations, the lot. Don't be above it.",
+          "who_with": [
+            "with_friends",
+            "with_partner",
+            "with_teenagers",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "bumper_cars_waltzers",
+      "label": "Bumper cars or the waltzers, go hard",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "bumper_cars_waltzers_slip",
+          "protocol": "slip",
+          "pitch": "Get on the bumper cars and actually hunt people down, or take the waltzers and let the lad spin you till the world smears. Yelling, helpless laughing, no composure left to protect. Everyone on the ride is equally daft - and you climb off remembering the sensible version of you was never the fun one anyway.",
+          "instruction": "Get on the bumper cars or waltzers and go properly hard. Make a show of it.",
+          "who_with": [
+            "with_friends",
+            "with_teenagers",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "the_8pm_telly",
+      "label": "The automatic 8pm telly",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_8pm_telly_catch",
+          "protocol": "catch",
+          "pitch": "Before the remote's even in your hand tonight, stop. Did the sofa just have you at eight, the arm reaching on its own? Leave it dark a minute and look - there's a whole evening in front of you that you were about to hand over without noticing, and somewhere in it something you'd rather be doing.",
+          "instruction": "Before the TV goes on, pause. Is there something you actually want to watch? If yes, watch it properly. If no, leave it off.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_dinner_phone",
+      "label": "The dinner-table phone",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "closeness"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_dinner_phone_catch",
+          "protocol": "catch",
+          "pitch": "It buzzes mid-meal and your hand's already going. Don't. Leave it face-down and watch nothing happen - no fire, no fury, the world fine without you for twenty minutes. And the rest of the meal, for once, is yours. There's a small illicit pleasure in not reaching that you'd forgotten was on offer.",
+          "instruction": "When the phone goes during a meal, leave it face-down and don't check it until you've finished eating.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_bedtime_scroll",
+      "label": "The bedtime scroll",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_bedtime_scroll_catch",
+          "protocol": "catch",
+          "pitch": "Phone in hand on the edge of the bed, thumb going, eyes not really seeing. Leave it in the other room tonight and just get in. The ten minutes you usually lose to nothing become ten minutes of actually winding down - and you feel it in the morning, like you got something back you hadn't known you were spending.",
+          "instruction": "Leave the phone in another room before getting into bed. Get in without it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_default_yes",
+      "label": "The favour you'd never refuse",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_default_yes_catch",
+          "protocol": "catch",
+          "pitch": "The lift, the pickup, the 'can you just' that gets a yes before you've heard it out. This time: 'not this week.' No excuse, no apology. Feel what it costs you to say it, and watch how little it costs them to hear it. The hour you'd have given away is back in your hands.",
+          "instruction": "Take one default-yes favour this week and say 'not this week' - no justification, no apology.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 4,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_instant_reply",
+      "label": "The instant email/message reply",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_instant_reply_catch",
+          "protocol": "catch",
+          "pitch": "The email lands and you're already typing - the reflex that's trained everyone to expect you inside the minute. Catch it, and don't, for a few hours. Nothing breaks. The urgency turns out to have been only yours, and the gap between a question and your answer is a pocket of the day you'd quietly handed over.",
+          "instruction": "Next non-urgent message that triggers the instant reply, leave it a few hours before answering. Notice nothing breaks.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_silence_you_fill",
+      "label": "The silence you always fill",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "the_silence_you_fill_catch",
+          "protocol": "catch",
+          "pitch": "The pause in the room you always rush to fill - the suggestion, the joke, the 'shall I just'. Next time, sit on your hands and let it hang. Someone else steps in, or the quiet does its own work. You see how often you've been doing a job nobody asked for, and how restful it is to stop.",
+          "instruction": "In one meeting or chat, when you'd normally jump into the silence, hold off and let someone else fill it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_auto_fix",
+      "label": "The job you'd auto-fix",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_auto_fix_catch",
+          "protocol": "catch",
+          "pitch": "The thing that's not quite right - the crooked picture, the cluttered side - that your hands move to before you've decided. Catch it and leave it, just for tonight. Sit down with it undone. The world turns, the picture stays crooked, and you find you're allowed off-duty in your own house.",
+          "instruction": "Spot one thing you'd automatically tidy or fix and deliberately leave it for the evening. Sit down anyway.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_holiday_work_check",
+      "label": "The work thing checked on holiday",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "the_holiday_work_check_catch",
+          "protocol": "catch",
+          "pitch": "The quick peek at work email while you're meant to be off - the one that drags half your head back to the desk for the rest of the day. Catch the reflex and don't open it. The day stays yours, properly, and the place runs perfectly well without you watching it.",
+          "instruction": "While off, when the urge comes to check work, don't. Leave it shut for the day.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "auction_viewing",
+      "label": "Regional auction house viewing day",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.the-saleroom.com",
+        "https://www.cheffins.co.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "arts_and_culture"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "auction_viewing_trespass",
+          "protocol": "trespass",
+          "pitch": "A room near you full of other people's lives - handwritten lot tickets, a Georgian watch and a box of doorknobs on the same trestle, an assistant carrying a longcase clock across the floor in shirtsleeves. On a viewing day you can pick almost any of it up; no paddle, no pressure, nobody asking why you're there. You can hold a watch that outlived the man who wound it, somewhere you've no reason on earth to be.",
+          "instruction": "Find a saleroom holding a viewing day. Go in, handle a few things, watch what's happening, leave. You're not bidding.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        },
+        {
+          "variant_id": "auction_viewing_steeping",
+          "protocol": "steeping",
+          "pitch": "Pick one thing in the room - a single watch, one dark little painting - and give it your whole attention for a few minutes. Not to price it, not to move on to the next lot. Just to let one old, made object actually land on you: the wear on it, the hands that owned it. The looking is the thing, and you almost never let yourself do it.",
+          "instruction": "At the viewing, choose one object and stay with it. Don't move on to assessing the next lot.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "magistrates_court",
+      "label": "Magistrates' court public gallery",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.gov.uk/find-court-tribunal"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "learning_and_skill",
+        "community_and_service"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "magistrates_court_trespass",
+          "protocol": "trespass",
+          "pitch": "You can walk into almost any courtroom in the country, sit at the back, and stay an hour - and hardly anyone ever does. Real cases, real people at a bad morning of their lives, the clerk and the bench and the worn wood of it, nothing like the television version. Free, open, and you've no business there at all, which is exactly the charge of it.",
+          "instruction": "Find your nearest magistrates' court and sit in the public gallery for an hour. No booking needed.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "working_mill",
+      "label": "A working windmill or watermill on a milling day",
+      "cost_tier": "low",
+      "websites": [
+        "https://www.nationaltrust.org.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "learning_and_skill"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "working_mill_trespass",
+          "protocol": "trespass",
+          "pitch": "On a milling day the whole thing runs - the great stones turning, the timber building shuddering under you, warm flour coming off the end and dust on the miller's forearms. A piece of working machinery older than anyone's grandfather, and you standing right inside it. You walk out knowing in your hands how a thing you've eaten all your life gets made.",
+          "instruction": "Find a working mill open on a milling day and go when it's actually running. Watch the whole process.",
+          "who_with": [
+            "solo",
+            "with_young_children",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "talk_outside_your_field",
+      "label": "A talk in a subject that isn't yours",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.eventbrite.co.uk"
+      ],
+      "directions": [
+        "growth"
+      ],
+      "interest_domains": [
+        "learning_and_skill"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "talk_outside_your_field_trespass",
+          "protocol": "trespass",
+          "pitch": "An evening lecture on something you'll never need - beekeeping, Roman roads, the deep-sea fish nobody's seen alive - in a room of people quietly obsessed with a world you didn't know ran. You follow an argument half over your head, and walk out with one strange fact lodged for good and the pleasant feeling of having put your nose somewhere it didn't belong.",
+          "instruction": "Find a talk on a subject completely outside your life and go to it. Once.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "car_boot_dawn",
+      "label": "A car boot sale at 6am",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "car_boot_dawn_trespass",
+          "protocol": "trespass",
+          "pitch": "Six in the morning, a wet field, torch beams swinging - and a whole economy you never knew kept these hours: dealers haggling over a crate before the sun's up, tables of other people's attics going for coins. It's a different country at dawn. You wander it owing nobody a purchase, just to see the bit of the world that's awake while you usually sleep.",
+          "instruction": "Get to a big car boot sale at opening, around 6am. Walk the whole thing. Buying optional.",
+          "who_with": [
+            "solo",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "bus_to_the_end",
+      "label": "A bus to the end of the line",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "bus_to_the_end_trespass",
+          "protocol": "trespass",
+          "pitch": "Pick a bus you've never taken and ride it to wherever the line gives out - top deck, no plan beyond getting there and turning round. The end of a route is always somewhere odd: an estate, a terminus, a village the driver assumes nobody wants. You step off into an unfamiliar bit of your own region, unaccounted for, for the price of a fare.",
+          "instruction": "Take an unfamiliar bus route to its final stop. Have a look around, get the bus back.",
+          "who_with": [
+            "solo",
+            "with_teenagers",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "weekday_evensong",
+      "label": "A weekday cathedral evensong",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.choralevensong.org"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "music_and_performance",
+        "history_and_heritage"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "weekday_evensong_trespass",
+          "protocol": "trespass",
+          "pitch": "Slip into the back of a cathedral on an ordinary weekday and let the choir do the thing to the stone that no recording manages - voices climbing into the dark of the roof, the building holding the sound. You needn't believe a word. You just sit in nine centuries of cold stone for forty minutes, in a world that runs on nothing like your week, and come out quieter.",
+          "instruction": "Find a cathedral with weekday sung evensong and go and sit at the back. No need to take part.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "agricultural_show",
+      "label": "A county agricultural show",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "community_and_service"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "agricultural_show_trespass",
+          "protocol": "trespass",
+          "pitch": "Prize bulls the size of small cars, a man whose whole life is dry-stone walling, ferrets racing down a length of drainpipe, the smell of livestock and frying onions over everything. A working rural world a few miles from you that you've never once stepped into. A day among people who do entirely different things with their lives, and are glad to show you how.",
+          "instruction": "Go to a county agricultural show for the day. Wander the lot - livestock, crafts, the odd corners.",
+          "who_with": [
+            "solo",
+            "with_young_children",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "medium",
+          "friction": 1,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "greyhound_speedway_night",
+      "label": "A greyhound or speedway night",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "greyhound_speedway_night_trespass",
+          "protocol": "trespass",
+          "pitch": "A floodlit track, two-stroke smoke or the dogs banging out of the traps, a crowd that's been coming forty years and knows every regular. A proper old seam of British sporting life you'd never thought to go to. An evening somewhere with its own rules and its own faces, you among them, quietly working out how the whole thing runs.",
+          "instruction": "Go to a greyhound or speedway meeting for the evening. Have a flutter or just watch.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "subculture_meet",
+      "label": "A subculture meet you're not part of",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "community_and_service",
+        "learning_and_skill"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "subculture_meet_trespass",
+          "protocol": "trespass",
+          "pitch": "A hall full of people deep into something you know nothing about - model railways, pre-war motorbikes, valve radios - and delighted that someone finally asked. There's a real charge in walking into a world with its own language as a complete outsider. You leave having seen what total, unembarrassed devotion to one odd thing actually looks like up close.",
+          "instruction": "Find a hobby or collector meet for something you've no connection to and go and look round. Ask people about it.",
+          "who_with": [
+            "solo",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "dawn_trade_market",
+      "label": "A trade market at dawn",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "food_and_drink",
+        "community_and_service"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "dawn_trade_market_trespass",
+          "protocol": "trespass",
+          "pitch": "Four in the morning at the wholesale market, the whole city's fish or flowers changing hands before the alarms go off across town - ice, shouting, barrows, a trade running flat out in the dark. You stand at the edge of a working world you eat and live off and have never seen. It's electric in a way nothing in your usual day comes near.",
+          "instruction": "Get to a wholesale market (fish, flower, produce) for its pre-dawn trading. Stand back and watch it run.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "foraging_day",
+      "label": "A foraging day",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "experience",
+        "growth"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "food_and_drink"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "foraging_day_trespass",
+          "protocol": "trespass",
+          "pitch": "A few hours learning to read a hedgerow or a shoreline as a larder - the mushroom that's good and the one beside it that isn't, the leaves you've trodden past your whole life. Suddenly the ordinary green at the roadside is full of food and you can't switch it off. You drive home with the country quietly rewired, edible where it used to be just scenery.",
+          "instruction": "Join a one-day guided forage. Learn to spot and pick a few things, properly identified.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "city_on_foot_unfamiliar",
+      "label": "An unfamiliar part of your own city, on foot",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "city_on_foot_unfamiliar_trespass",
+          "protocol": "trespass",
+          "pitch": "Pick the part of your own town you've genuinely never walked - the industrial edge, the streets you only ever drive past - and go on foot with no aim at all. It's a strange thing, being a tourist where you live: the back of buildings you know from the front, a whole district running its own life. Most of your own patch you've never actually seen.",
+          "instruction": "Choose a district of your own town you never set foot in and walk it for an hour or two. No destination.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "blacksmith_taster",
+      "label": "A blacksmith / forge taster day",
+      "cost_tier": "high",
+      "websites": [],
+      "directions": [
+        "creation",
+        "experience"
+      ],
+      "interest_domains": [
+        "making_and_craft",
+        "learning_and_skill"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "blacksmith_taster_trespass",
+          "protocol": "trespass",
+          "pitch": "A day at the forge - heat off the fire on your face, scale flying off the metal under the hammer, the orange glow dying to grey as you work. You beat a flat bar into something that'll outlast you: a knife, a hook, a thing made by your own arm. You drive home filthy and aching with an object in the boot that didn't exist this morning, and you made it.",
+          "instruction": "Book a one-day forge / blacksmith taster and make one thing under instruction. Take it home.",
+          "who_with": [
+            "solo",
+            "with_teenagers",
+            "with_adult_children"
+          ],
+          "magnitude": "big",
+          "friction": 3,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "unusual_overnight_stay",
+      "label": "A night somewhere genuinely unusual",
+      "cost_tier": "high",
+      "websites": [
+        "https://www.canopyandstars.co.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration",
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "unusual_overnight_stay_trespass",
+          "protocol": "trespass",
+          "pitch": "One night up a tree, or in a lighthouse, or a shepherd's hut alone on a hillside - somewhere you'd never otherwise have a reason to sleep. The strangeness of the last light through an unfamiliar window, the quiet that isn't your quiet. You go to bed somewhere you've never been and wake somewhere you've never woken, and carry it about for months.",
+          "instruction": "Book one night somewhere genuinely unusual and go and stay in it.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_young_children",
+            "with_teenagers"
+          ],
+          "magnitude": "big",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "sleeper_train",
+      "label": "A sleeper train, there and back",
+      "cost_tier": "high",
+      "websites": [
+        "https://www.sleeper.scot",
+        "https://www.gwr.com/sleeper"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "travel_and_exploration"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "sleeper_train_trespass",
+          "protocol": "trespass",
+          "pitch": "Board in a lit-up city at night, fold yourself into a narrow berth, and fall asleep to the rails clicking under you - then wake to mountains or the sea sliding past the blind. A little cabin, the dark country going by, a way of travelling that feels lifted from another age. The journey is the whole of it; you barely need a reason at the far end.",
+          "instruction": "Book a sleeper train, travel overnight, and come back. The trip is the journey, not the destination.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_friends"
+          ],
+          "magnitude": "big",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "ancient_inn_night",
+      "label": "A night in a 900-year-old inn",
+      "cost_tier": "high",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "travel_and_exploration"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "ancient_inn_night_trespass",
+          "protocol": "trespass",
+          "pitch": "Sleep a night where people have slept for nine hundred years - beams you duck under, floors that run downhill, a fire lit in the same grate since before America was a country. You lie in the dark with that much time stacked over you and feel both very small and oddly part of it. A night that quietly resets the size of your own week.",
+          "instruction": "Book a night in a genuinely ancient inn and stay over. Sit in the old rooms, take it in.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "big",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "comic_con",
+      "label": "A comic con",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "community_and_service"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "comic_con_trespass",
+          "protocol": "trespass",
+          "pitch": "A vast hall of people in costume, openly and joyfully obsessed with the things they love - a whole world running on the kind of enthusiasm you learned years ago to keep quiet. You walk in an outsider and find the sheer unembarrassed delight of the place is the experience. Nobody's pretending to be cool, and an afternoon of that is stranger and freer than it sounds.",
+          "instruction": "Go to a comic con for the day. Wander it as an outsider and take the whole spectacle in.",
+          "who_with": [
+            "solo",
+            "with_teenagers",
+            "with_young_children",
+            "with_adult_children"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "sea_fishing_trip",
+      "label": "A sea-fishing trip off a working boat",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "sport_and_games"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "sea_fishing_trip_trespass",
+          "protocol": "trespass",
+          "pitch": "Out past the harbour wall on a working boat, the skipper forty years at it, the land dropping away and the sea doing as it pleases. You've no idea what you're doing and it doesn't matter - the cold spray, the lines, the open water is the whole point. A morning in a world that owes your usual life nothing, and gives you back something it didn't ask about.",
+          "instruction": "Book onto a charter sea-fishing trip from a working port and go out. Let the crew show you the ropes.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_teenagers",
+            "with_adult_children"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 4
+        }
+      ]
+    },
+    {
+      "activity_id": "long_lunch_no_logistics",
+      "label": "Long lunch, no logistics",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships",
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "long_lunch_no_logistics_aside_partner",
+          "protocol": "aside",
+          "pitch": "Two hours with your partner and one rule: no admin, no kids, no holiday planning. Just lunch with the person you've sat beside for years, where for once you're genuinely curious how she is, not what needs sorting. You'll notice how much of your time together has quietly turned into logistics - and hear something you hadn't when it isn't.",
+          "instruction": "Long lunch with your partner, no logistics allowed. Go in curious about how she actually is. When you drift to admin, drift back.",
+          "who_with": [
+            "with_partner"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "one_question_walk",
+      "label": "A walk with one real question",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "one_question_walk_aside_parent",
+          "protocol": "aside",
+          "pitch": "Walk with your mum or dad and ask one thing you've never actually asked - a decision they made, something from before you existed. Side by side, no eye contact, the walking carrying it along. You'll hear a version of them you didn't have, and the window for the asking won't stay open forever.",
+          "instruction": "Walk with your parent. Ask one thing you've never asked, and just listen. No fixing.",
+          "who_with": [
+            "with_parents"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 2
+        },
+        {
+          "variant_id": "one_question_walk_aside_young",
+          "protocol": "aside",
+          "pitch": "A walk with one of your young kids, no errand, nothing you've been meaning to raise. Ask them something real - what they actually like, what worries them - and let it sit. They answer differently beside you than they do with you looming over them, and differently again when they can tell you really want to know.",
+          "instruction": "Walk with one of your young children. Ask one real question and listen without steering it.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        },
+        {
+          "variant_id": "one_question_walk_aside_adult",
+          "protocol": "aside",
+          "pitch": "Your grown-up kid is a person you don't entirely know now - they changed while you weren't quite watching. A walk, the two of you, one real question about how they actually are, asked the way you would of someone you'd just met and liked. No advice, no fixing. What comes back will likely not be what you'd assumed.",
+          "instruction": "Walk with your adult child. Ask one real question and stay curious - resist advice or fixing.",
+          "who_with": [
+            "with_adult_children"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "pint_no_catching_up",
+      "label": "A pint with one old friend, no catching up",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "pint_no_catching_up_aside_friend",
+          "protocol": "aside",
+          "pitch": "A pint with an old mate, but skip the usual trading of headlines. Ask him something real instead - how he's actually doing, the thing under the thing - and stay there past where you'd normally crack a joke and move it on. Twenty years in, you might find a whole side of him you've simply never asked about.",
+          "instruction": "Pint with one old friend. Get past the headlines to one real question, and don't deflect with a joke when it gets close.",
+          "who_with": [
+            "with_friends"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "old_photos_with_a_parent",
+      "label": "Old photos with a parent",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "reflection_and_memory",
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "old_photos_with_a_parent_aside_parent",
+          "protocol": "aside",
+          "pitch": "Get the old photographs out with a parent and ask, properly, who's who and what was going on - not to sort them, just to hear it. A face with no name, a holiday before you were born, your parent at the age you are now. Stories that live only in their head at the moment, side by side over the kitchen table.",
+          "instruction": "Sit with a parent over old photographs. Ask about the people and moments and let them tell it. No tidying or scanning project.",
+          "who_with": [
+            "with_parents"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "their_world_with_a_teenager",
+      "label": "Do the thing they're into, no comment",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "their_world_with_a_teenager_aside_teen",
+          "protocol": "aside",
+          "pitch": "The game, the music, the thing your teenager's lost in that you usually only sigh at. Ask them to show you properly, then let yourself be shown - no jokes, no improving it, no point to make. Stepping into their world on their terms is rare enough that they notice, and you get the fluent, expert version of them the dinner table never sees.",
+          "instruction": "Get your teenager to walk you through the thing they love. Take part, ask real questions, pass no comment on its worth.",
+          "who_with": [
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "gig_an_adult_child_loves",
+      "label": "Go to a gig your adult child loves",
+      "cost_tier": "medium",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "music_and_performance",
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "gig_an_adult_child_loves_aside_adult",
+          "protocol": "aside",
+          "pitch": "Let your grown-up child take you to a band they love - their pick, their crowd, you along for the ride. Standing beside them while they light up at something wholly theirs tells you more about who they've become than a dozen phone calls. For once you're the guest in their world, and it suits the pair of you.",
+          "instruction": "Ask your adult child to take you to a gig they love. Go on their terms, enjoy it through them.",
+          "who_with": [
+            "with_adult_children"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "let_the_young_kid_lead",
+      "label": "Let a young child lead the whole day",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "let_the_young_kid_lead_aside_young",
+          "protocol": "aside",
+          "pitch": "Hand one of your small kids the whole afternoon and actually follow - their choices, their pace, the puddle they want to study for ten minutes. No quiet steering toward the sensible or the efficient. You get a clear window into how their head works when nobody's managing them, and they get the rare thing of being properly listened to.",
+          "instruction": "Give a young child the lead for an afternoon and genuinely follow - their plan, their pace. Don't take the wheel.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "breakfast_with_one_kid",
+      "label": "Breakfast out with one kid, just them",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships",
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "breakfast_with_one_kid_aside_young",
+          "protocol": "aside",
+          "pitch": "One child, a café, no siblings, no rush - just them and you over breakfast. Pulling one out of the pack and giving them your whole attention is something they almost never get. You'll meet the unguarded version, the one that only surfaces when they're not competing to be heard.",
+          "instruction": "Take one child out for breakfast on their own. Give them your full attention, follow what they bring up.",
+          "who_with": [
+            "with_young_children",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "the_place_they_always_mention",
+      "label": "Take a parent to the place they always mention",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "reflection_and_memory",
+        "family_and_relationships"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "the_place_they_always_mention_aside_parent",
+          "protocol": "aside",
+          "pitch": "The street they grew up on, the spot they always bring up and never go back to. Take your parent there, walk it slowly, ask as you go. The place loosens things the kitchen table never does - who lived where, what happened on that corner - and a younger version of them comes up to meet the setting.",
+          "instruction": "Take a parent to the place they always talk about. Walk it together and ask about it as you go.",
+          "who_with": [
+            "with_parents"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "one_kid_one_task",
+      "label": "One kid, one task, side by side",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships",
+        "making_and_craft"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "one_kid_one_task_aside_young",
+          "protocol": "aside",
+          "pitch": "Pick a small job - the bike, a loaf, the shed - and do it shoulder to shoulder with one of your kids, no rush to finish. Working alongside someone loosens the tongue in a way sitting opposite never does. Half the real things kids say come out sideways, over a task, when nobody's calling it A Conversation.",
+          "instruction": "Do one small hands-on task side by side with one child. Let the talk come sideways, in its own time.",
+          "who_with": [
+            "with_young_children",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "morning_coffee_fully",
+      "label": "The morning coffee, fully",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "reflection_and_memory",
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "morning_coffee_fully_steeping",
+          "protocol": "steeping",
+          "pitch": "Tomorrow, sit down with the coffee. Phone in another room. Five minutes, and don't try to make it better - no nicer beans, no podcast. Just the coffee you already have, tasted instead of swallowed on the way out the door.",
+          "instruction": "Sit down with your coffee, phone elsewhere, five minutes. Don't improve it. Notice what it tastes like.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "walk_with_no_audio",
+      "label": "A walk with no audio",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "walk_with_no_audio_steeping",
+          "protocol": "steeping",
+          "pitch": "Your usual walk, but leave the headphones at home - no podcast, no music, no call. Just your feet, the traffic, a bird, the wind. The place you cross every day with the sound turned down comes quietly back up.",
+          "instruction": "Take a walk with no audio at all. Let the real sounds of the place fill the gap. Don't reach for the phone.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "one_meal_no_screen",
+      "label": "One meal at the table, no screen",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "food_and_drink",
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "one_meal_no_screen_steeping",
+          "protocol": "steeping",
+          "pitch": "One meal at the actual table, no telly, no phone against the sauce bottle. Just the food and whoever's there. Quiet at first - then the meal becomes a thing in itself instead of fuel taken on while looking elsewhere.",
+          "instruction": "Eat one meal at the table with every screen off and away. Just the food and the company.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "one_record_sleeve_in_hand",
+      "label": "An hour with one record, sleeve in hand",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "music_and_performance"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "one_record_sleeve_in_hand_steeping",
+          "protocol": "steeping",
+          "pitch": "One album, start to finish, nothing else running - sleeve in your hands, the notes, the order the artist meant. Not background to the washing up, not on shuffle. A whole side passes and you're there for it.",
+          "instruction": "Play one album start to finish with nothing else on, sleeve in hand. Just listen.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "phone_in_a_drawer",
+      "label": "Half a day, phone in a drawer",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "phone_in_a_drawer_steeping",
+          "protocol": "steeping",
+          "pitch": "Put the phone in a drawer for half a day and leave it. The first hour itches; then it settles. Time slows in a good way, the tug on your attention lets go, and the ordinary afternoon you're in becomes the only thing there is.",
+          "instruction": "Put your phone in a drawer for half a day. Leave it there. Be wherever you are.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "big",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "sunset_start_to_finish",
+      "label": "Watch a sunset start to finish",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "sunset_start_to_finish_steeping",
+          "protocol": "steeping",
+          "pitch": "Watch one whole sunset, beginning to end - no leaving halfway, no photographing it. The sky does something enormous and slow that you usually only catch in glances from the car. The changes are so gradual you only see them if you stay.",
+          "instruction": "Watch a full sunset from start to finish. Don't photograph it or leave early. Just watch.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "garden_at_dusk",
+      "label": "Sit in the garden at dusk, just listen",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "garden_at_dusk_steeping",
+          "protocol": "steeping",
+          "pitch": "Sit outside as it goes dark and do nothing but listen - the last birds, a door somewhere, the day winding down. No phone, no job out there. The garden you only ever cross becomes, for twenty minutes, a place to be.",
+          "instruction": "Sit outside at dusk with nothing to do. Just listen to the day end. Stay a while.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "sit_by_moving_water",
+      "label": "Sit by moving water for half an hour",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "sit_by_moving_water_steeping",
+          "protocol": "steeping",
+          "pitch": "Find moving water - a river, a weir, the shoreline - and sit by it for half an hour. Don't walk on, don't make it a route. Water that's always going and never repeating empties the head better than almost anything; you get up rinsed through.",
+          "instruction": "Sit beside moving water for half an hour. Don't walk on or make it a route. Just stay and watch it.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "night_sky",
+      "label": "Lie out and watch the night sky",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "night_sky_steeping",
+          "protocol": "steeping",
+          "pitch": "Lie down somewhere dark and just look up, until the eyes adjust and more and more of it comes out. The sky you walk under every night and never see. Ten minutes with something that vast above you sets the day's worries at their right size.",
+          "instruction": "Lie out somewhere dark and watch the night sky. Stay long enough for your eyes to adjust. Don't rush in.",
+          "who_with": [
+            "solo",
+            "with_young_children",
+            "with_partner"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "oldest_tree",
+      "label": "The oldest tree in your county",
+      "cost_tier": "low",
+      "websites": [
+        "https://ati.woodlandtrust.org.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "history_and_heritage"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "oldest_tree_steeping",
+          "protocol": "steeping",
+          "pitch": "Find the oldest tree in your county - there'll be one, and it was ancient when your town was still fields. Drive out, put your hand on the bark, and stay a while. Don't photograph it, don't make it a project. One enormous old living thing, and you, for a few quiet minutes.",
+          "instruction": "Find the oldest tree in your county, go to it, put your hand on it and stay a while. Don't photograph it or improve the trip.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "big",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "first_frost_or_snow",
+      "label": "The first frost or snow, go out into it",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "first_frost_or_snow_steeping",
+          "protocol": "steeping",
+          "pitch": "First proper frost or snow, out into it early, before it's walked on or driven through - the hush, the changed light, the crunch underfoot. Don't rush to clear the car. Just stand a few minutes in the first morning of a season turning over.",
+          "instruction": "On the first frost or snow, go out into it early before it's spoiled. Stand in it for a few minutes. Don't make it a task.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "weekday_museum_alone",
+      "label": "A museum you've never been to, alone, no plan",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.museumsassociation.org/museums"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "history_and_heritage"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "weekday_museum_alone_trespass",
+          "protocol": "trespass",
+          "pitch": "A museum you've never set foot in, on a weekday, alone, with no plan to see anything in particular - half-empty rooms, nobody to keep pace with, free to stand five minutes in front of one cabinet of beetles or stride past a whole wing. A couple of unhurried hours among things you know nothing about, answering to no one. You drift out having met a corner of the world you'd never have walked into with company.",
+          "instruction": "Go alone, midweek, to a museum you've never visited. No route, no audioguide. Stop where you want, leave when you're done.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "heritage_railway",
+      "label": "A morning at a heritage steam railway",
+      "cost_tier": "medium",
+      "websites": [
+        "https://www.heritagerailways.com"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "heritage_railway_trespass",
+          "protocol": "trespass",
+          "pitch": "A real steam engine the size of a house, lit and breathing - heat rolling off the firebox, coal and hot oil in the air, the whistle going clean through you. Ride behind it, then stand at the platform end and watch them turn it on the table. Nothing on a screen comes near a living fire shifting something that big, and you come away having stood next to the actual machine.",
+          "instruction": "Spend a morning at a preserved steam railway. Ride the train, then go and watch the engines being worked up close.",
+          "who_with": [
+            "solo",
+            "with_young_children",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "medium",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "hillfort_walk",
+      "label": "The nearest Iron Age hillfort, walked up to",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.english-heritage.org.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "hillfort_walk_trespass",
+          "protocol": "trespass",
+          "pitch": "There's almost certainly an Iron Age hillfort within reach - vast earth ramparts thrown up three thousand years ago, free to walk, often five minutes from the car. Climb onto the top where people lived and farmed and watched the valley for trouble, and the ground stops being a view and starts being someone's home. You come down with the country round you suddenly much older than it was.",
+          "instruction": "Find your nearest Iron Age hillfort and walk up onto it. Walk the ramparts, take in what they could see.",
+          "who_with": [
+            "solo",
+            "with_young_children",
+            "with_partner",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "non_league_football",
+      "label": "A non-league football match",
+      "cost_tier": "low",
+      "websites": [
+        "https://www.thenonleaguefootballpaper.com"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "non_league_football_trespass",
+          "protocol": "trespass",
+          "pitch": "Forget the Premier League. Stand on a non-league terrace where the ticket's a tenner and you're close enough to hear the keeper swearing and the manager coming apart on the touchline. Real players with day jobs, a crowd that's been here decades, a pie at half time. It feels the way the game felt before the money got to it, and you leave having actually been at the football.",
+          "instruction": "Go to a non-league or lower-league match. Stand close to the pitch, have a pie, take in the atmosphere.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_teenagers",
+            "with_adult_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "snooker_darts_live",
+      "label": "A live snooker or darts session",
+      "cost_tier": "medium",
+      "websites": [
+        "https://www.wst.tv",
+        "https://www.pdc.tv"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "snooker_darts_live_trespass",
+          "protocol": "trespass",
+          "pitch": "Live snooker or darts is nothing like the box. The held breath of a packed room before a frame-deciding black; the wall of noise that goes up for a 180 you feel through the floor. A day-session seat is cheap and oddly intimate. You walk out having stood inside the atmosphere instead of watching it through a camera.",
+          "instruction": "Get a day-session ticket to a live snooker or darts event and go. Soak up the room, not just the scoreline.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "highland_games",
+      "label": "A Highland Games or county wrestling day",
+      "cost_tier": "low",
+      "websites": [
+        "https://www.shga.co.uk"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games",
+        "history_and_heritage"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "highland_games_trespass",
+          "protocol": "trespass",
+          "pitch": "The caber going end over end, the hammer whirling, jacketed wrestlers locked together on the grass a few feet from you - a living sport with centuries behind it, barely known outside its own glen. A day at the games drops you bodily into something genuinely old and genuinely strange, and you leave having seen a Britain that's still quietly getting on with it.",
+          "instruction": "Go and spectate at a Highland Games or traditional wrestling meeting for the day. Watch the heavy events up close.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_young_children",
+            "with_teenagers"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "bothy_night",
+      "label": "A night in a mountain bothy",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.mountainbothies.org.uk"
+      ],
+      "directions": [
+        "experience",
+        "freedom"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "travel_and_exploration"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "bothy_night_trespass",
+          "protocol": "trespass",
+          "pitch": "A stone shelter miles from the nearest road, free, no booking, no one in charge - you walk in with what you can carry and that's the night. Firelight on bare walls, full dark outside, weather worrying at the door, and a silence you can't buy. Most men have no idea these are scattered across the hills, left open for anyone who'll make the walk. You wake somewhere properly off the map.",
+          "instruction": "Pick an accessible bothy, walk in with what you need for one night, and stay. Take everything out again in the morning.",
+          "who_with": [
+            "solo",
+            "with_friends"
+          ],
+          "magnitude": "big",
+          "friction": 3,
+          "exertion": 4
+        }
+      ]
+    },
+    {
+      "activity_id": "gladstones_library",
+      "label": "A night at Gladstone's residential library",
+      "cost_tier": "high",
+      "websites": [
+        "https://www.gladstoneslibrary.org"
+      ],
+      "directions": [
+        "experience",
+        "freedom"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 5,
+      "variants": [
+        {
+          "variant_id": "gladstones_library_trespass",
+          "protocol": "trespass",
+          "pitch": "You can actually sleep inside a Victorian library - a real bedroom upstairs, meals laid on, and a reading room below holding more books than a lifetime would clear, kept open late just for the people staying. No itinerary, no reason to be there but to read whatever your hand finds. Almost nobody knows the place takes guests, and a night in it feels like getting away with something.",
+          "instruction": "Book a night at Gladstone's Library and stay over. Spend the evening in the reading room with whatever you fancy.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "big",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "give_blood",
+      "label": "Give blood",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.blood.co.uk"
+      ],
+      "directions": [
+        "contribution"
+      ],
+      "interest_domains": [
+        "community_and_service"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "give_blood_trespass",
+          "protocol": "trespass",
+          "pitch": "Book in once and give a pint - the clipboard, the questions, the reclining chair, the bag filling slowly at your side while you eat a biscuit. Under an hour, and a part of you is keeping a stranger alive inside a few days. It's a quietly strange thing to walk into, and you leave a little lighter than the errand deserves.",
+          "instruction": "Book a single blood donation appointment and go. That's the whole thing.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "mens_shed_dropin",
+      "label": "Drop in once at a Men's Shed",
+      "cost_tier": "free",
+      "websites": [
+        "https://menssheds.org.uk"
+      ],
+      "directions": [
+        "contribution",
+        "closeness"
+      ],
+      "interest_domains": [
+        "community_and_service",
+        "making_and_craft"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "mens_shed_dropin_trespass",
+          "protocol": "trespass",
+          "pitch": "A workshop full of blokes building, mending and tinkering - and talking, sideways, because their hands are busy. Walk in once with no plan to sign up to anything; the door is the only hard part. Pick up whatever's on the bench, and find that the talk that comes off the back of a shared task is the kind you can never manufacture in a pub.",
+          "instruction": "Find a local Men's Shed and turn up to one session. Pitch in on whatever's on the bench and see what it's like.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "public_lecture",
+      "label": "A free public lecture by a real expert",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.gresham.ac.uk",
+        "https://www.rigb.org"
+      ],
+      "directions": [
+        "growth",
+        "experience"
+      ],
+      "interest_domains": [
+        "learning_and_skill"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "public_lecture_trespass",
+          "protocol": "trespass",
+          "pitch": "Someone who's given thirty years to one subject, an hour on it, free, in a room of people who came because they wanted to. Pick a field you know nothing about. You follow an argument you can't quite keep up with, the slides going by, the questions afterwards sharper than you expected - and you walk out with your head somewhere it hasn't been since you were a student.",
+          "instruction": "Find a free public lecture on an unfamiliar subject and go. Stay for the questions afterwards.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "philosophy_pub",
+      "label": "A philosophy-in-pubs evening",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.philosophyinpubs.co.uk"
+      ],
+      "directions": [
+        "growth"
+      ],
+      "interest_domains": [
+        "learning_and_skill"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "philosophy_pub_trespass",
+          "protocol": "trespass",
+          "pitch": "In the back room of a pub, a handful of strangers go at it properly - free will, what we owe each other - and then shake hands and get the next round in. A real disagreement, taken seriously, with people you've never met and a pint going warm at your elbow. You leave having used a part of your mind that's been idle since university.",
+          "instruction": "Go to a Philosophy in Pubs session and actually weigh in. Disagree with someone, then buy them a drink.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "green_lane",
+      "label": "Walk an ancient green lane",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.glass-uk.org"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature",
+        "history_and_heritage"
+      ],
+      "novelty_index": 4,
+      "variants": [
+        {
+          "variant_id": "green_lane_trespass",
+          "protocol": "trespass",
+          "pitch": "Threaded across the country are green lanes - unsurfaced trackways, some older than the Romans, still legally yours to walk - running sunken between hedges and out across the moor as they have for eight hundred years. Walk one and you're moving through a landscape that simply stopped changing. Hardly anyone knows they're there, or that the law still lets you on them.",
+          "instruction": "Find a green lane near you and walk its length. Notice it's a road that time forgot, not a footpath someone built.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 3
+        }
+      ]
+    },
+    {
+      "activity_id": "county_show_compete",
+      "label": "Enter a class at the county show",
+      "cost_tier": "low",
+      "websites": [
+        "https://www.greatyorkshireshow.co.uk"
+      ],
+      "directions": [
+        "experience",
+        "creation"
+      ],
+      "interest_domains": [
+        "community_and_service",
+        "making_and_craft"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "county_show_compete_trespass",
+          "protocol": "trespass",
+          "pitch": "Most county shows have open classes anyone can enter - a photograph, a marrow, a jar of chutney, a sponge. Put something in, then stand in the produce tent while a judge in a white coat picks it up, turns it over, sets it down by the card. The odd, exposed thrill of having your effort weighed in public, in a world you've only ever wandered through as a spectator.",
+          "instruction": "Enter one open competition class at your county show, take your entry along on the day, and go and see how it's judged.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_young_children"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "bouldering_first_go",
+      "label": "A first go on a bouldering wall",
+      "cost_tier": "low",
+      "websites": [
+        "https://www.thebmc.co.uk"
+      ],
+      "directions": [
+        "growth",
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "bouldering_first_go_stir",
+          "protocol": "stir",
+          "pitch": "Walk in, borrow the shoes, and throw yourself at a wall four metres up with mats below. No ropes, no partner, no booking - just you and the very physical question of whether you can reach the next hold. The forearms go before the nerve does, the heart's hammering, and you drop onto the mat spent and grinning, having found an edge in yourself you hadn't tested in years.",
+          "instruction": "Go to a bouldering wall, hire shoes, and try the easy problems for an hour. Falling onto the mat is the whole design.",
+          "who_with": [
+            "solo",
+            "with_friends",
+            "with_teenagers",
+            "with_adult_children"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 4
+        }
+      ]
+    },
+    {
+      "activity_id": "pub_quiz_solo",
+      "label": "A pub quiz as a team of one",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "freedom",
+        "experience"
+      ],
+      "interest_domains": [
+        "sport_and_games"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "pub_quiz_solo_slip",
+          "protocol": "slip",
+          "pitch": "Walk into the quiz on your own and put your name down as a team of one. It's faintly absurd, and that's the whole point - no team to hide in, the next table raising an eyebrow, you cheerfully going down to six-strong outfits. The man who'd never sit there solo gets an airing, and folk are far warmer about it than you'd dread.",
+          "instruction": "Enter a pub quiz solo. Hand in your sheet as a one-man team and enjoy being the odd one out.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "geocache_hunt",
+      "label": "Hunt down a geocache near home",
+      "cost_tier": "free",
+      "websites": [
+        "https://www.geocaching.com"
+      ],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "geocache_hunt_loophole",
+          "protocol": "loophole",
+          "pitch": "There are tiny hidden boxes tucked in walls and tree roots minutes from your door, and a free app that roughly shows where. Go and find one, for no reason at all. The daftness of poking about a wall on a hunch is the point - and the street turns into a puzzle you'd never clocked.",
+          "instruction": "Open the geocaching app, pick the nearest cache, and go and find it. No purpose beyond the finding.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "learn_from_your_kid",
+      "label": "Let your child teach you their thing",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships",
+        "learning_and_skill"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "learn_from_your_kid_aside_young",
+          "protocol": "aside",
+          "pitch": "Hand the expertise over: ask your young child to teach you the game or the trick they're obsessed with, and be a genuinely useless beginner while they run it. The flip does something - they stand taller, explain more than they ever tell you - and you see, close up, exactly how their mind goes about a thing.",
+          "instruction": "Ask your young child to teach you something they're into. Be a real student - let them correct you, don't take over.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        },
+        {
+          "variant_id": "learn_from_your_kid_aside_adult",
+          "protocol": "aside",
+          "pitch": "Ask your grown-up child to properly teach you something they're good at and you're not - their software, their sport, their craft. Sitting as the novice while they lead is a role you've likely never handed them. You'll pick up the skill, but mostly you'll meet the assured adult version of them the family dynamic keeps tucked away.",
+          "instruction": "Get your adult child to teach you a skill of theirs. Stay the learner the whole way through - no advice, no taking charge.",
+          "who_with": [
+            "with_adult_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "tell_a_true_story",
+      "label": "Tell your kids a true story from your life",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "reflection_and_memory",
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "tell_a_true_story_aside",
+          "protocol": "aside",
+          "pitch": "Tell your kids one true story about yourself they've never heard - the time it went wrong, the lucky break, the daft thing you did at their age. Not a lesson, just the story. Letting them see you as a person with a past steadies something in them that no advice does - and costs only the willingness to be more than 'Dad' for ten minutes.",
+          "instruction": "Tell your children one true, unheard story from your own life. Tell it straight - don't tack a moral on the end.",
+          "who_with": [
+            "with_young_children",
+            "with_teenagers"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "avoided_conversation",
+      "label": "The conversation you've both been swerving",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "avoided_conversation_aside",
+          "protocol": "aside",
+          "pitch": "Pick the thing you and your partner have quietly steered round for months and open it - not as a row, as a real question brought in good faith. Couples get so good at running the house they stop saying what they actually think. Give it an uninterrupted hour and there's usually far more still to say than either of you expects.",
+          "instruction": "Raise the subject you've both been avoiding, somewhere you won't be interrupted. Lead with a genuine question, not a grievance.",
+          "who_with": [
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "parents_admin_together",
+      "label": "Sort a parent's affairs together, over tea",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "contribution",
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "parents_admin_together_aside",
+          "protocol": "aside",
+          "pitch": "Sit down with a parent and work through the stuff left undone because it's awkward - the will, the passwords, the paperwork no one wants to raise. Not briskly: over a pot of tea, a whole afternoon, with care. The relief lands on them straight away, and the things that get said while your heads are bent over it tend not to come up any other way.",
+          "instruction": "Spend an afternoon helping a parent get their practical affairs in order. Go gently, take your time, let the talk wander.",
+          "who_with": [
+            "with_parents"
+          ],
+          "magnitude": "medium",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "call_old_friend",
+      "label": "Call an old friend you've lost touch with",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "closeness"
+      ],
+      "interest_domains": [
+        "family_and_relationships"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "call_old_friend_aside",
+          "protocol": "aside",
+          "pitch": "Not a text - a proper call to the friend you've meant to ring for years, with the evening cleared so it can't be rushed. The dread of the first thirty seconds is the only real obstacle. Past that, the friendship usually picks up exactly where it dropped, and the conversation goes somewhere neither of you planned.",
+          "instruction": "Ring an old friend you've fallen out of touch with, with time set aside. No occasion needed - just call.",
+          "who_with": [
+            "with_friends"
+          ],
+          "magnitude": "small",
+          "friction": 3,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "grandchild_interviews_grandparent",
+      "label": "Your child interviews an elderly relative on camera",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "closeness",
+        "creation"
+      ],
+      "interest_domains": [
+        "reflection_and_memory",
+        "family_and_relationships"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "grandchild_interviews_grandparent_aside",
+          "protocol": "aside",
+          "pitch": "Set a phone on a tripod and let your child interview their grandparent, with questions the child writes. A grandparent answers a grandchild quite differently from how they'd answer you - and children ask the blunt, real things adults have learned to leave be. What you catch in an afternoon is the footage the family ends up keeping.",
+          "instruction": "Help your child prepare a few questions, then film them interviewing an older relative. Stay out of it and let the child lead.",
+          "who_with": [
+            "with_young_children"
+          ],
+          "magnitude": "medium",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "churchyard_reading",
+      "label": "Read a churchyard properly",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "churchyard_reading_steeping",
+          "protocol": "steeping",
+          "pitch": "Go into the churchyard you've passed for years and read it - the trades, the family lines, the children lost in one hard winter, the old names. Don't tidy it into a project; move slowly stone to stone and let four hundred years of one small place settle on you.",
+          "instruction": "Spend twenty minutes in an old churchyard reading the stones properly. Don't photograph or research - just read and stay a while.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "look_up_old_street",
+      "label": "Walk your town's oldest street looking up",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "experience"
+      ],
+      "interest_domains": [
+        "history_and_heritage"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "look_up_old_street_steeping",
+          "protocol": "steeping",
+          "pitch": "Walk the oldest street in town and do one thing differently: look up, above the shop signs. The carved stone, the date plaques, the crooked timber - a different building from the one you buy coffee in. Ten slow minutes with your eyes raised and somewhere familiar turns strange.",
+          "instruction": "Walk your town's oldest street slowly, looking above the shopfronts the whole way. Don't rush; notice what you've never seen.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "library_morning",
+      "label": "A morning in the library, no agenda",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "freedom"
+      ],
+      "interest_domains": [
+        "arts_and_culture",
+        "reflection_and_memory"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "library_morning_steeping",
+          "protocol": "steeping",
+          "pitch": "A morning in the library with nothing to look for and no screen - just pulling things off the shelf because the spine caught you. The last free, quiet, nobody-selling-you-anything room there is. Two unhurried hours among the stacks, and you needn't finish a single thing.",
+          "instruction": "Spend a morning in the library with no purpose and phone away. Browse by whim, read whatever you pick up. Don't 'get through' anything.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "book_outside_your_world",
+      "label": "One serious book on something you know nothing about",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "growth"
+      ],
+      "interest_domains": [
+        "learning_and_skill"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "book_outside_your_world_steeping",
+          "protocol": "steeping",
+          "pitch": "Pick one proper book on a subject wholly outside your life - mycology, Byzantine history, how a bridge stands up - and read it right through, not skim it. Sitting with one unfamiliar thing long enough to start hearing its language is a slow attention most men have let go. Let it take as long as it takes.",
+          "instruction": "Choose a serious book on a wholly unfamiliar subject and read it cover to cover, in its own time. Don't abandon it for something easier.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "big",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "whittle_a_spoon",
+      "label": "Whittle something from green wood",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "making_and_craft"
+      ],
+      "novelty_index": 2,
+      "variants": [
+        {
+          "variant_id": "whittle_a_spoon_steeping",
+          "protocol": "steeping",
+          "pitch": "Sit out with a knife and a bit of green hazel and whittle - no plan past a spoon or a peg. The shape comes off in slow curls and there's nowhere for the attention to wander. An afternoon goes, and you've one small real thing in your hand that you didn't improve or optimise.",
+          "instruction": "Take a knife and a piece of green wood into the garden and whittle one simple object. Let it take the afternoon.",
+          "who_with": [
+            "solo",
+            "with_young_children"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "bind_a_notebook",
+      "label": "Hand-bind a notebook",
+      "cost_tier": "low",
+      "websites": [
+        "https://londonbookarts.org"
+      ],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "making_and_craft"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "bind_a_notebook_trespass",
+          "protocol": "trespass",
+          "pitch": "Three tools - a needle, thread, an awl - and a couple of hours turn a stack of loose paper into a proper stab-bound book, the old Japanese way. An exact little craft most men never try and don't know is this simple: the holes punched in a row, the thread drawn tight, the spine appearing under your hands. The book comes out yours in a way a bought one isn't, and you write in it differently.",
+          "instruction": "Follow a simple Japanese stab-binding method and hand-bind one notebook in an afternoon. Then write in it.",
+          "who_with": [
+            "solo",
+            "with_partner"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "sloe_gin",
+      "label": "Make a batch of sloe gin from foraged fruit",
+      "cost_tier": "low",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "food_and_drink",
+        "outdoors_and_nature"
+      ],
+      "novelty_index": 3,
+      "variants": [
+        {
+          "variant_id": "sloe_gin_trespass",
+          "protocol": "trespass",
+          "pitch": "Pick sloes off a blackthorn in autumn - thumb stained, thorns catching - and turn them into gin in twenty minutes flat: prick, jar, sugar, done, then away in the dark for three months to go deep red. Foraging a thing and making it into another thing closes a loop modern life leaves wide open. Opening that bottle at Christmas, off a hedge you can picture, is nothing like buying one.",
+          "instruction": "Forage sloes (or damsons), make up a batch of sloe gin in a jar, and put it away to mature. Open it months later.",
+          "who_with": [
+            "solo",
+            "with_partner",
+            "with_friends"
+          ],
+          "magnitude": "small",
+          "friction": 2,
+          "exertion": 2
+        }
+      ]
+    },
+    {
+      "activity_id": "meal_from_the_cupboard",
+      "label": "A meal from only what's already in the kitchen",
+      "cost_tier": "free",
+      "websites": [],
+      "directions": [
+        "creation"
+      ],
+      "interest_domains": [
+        "food_and_drink"
+      ],
+      "novelty_index": 1,
+      "variants": [
+        {
+          "variant_id": "meal_from_the_cupboard_loophole",
+          "protocol": "loophole",
+          "pitch": "Cook tonight from only what's already in - no shopping, no recipe, no nipping out for the missing thing. The constraint is the game. You'll likely turn out something good from what you'd written off as an empty kitchen, purely for not being allowed to do it the sensible way.",
+          "instruction": "Make tonight's meal from only what you already have in. No shopping and no recipe - work with what's there.",
+          "who_with": [
+            "solo"
+          ],
+          "magnitude": "small",
+          "friction": 1,
+          "exertion": 1
+        }
+      ]
+    }
+  ]
+}

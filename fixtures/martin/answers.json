@@ -1,0 +1,108 @@
+{
+  "domain_current_state": {
+    "time_as_yours": 30,
+    "energy_as_resource": 40,
+    "felt_aliveness": 25,
+    "body_physical_aliveness": 50,
+    "curiosity": 25,
+    "making": 10,
+    "conversation_depth": 25,
+    "being_known": 25,
+    "friendship": 15,
+    "intimacy": 40,
+    "mattering": 60,
+    "spiritual": 10
+  },
+  "past_presence_selection": [
+    "time_as_yours",
+    "energy_as_resource",
+    "felt_aliveness",
+    "body_physical_aliveness",
+    "curiosity",
+    "making",
+    "conversation_depth",
+    "being_known",
+    "friendship",
+    "intimacy",
+    "mattering"
+  ],
+  "peace_discriminator": {
+    "time_as_yours": "still_misses",
+    "energy_as_resource": "still_misses",
+    "felt_aliveness": "still_misses",
+    "curiosity": "still_misses",
+    "making": "still_misses",
+    "conversation_depth": "still_misses",
+    "being_known": "still_misses",
+    "friendship": "still_misses",
+    "intimacy": "still_misses"
+  },
+  "q70_allocation": {
+    "creator": 20,
+    "experience_seeker": 15
+  },
+  "per_direction_card_a": {
+    "contributor": "b",
+    "experience_seeker": "a",
+    "freedom_designer": "a",
+    "growth_focused": "a",
+    "creator": "a",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_b": {
+    "contributor": "a",
+    "experience_seeker": "c",
+    "freedom_designer": "b",
+    "growth_focused": "a",
+    "creator": "c",
+    "relationship_rebuilder": "b"
+  },
+  "per_direction_card_c": {
+    "contributor": "skipped",
+    "experience_seeker": "b",
+    "freedom_designer": "a",
+    "growth_focused": "skipped",
+    "creator": "c",
+    "relationship_rebuilder": "a"
+  },
+  "q8_past_presence_ticked": [
+    "contributor",
+    "experience_seeker",
+    "freedom_designer",
+    "growth_focused",
+    "creator",
+    "relationship_rebuilder"
+  ],
+  "q9_stopped_expecting_ticked": [
+    "experience_seeker",
+    "freedom_designer",
+    "creator"
+  ],
+  "q10_direction_chosen": "rest",
+  "q10b_retrospective": "rest",
+  "q10c_counterfactual": "creator",
+  "q4_life_shape_duration": "c",
+  "q5_recent_life_shape_change": "c",
+  "q29_recent_reaching": "d",
+  "q2_primary_load": "a",
+  "q3_paid_work_relationship": "c",
+  "q7_sociality_default": "a",
+  "q11a_spare_resource": "b",
+  "q11b_footprint": "b",
+  "q11c_small_wants": "c",
+  "q31_role_consolidation": "a",
+  "q32_attention_pattern": "b",
+  "q33_relational_presence": "b",
+  "q_friendship_count": "a",
+  "q_depth_known": "a",
+  "q6_capacity_strain": "a",
+  "q1_week_shape_ticked": ["g"],
+  "q25_energy_availability": "b",
+  "q26_time_availability": 30,
+  "q27_body_capacity": "b",
+  "q30_permission": "d",
+  "q34_self_report": {
+    "kind": "named",
+    "items": ["building_or_making", "something_just_for_me", "something_to_look_forward_to"]
+  }
+}

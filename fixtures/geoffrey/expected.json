@@ -1,0 +1,9 @@
+{
+  "domains": {
+    "felt_aliveness": { "fires": true },
+    "being_known": { "fires": true },
+    "conversation_depth": { "fires": true },
+    "intimacy": { "fires": true },
+    "friendship": { "fires": true }
+  }
+}

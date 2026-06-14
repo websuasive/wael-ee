@@ -1,0 +1,532 @@
+/* WAEL UI — component styles */
+
+/* ----- FixturePicker ----- */
+
+.fixture-picker-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.fixture-picker-label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.fixture-picker select {
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.fixture-picker button {
+  font: inherit;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.fixture-picker button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.fixture-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.fixture-preview-pane h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.fixture-preview-pane pre,
+.fixture-preview-pane .input-json,
+.fixture-preview-pane .story-md {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 0;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.fixture-preview-pane .story-md {
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.fixture-preview-empty {
+  color: #666;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+.discovery-warnings,
+.fixture-load-errors,
+.engine-errors {
+  background: #fff6f6;
+  border-left: 3px solid #cf222e;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.discovery-warnings ul,
+.fixture-load-errors ul,
+.engine-errors {
+  margin: 0.25rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+/* ----- AssertionSummary ----- */
+
+.assertion-summary .summary-empty {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+.summary-counts {
+  font-size: 1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.summary-passed {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.summary-failed {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.failed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.failed-list li {
+  border: 1px solid #f1c0c0;
+  background: #fff6f6;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.failed-path {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.failed-detail {
+  font-size: 12px;
+  margin-left: 0.5rem;
+}
+
+.failed-detail code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  background: #fff;
+  padding: 0 0.25rem;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.failed-label {
+  display: inline-block;
+  width: 4.5rem;
+  color: #555;
+}
+
+.failed-reason {
+  font-size: 12px;
+  color: #555;
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+  font-style: italic;
+}
+
+/* === Step 14b: Panel 2 components === */
+
+.indicator {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: help;
+  vertical-align: middle;
+}
+.indicator.passed { color: #1a7f37; }
+.indicator.failed { color: #cf222e; }
+
+/* DirectionPanel */
+
+.direction-panel h2,
+.domain-panel h2,
+.constraint-panel h2,
+.crosscutting-panel h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+.direction-panel .direction-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.direction-card {
+  background: #fff;
+  border: 1px solid #e3e3e6;
+  border-top: 3px solid transparent;
+  border-radius: 5px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.direction-card--surfaced {
+  border-top: 3px solid #1a7f37;
+  background: #f6fbf7;
+}
+
+.direction-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.direction-name {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.surfaced-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #e3f5e8;
+  color: #1a7f37;
+  border: 1px solid #b6dec0;
+  font-weight: 600;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 13px;
+  min-height: 1.4em;
+}
+
+.field-row--array {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.field-label {
+  flex: 0 0 130px;
+  color: #666;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.field-value {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  color: #222;
+}
+
+.chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #2c3a73;
+  font-size: 11px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.chip--empty {
+  background: transparent;
+  color: #999;
+  font-style: italic;
+  padding: 0;
+}
+
+/* DomainPanel */
+
+.domain-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.domain-table th,
+.domain-table td {
+  text-align: left;
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+
+.domain-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  background: #fafafa;
+}
+
+.domain-table td {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12.5px;
+}
+
+.domain-row--intact td {
+  color: #888;
+}
+
+.cell-value {
+  display: inline-block;
+}
+
+/* ConstraintPanel */
+
+.constraint-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+  background: #f3f4f8;
+  border: 1px solid #dde0ec;
+  border-radius: 5px;
+}
+
+.constraint-hero-label {
+  font-size: 12px;
+  color: #555;
+  font-weight: 600;
+}
+
+.constraint-hero-value {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.constraint-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.constraint-card {
+  background: #fff;
+  border: 1px solid #e3e3e6;
+  border-left: 3px solid transparent;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+}
+
+.constraint-card--firing {
+  border-left: 3px solid #cf222e;
+  background: #fffaf9;
+}
+
+.constraint-card-name {
+  margin: 0 0 0.3rem 0;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #444;
+}
+
+/* CrossCuttingPanel */
+
+.crosscutting-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.crosscutting-table th,
+.crosscutting-table td {
+  text-align: left;
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid #eee;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.crosscutting-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  background: #fafafa;
+}
+
+.crosscutting-row--firing td {
+  font-weight: 600;
+  color: #2c3a73;
+}
+
+/* ----- AppHeader bar ----- */
+
+.app-header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #d0d7de;
+  background: #fffbe6;
+}
+
+.app-header-bar-admin {
+  background: #eef6ff;
+}
+
+.app-header-bar-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  flex-wrap: wrap;
+}
+
+.app-header-bar-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #6a5d00;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #d4b800;
+  border-radius: 3px;
+}
+
+.app-header-bar-admin .app-header-bar-tag {
+  color: #1f4477;
+  border-color: #1f4477;
+}
+
+.app-header-bar-nav {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 13px;
+}
+
+.app-header-bar-nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+}
+
+.app-header-bar-nav a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.app-header-bar-nav a.router-link-active {
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.dev-fixture-picker,
+.impersonation-control {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: auto;
+  font-size: 13px;
+}
+
+.dev-fixture-picker-loading {
+  font-size: 12px;
+  color: #6a5d00;
+}
+
+.impersonation-active {
+  font-size: 12px;
+  color: #1f4477;
+}
+
+/* ----- Generic view scaffolding ----- */
+
+.view {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.view-header {
+  margin-bottom: 1rem;
+}
+
+.view-subtitle {
+  color: #555;
+  font-size: 14px;
+}
+
+.view-empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.view-error {
+  color: #cf222e;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+}
+
+.fixture-list ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.fixture-list-item {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.fixture-list-item:hover:not(:disabled) {
+  background: #eaeef2;
+}

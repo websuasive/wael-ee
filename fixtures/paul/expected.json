@@ -1,0 +1,11 @@
+{
+  "directions": {
+    "relationship_rebuilder": { "surfaced": true }
+  },
+  "domains": {
+    "being_known": { "fires": true },
+    "felt_aliveness": { "fires": true },
+    "conversation_depth": { "fires": true }
+  }
+}
+
