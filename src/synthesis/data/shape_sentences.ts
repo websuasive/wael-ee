@@ -6,7 +6,6 @@ import type {
   DirectionOutput,
   PerDirectionInputs,
   DomainName,
-  DomainPresenceValue,
   CrossCuttingName,
 } from '../../engine';
 import type { ShapeSentence, MergedDirectionView } from '../types';
@@ -62,29 +61,6 @@ function existsDirection(
   return mergedViews(output, input).some(predicate);
 }
 
-function everyDirection(
-  output: EngineOutput,
-  input: InputMap,
-  predicate: (d: MergedDirectionView) => boolean,
-): boolean {
-  return mergedViews(output, input).every(predicate);
-}
-
-function countDirections(
-  output: EngineOutput,
-  input: InputMap,
-  predicate: (d: MergedDirectionView) => boolean,
-): number {
-  return mergedViews(output, input).filter(predicate).length;
-}
-
-function countDomainsWithValue(
-  output: EngineOutput,
-  value: DomainPresenceValue,
-): number {
-  return output.domains.filter((m) => m.value === value).length;
-}
-
 function countDomainsFiring(output: EngineOutput): number {
   return output.domains.filter(
     (m) => m.fires && m.value !== 'never_been_part_of_his_life',
@@ -109,302 +85,6 @@ function crossCuttingFires(
 /* ------------------------------------------------------------------ */
 
 export const shapeSentences: ShapeSentence[] = [
-  /* 7.1 — Pattern paragraph slot (v4 compression-point entries at HEAD) */
-  {
-    id: 'compression_high_depletion_driven',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      allBandsAt(output, 'high') &&
-      (input.cross_direction.primary_load === 'caregiving' ||
-        input.cross_direction.primary_load === 'paid_work') &&
-      (input.constraints.permission_sub_shape === 'act_block' ||
-        input.constraints.permission_sub_shape === 'want_block') &&
-      input.cross_direction.relational_presence === 'partial',
-    sentence:
-      'All seven readings sit at high. The load is the shape of his life now. Partly in the relationships he has; contact thin around them.',
-  },
-  {
-    id: 'compression_high_autopilot',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      allBandsAt(output, 'high') &&
-      input.cross_direction.relational_presence === 'mostly_absent',
-    sentence:
-      'Every part of life is stretched right now. You\'re moving through the days without much landing, and even the close relationships feel more managed than met.',
-  },
-  {
-    id: 'compression_moderate_consuming_unfiltered',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      allBandsAt(output, 'moderate') &&
-      input.cross_direction.paid_work_relationship === 'consuming' &&
-      input.cross_direction.psychological_filtering === 'does_not_filter',
-    sentence:
-      'All seven readings sit at moderate. Work consuming; the wanting reaches toward action without filter. Something running alongside the work.',
-  },
-  {
-    id: 'compression_moderate_consuming_filtered',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      allBandsAt(output, 'moderate') &&
-      input.cross_direction.paid_work_relationship === 'consuming' &&
-      input.cross_direction.psychological_filtering === 'filters_some',
-    sentence:
-      'All seven readings sit at moderate. Work consuming; the wanting passes through some filtering before it acts. Something starting to form alongside.',
-  },
-  {
-    id: 'compression_moderate_functional_enduring',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      allBandsAt(output, 'moderate') &&
-      input.cross_direction.paid_work_relationship === 'functional' &&
-      input.cross_direction.life_stage === 'enduring',
-    sentence:
-      'All seven readings sit at moderate. Work neutral; the shape has been in place a long time. Something held, not currently moving.',
-  },
-  /* 7.1 — Pattern paragraph slot (v2-final entries) */
-  {
-    id: 'enduring_long_depleted',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_stage === 'enduring' &&
-      input.cross_direction.life_shape_duration === 'long' &&
-      output.cross_direction.life_texture_band === 'depleted' &&
-      countDirections(output, input, (d) => d.surfaced) >= 2,
-    sentence:
-      'Several directions reading. The pattern has been long-running, the week reads thin around them. The load is the shape of his life now.',
-  },
-  {
-    id: 'enduring_long_mixed',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_stage === 'enduring' &&
-      input.cross_direction.life_shape_duration === 'long' &&
-      output.cross_direction.life_texture_band === 'mixed' &&
-      countDirections(output, input, (d) => d.surfaced) >= 2,
-    sentence:
-      'Several directions reading. The pattern has been long-running, with some texture around it. The load is the shape of his life now.',
-  },
-  {
-    id: 'drifting_with_pulls',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_stage === 'drifting' &&
-      countDirections(output, input, (d) => d.surfaced) >= 2,
-    sentence:
-      'Pulls reading without a settled direction. Nothing forcing a change; whether the current shape is right is unresolved.',
-  },
-  {
-    id: 'held_unexpressed_strong',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_state.includes('held_attributed_unexpressed') && d.pull >= 70,
-      ),
-    sentence:
-      'Something specific held in {direction_display}, and the week has no current room for it.',
-  },
-  {
-    id: 'held_unexpressed_moderate',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) => {
-      const hasHeld = existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_state.includes('held_attributed_unexpressed') && d.pull < 70,
-      );
-      if (!hasHeld) return false;
-      // "2+ other directions d' surfaced" — count surfaced directions that are
-      // not themselves the held_attributed_unexpressed direction.
-      const surfacedOther = countDirections(
-        output,
-        input,
-        (d) =>
-          d.surfaced && !d.pull_state.includes('held_attributed_unexpressed'),
-      );
-      return surfacedOther >= 2;
-    },
-    sentence:
-      'Something specific held in {direction_display}, with no current room for it. Other directions are reading too.',
-  },
-  {
-    id: 'mixed_band_uniform_pattern',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_texture_band === 'mixed' &&
-      output.cross_direction.week_shape.varied_week === false &&
-      countDirections(output, input, (d) => d.surfaced) >= 2 &&
-      !existsDirection(output, input, (d) =>
-        d.pull_state.includes('capacity_strain'),
-      ) &&
-      !existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_state.includes('held_attributed_with_expression') ||
-          d.pull_state.includes('held_attributed_unexpressed'),
-      ),
-    sentence:
-      'Several directions reading, with some texture around them. The same pattern, repeating.',
-  },
-  {
-    id: 'depleted_band_with_held',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_texture_band === 'depleted' &&
-      existsDirection(
-        output,
-        input,
-        (d) =>
-          d.specificity === 'strong' &&
-          d.pull_state.includes('held_attributed_unexpressed'),
-      ),
-    sentence:
-      'Something specific held in {direction_display}. The week is absorbed by load with no current room for it.',
-  },
-
-  /* 7.1 — Pattern paragraph slot (existing, indices unchanged in registration) */
-  {
-    id: 'deep_suppression_multi',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      countDirections(
-        output,
-        input,
-        (d) => d.pull_quality.includes('suppressed') && d.past_presence === 'yes',
-      ) >= 3 &&
-      output.constraints.sustained_constraint_intensity >= 70 &&
-      input.cross_direction.life_shape_duration === 'long',
-    sentence:
-      'Several directions reading with past presence and stated wanting low. The constraint pattern has been heavy and long-running.',
-  },
-  {
-    id: 'suppressed_standard_multi',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      countDirections(
-        output,
-        input,
-        (d) =>
-          d.pull_quality.includes('suppressed') &&
-          d.past_presence === 'yes' &&
-          d.felt_cost >= 50,
-      ) >= 2 &&
-      output.constraints.sustained_constraint_intensity >= 60 &&
-      output.constraints.sustained_constraint_intensity < 70 &&
-      input.cross_direction.life_shape_duration !== 'long',
-    sentence:
-      'Several directions reading with past presence, real felt cost, and stated wanting low. Constraint heavy without being long-running.',
-  },
-  {
-    id: 'active_with_tension',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(
-        output,
-        input,
-        (d) =>
-          d.quadrant === 'active' &&
-          d.pull >= 70 &&
-          d.pull_state.includes('capacity_strain'),
-      ),
-    sentence:
-      'One direction reading active and strong. Capacity strain firing alongside: pull on this and pull toward less weight overall, at the same time.',
-  },
-  {
-    id: 'active_going_through_motions',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(
-        output,
-        input,
-        (d) => d.quadrant === 'active' && d.pull < 70,
-      ) && crossCuttingFires(output, 'mid_process'),
-    sentence: 'One direction reading active. The reaching is recent.',
-  },
-  {
-    id: 'saturated',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(output, input, (d) =>
-        d.pull_quality.includes('saturated'),
-      ),
-    sentence: 'Wanting present on a direction, but soured.',
-  },
-  {
-    id: 'desired_direction_partial',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(output, input, (d) =>
-        d.pull_quality.includes('phantom_partial'),
-      ) &&
-      !existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_quality.includes('real') ||
-          d.pull_quality.includes('suppressed') ||
-          d.pull_quality.includes('saturated') ||
-          d.pull_quality.includes('behaviourally_divergent'),
-      ),
-    sentence:
-      "A desired direction named: {direction_display}. The surrounding readings are still partial; the conditions for acting haven't shown up yet.",
-  },
-  {
-    id: 'desired_direction_full',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      existsDirection(output, input, (d) =>
-        d.pull_quality.includes('phantom'),
-      ) &&
-      !existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_quality.includes('real') ||
-          d.pull_quality.includes('suppressed') ||
-          d.pull_quality.includes('saturated') ||
-          d.pull_quality.includes('behaviourally_divergent'),
-      ),
-    sentence:
-      "A desired direction stated strongly: {direction_display}. The surrounding readings haven't yet caught up.",
-  },
-  {
-    id: 'between_shapes_clean',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      crossCuttingFires(output, 'between_shapes') &&
-      !existsDirection(output, input, (d) =>
-        d.pull_quality.includes('suppressed'),
-      ),
-    sentence:
-      'Recent change in life shape, no replacement structure yet in place.',
-  },
-  {
-    id: 'empty_pulls_past_present_wants',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      everyDirection(output, input, (d) => d.pull_quality.length === 0) &&
-      countDirections(output, input, (d) => d.past_presence === 'yes') >= 3 &&
-      countDomainsWithValue(output, 'reduced_at_peace') < 3,
-    sentence:
-      'No direction reading as a current pull. Several directions register past presence; the wanting has gone quiet.',
-  },
-  {
-    id: 'empty_pulls_past_present_at_peace',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      everyDirection(output, input, (d) => d.pull_quality.length === 0) &&
-      countDirections(output, input, (d) => d.past_presence === 'yes') >= 3 &&
-      countDomainsWithValue(output, 'reduced_at_peace') >= 3,
-    sentence:
-      'No direction reading as a current pull. Several directions register past presence; the wanting reads as having been let go.',
-  },
-
   /* 7.2 — Direction card summary slot (NEW head entries for held_unexpressed
      on the four eligible directions; register BEFORE card_real_active_strong
      to take precedence when expression-space is absent on a strong-specificity
@@ -785,42 +465,85 @@ export const shapeSentences: ShapeSentence[] = [
   },
 
   /* --------------------------------------------------------------- */
-  /* §7.1 — Pattern paragraph slot (NEW tail entries, lower priority) */
+  /* Pattern paragraph axes (NEW compositional system)                */
   /* --------------------------------------------------------------- */
   {
-    id: 'empty_band_with_phantom',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_texture_band === 'empty' &&
-      existsDirection(
-        output,
-        input,
-        (d) =>
-          d.pull_quality.includes('phantom') ||
-          d.pull_quality.includes('phantom_partial'),
-      ),
-    sentence:
-      'A direction named: {direction_display}. The week shows little around it yet.',
+    id: 'pull_character_held',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "There's something you want that you've never put into words.",
   },
   {
-    id: 'empty_band_reaching',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      (output.cross_direction.life_stage === 're_evaluating' ||
-        output.cross_direction.life_stage === 'transitioning') &&
-      output.cross_direction.life_texture_band === 'empty' &&
-      countDirections(output, input, (d) => d.surfaced) >= 1,
-    sentence:
-      'Direction reading without expression in the week. The week shape is still forming.',
+    id: 'pull_character_suppressed',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "Things you once wanted, you've quietly let go of.",
   },
   {
-    id: 'textured_band_multiple_firing',
-    slot: 'pattern_paragraph',
-    predicate: (output, input) =>
-      output.cross_direction.life_texture_band === 'textured' &&
-      countDirections(output, input, (d) => d.surfaced) >= 3,
-    sentence:
-      'Several directions reading. The week has texture across multiple dimensions.',
+    id: 'pull_character_saturated',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "Something you used to want, you've had your fill of. There's nothing left in it.",
+  },
+  {
+    id: 'pull_character_phantom',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "You say you want it, but it never quite becomes anything.",
+  },
+  {
+    id: 'relational_mostly_absent',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "The people closest to you, you manage more than you really know them.",
+  },
+  {
+    id: 'relational_partial',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "There are people around you, but no one you really open up to.",
+  },
+  {
+    id: 'attention_autopilot',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "You move through the days without much of it landing.",
+  },
+  {
+    id: 'domains_wants_back',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "A lot has fallen away from your life, and you'd want it back.",
+  },
+  {
+    id: 'domains_at_peace',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "A lot has fallen away over the years, and you've made your peace with most of it.",
+  },
+  {
+    id: 'constraint_high',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "Every part of life is stretched right now.",
+  },
+  {
+    id: 'constraint_moderate',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "There's a steady weight across everything, and it doesn't lift.",
+  },
+  {
+    id: 'stage_enduring',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "The days have looked much the same for a long time.",
+  },
+  {
+    id: 'stage_drifting',
+    slot: 'pattern_axis',
+    predicate: () => true,
+    sentence: "There's no real direction right now, and nothing pushing you toward one.",
   },
 
   /* --------------------------------------------------------------- */

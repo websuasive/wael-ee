@@ -190,7 +190,7 @@ const example: RenderingInstructions = {
     situation_text: null,
   },
   recognition_paragraph: slot('recognition'),
-  pattern_paragraph: slot('pattern'),
+  pattern_paragraph: [],
   direction_cards: directionCards,
   direction_evidence_chart: {
     bubbles: chartBubbles,
@@ -268,7 +268,7 @@ const example: RenderingInstructions = {
 
 const exampleShapeSentence: ShapeSentence = {
   id: 'example_shape_sentence',
-  slot: 'pattern_paragraph',
+  slot: 'pattern_axis',
   predicate: () => true,
   sentence: 'example sentence',
 };

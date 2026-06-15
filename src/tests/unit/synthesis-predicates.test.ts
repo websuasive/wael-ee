@@ -15,7 +15,6 @@ import {
   extractMatchedDirection,
   allBandsAt,
 } from '@/synthesis/predicates';
-import { shapeSentences } from '@/synthesis/data/shape_sentences';
 
 /* ------------------------------------------------------------------ */
 /* Test helpers — minimal valid baselines                             */
@@ -237,48 +236,6 @@ function makeInputMap(
   };
 }
 
-function findById(id: string) {
-  return shapeSentences.find((s) => s.id === id);
-}
-
-/* ------------------------------------------------------------------ */
-/* A — findFirstMatchingSentence: slot iteration                      */
-/* ------------------------------------------------------------------ */
-
-describe('findFirstMatchingSentence — slot iteration', () => {
-  it('returns null when no predicate matches the baseline profile', () => {
-    const out = makeEngineOutput();
-    const inp = makeInputMap();
-    expect(findFirstMatchingSentence('pattern_paragraph', out, inp)).toBeNull();
-  });
-
-  it('returns the saturated match when only saturated predicate holds', () => {
-    const out = makeEngineOutput({
-      creator: { pull_quality: ['saturated'] },
-    });
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence('pattern_paragraph', out, inp);
-    expect(match).not.toBeNull();
-    expect(match!.id).toBe('saturated');
-    expect(match!.sentence).toBe('Wanting present on a direction, but soured.');
-    expect(match!.matched_direction).toBeNull();
-  });
-
-  it('respects array order: desired_direction_partial wins over desired_direction_full when both could fire', () => {
-    // Configure profile so both _partial and _full predicates are simultaneously true:
-    //   one direction has 'phantom_partial', another has 'phantom',
-    //   and no direction has 'real' / 'suppressed' / 'saturated' / 'behaviourally_divergent'.
-    const out = makeEngineOutput({
-      creator: { pull_quality: ['phantom_partial'], pull: 60 },
-      freedom_designer: { pull_quality: ['phantom'], pull: 50 },
-    });
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence('pattern_paragraph', out, inp);
-    expect(match).not.toBeNull();
-    expect(match!.id).toBe('desired_direction_partial');
-  });
-});
-
 /* ------------------------------------------------------------------ */
 /* B — slot scoping                                                   */
 /* ------------------------------------------------------------------ */
@@ -289,47 +246,8 @@ describe('findFirstMatchingSentence — slot scoping', () => {
       creator: { pull_quality: ['saturated'] },
     });
     const inp = makeInputMap();
-    const pp = findFirstMatchingSentence('pattern_paragraph', out, inp);
     const card = findFirstMatchingSentence('direction_card_summary', out, inp);
-    expect(pp?.id).toBe('saturated');
     expect(card?.id).toBe('card_saturated');
-    expect(pp?.id).not.toBe(card?.id);
-  });
-});
-
-/* ------------------------------------------------------------------ */
-/* C — order is load-bearing                                          */
-/* ------------------------------------------------------------------ */
-
-describe('findFirstMatchingSentence — order is load-bearing', () => {
-  it('deep_suppression_multi (index 0) wins over suppressed_standard_multi (index 1) when both are configurable', () => {
-    // deep_suppression_multi requires SCI >= 70 AND life_shape_duration === 'long'.
-    // suppressed_standard_multi requires 60 <= SCI < 70 AND life_shape_duration !== 'long'.
-    // The two SCI/duration conditions are mutually exclusive by spec.
-    // Construct the deep_suppression_multi conditions; verify it fires and wins.
-    const out = makeEngineOutput(
-      {
-        creator: { pull_quality: ['suppressed'] },
-        freedom_designer: { pull_quality: ['suppressed'] },
-        contributor: { pull_quality: ['suppressed'] },
-      },
-      {},
-      { sustained_constraint_intensity: 80 },
-    );
-    const inp = makeInputMap(
-      {
-        creator: { past_presence: 'yes', felt_cost: 60 },
-        freedom_designer: { past_presence: 'yes', felt_cost: 60 },
-        contributor: { past_presence: 'yes', felt_cost: 60 },
-      },
-      { life_shape_duration: 'long' },
-    );
-    // Sanity: deep_suppression_multi predicate fires.
-    const deep = findById('deep_suppression_multi')!;
-    expect(deep.predicate(out, inp)).toBe(true);
-    // First match wins.
-    const match = findFirstMatchingSentence('pattern_paragraph', out, inp);
-    expect(match?.id).toBe('deep_suppression_multi');
   });
 });
 
@@ -517,76 +435,6 @@ describe('extractMatchedDirection — non-targeted IDs', () => {
 });
 
 /* ------------------------------------------------------------------ */
-/* H — findFirstMatchingSentence populates matched_direction          */
-/* ------------------------------------------------------------------ */
-
-describe('findFirstMatchingSentence — matched_direction populated', () => {
-  it('active_with_tension → matched_direction = making', () => {
-    const out = makeEngineOutput({
-      creator: { pull: 80, quadrant: 'active', pull_state: ['capacity_strain'] },
-    });
-    const reordered: EngineOutput = {
-      ...out,
-      directions: [...out.directions].sort((a, b) => b.pull - a.pull),
-    };
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence(
-      'pattern_paragraph',
-      reordered,
-      inp,
-    );
-    expect(match?.id).toBe('active_with_tension');
-    expect(match?.matched_direction).toBe('creator');
-  });
-
-  it('desired_direction_partial → matched_direction = freedom', () => {
-    const out = makeEngineOutput({
-      freedom_designer: { pull: 60, pull_quality: ['phantom_partial'] },
-    });
-    const reordered: EngineOutput = {
-      ...out,
-      directions: [...out.directions].sort((a, b) => b.pull - a.pull),
-    };
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence(
-      'pattern_paragraph',
-      reordered,
-      inp,
-    );
-    expect(match?.id).toBe('desired_direction_partial');
-    expect(match?.matched_direction).toBe('freedom_designer');
-  });
-
-  it('desired_direction_full → matched_direction = growth', () => {
-    const out = makeEngineOutput({
-      growth_focused: { pull: 60, pull_quality: ['phantom'] },
-    });
-    const reordered: EngineOutput = {
-      ...out,
-      directions: [...out.directions].sort((a, b) => b.pull - a.pull),
-    };
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence(
-      'pattern_paragraph',
-      reordered,
-      inp,
-    );
-    expect(match?.id).toBe('desired_direction_full');
-    expect(match?.matched_direction).toBe('growth_focused');
-  });
-
-  it('saturated → matched_direction = null', () => {
-    const out = makeEngineOutput({
-      creator: { pull_quality: ['saturated'] },
-    });
-    const inp = makeInputMap();
-    const match = findFirstMatchingSentence('pattern_paragraph', out, inp);
-    expect(match?.id).toBe('saturated');
-    expect(match?.matched_direction).toBeNull();
-  });
-});
-
-/* ------------------------------------------------------------------ */
 /* I — purity                                                         */
 /* ------------------------------------------------------------------ */
 
@@ -596,8 +444,8 @@ describe('findFirstMatchingSentence — purity', () => {
       creator: { pull_quality: ['saturated'] },
     });
     const inp = makeInputMap();
-    const a = findFirstMatchingSentence('pattern_paragraph', out, inp);
-    const b = findFirstMatchingSentence('pattern_paragraph', out, inp);
+    const a = findFirstMatchingSentence('direction_card_summary', out, inp);
+    const b = findFirstMatchingSentence('direction_card_summary', out, inp);
     expect(JSON.stringify(a)).toBe(JSON.stringify(b));
   });
 });

@@ -266,7 +266,7 @@ export type ExpectedComparisonSurfacePanelAssertions = {
 export type ExpectedSynthesisAssertions = {
   headline?: ExpectedHeadlineAssertions;
   recognition_paragraph?: ExpectedSlotContentAssertions;
-  pattern_paragraph?: ExpectedSlotContentAssertions;
+  pattern_paragraph?: { match: boolean };
   direction_cards?: {
     [direction_engine_name: string]: ExpectedDirectionCardAssertions;
   };

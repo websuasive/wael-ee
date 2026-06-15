@@ -85,7 +85,7 @@ export function buildPlaceholderRenderingInstructions(): RenderingInstructions {
       situation_text: 'Placeholder situation.',
     },
     recognition_paragraph: emptySlot(),
-    pattern_paragraph: emptySlot(),
+    pattern_paragraph: [],
     direction_cards: ENGINE_DIRECTIONS.map((d) => ({
       direction_name: DIRECTION_DISPLAY_NAMES[d],
       direction_engine_name: d,

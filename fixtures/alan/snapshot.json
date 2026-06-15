@@ -436,10 +436,12 @@
       "interpretive_text": "What you want is depth, a few people who actually know you, alongside something of your own to make. What you can't stand is people who never talk about the important things, or only ever consuming and creating nothing.",
       "token_text": "Relationship Rebuilder and Creator."
     },
-    "pattern_paragraph": {
-      "interpretive_text": "Every part of life is stretched right now. You're moving through the days without much landing, and even the close relationships feel more managed than met.",
-      "token_text": "2 directions reading materially. Constraint pattern: heavy. Life shape duration: long."
-    },
+    "pattern_paragraph": [
+      "The people closest to you, you manage more than you really know them.",
+      "You move through the days without much of it landing.",
+      "A lot has fallen away from your life, and you'd want it back.",
+      "Every part of life is stretched right now."
+    ],
     "direction_cards": [
       {
         "direction_name": "Relationship Rebuilder",

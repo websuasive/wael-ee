@@ -445,10 +445,12 @@
       "interpretive_text": "You need a life on your own terms, things you chose, with a few people who really know you, and being useful where it counts. What you can't stand is a life on everyone else's terms, people who stay on the surface, or not making a difference.",
       "token_text": "Freedom Designer, Relationship Rebuilder, and Contributor."
     },
-    "pattern_paragraph": {
-      "interpretive_text": "Several directions reading. The pattern has been long-running, with some texture around it. The load is the shape of his life now.",
-      "token_text": "4 directions reading materially. Constraint pattern: heavy and long-running. Life shape duration: long."
-    },
+    "pattern_paragraph": [
+      "Things you once wanted, you've quietly let go of.",
+      "The people closest to you, you manage more than you really know them.",
+      "You move through the days without much of it landing.",
+      "A lot has fallen away from your life, and you'd want it back."
+    ],
     "direction_cards": [
       {
         "direction_name": "Freedom Designer",

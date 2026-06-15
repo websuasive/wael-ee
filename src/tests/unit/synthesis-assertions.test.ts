@@ -421,7 +421,7 @@ describe('runSynthesisAssertions — multi-block walk', () => {
     const expected: ExpectedSynthesisAssertions = {
       headline: { direction_engine_names: { contains: ['creator'] } },
       recognition_paragraph: { interpretive_text: '<NON_NULL>' },
-      pattern_paragraph: { token_text: '<NON_NULL>' },
+      pattern_paragraph: { match: true },
       direction_cards: { creator: { visual_state: 'named' } },
       direction_evidence_chart: {
         bubbles: { creator: { pull: { between: [70, 90] } } },
@@ -433,10 +433,10 @@ describe('runSynthesisAssertions — multi-block walk', () => {
       experience_candidate_directions: { creator: '<PRESENT>' },
     };
     const r = runSynthesisAssertions(expected, actual);
-    // 10 leaf assertions across 9 blocks.
-    expect(r.total).toBe(10);
+    // 9 leaf assertions across 9 blocks (pattern_paragraph is now a simple boolean match).
+    expect(r.total).toBe(9);
     expect(r.failed).toBe(0);
-    expect(r.passed).toBe(10);
+    expect(r.passed).toBe(9);
   });
 });
 

@@ -2,7 +2,6 @@
 
 import type { EngineOutput, InputMap } from '../engine';
 import type { LifeContextPanel, SlotContent } from './types';
-import type { ShapeSentenceMatch } from './predicates';
 import { findFirstMatchingSentence } from './predicates';
 import { shapeSentences } from './data/shape_sentences';
 import {
@@ -47,10 +46,8 @@ function composeSubSlot(
 export function computeLifeContextPanel(
   output: EngineOutput,
   input: InputMap,
-  patternParagraphMatch: ShapeSentenceMatch | null,
 ): LifeContextPanel {
   const cross = output.cross_direction;
-  const matchId = patternParagraphMatch?.id ?? null;
 
   // §5.12.1 life_stage_summary — token fallback per §5.12.1 / §6.16.
   const life_stage_summary = composeSubSlot(
@@ -84,12 +81,9 @@ export function computeLifeContextPanel(
   );
 
   // Whole-situation closing lines (relocated from computeClosingLines)
-  // 1. closing_between_shapes — suppressed when matchId is 'between_shapes_clean'
+  // 1. closing_between_shapes — unconditional firing
   let closing_between_shapes: SlotContent | null = null;
-  if (
-    crossCuttingFires(output, 'between_shapes') &&
-    matchId !== 'between_shapes_clean'
-  ) {
+  if (crossCuttingFires(output, 'between_shapes')) {
     const sentence = sentenceForId('closing_between_shapes');
     if (sentence !== null) {
       closing_between_shapes = {
@@ -99,12 +93,9 @@ export function computeLifeContextPanel(
     }
   }
 
-  // 2. closing_mid_process — suppressed when matchId is 'active_going_through_motions'
+  // 2. closing_mid_process — unconditional firing
   let closing_mid_process: SlotContent | null = null;
-  if (
-    crossCuttingFires(output, 'mid_process') &&
-    matchId !== 'active_going_through_motions'
-  ) {
+  if (crossCuttingFires(output, 'mid_process')) {
     const sentence = sentenceForId('closing_mid_process');
     if (sentence !== null) {
       closing_mid_process = {

@@ -860,13 +860,17 @@ export function runSynthesisAssertions(
 
   // 3. pattern_paragraph
   if (expected.pattern_paragraph !== undefined) {
-    walkSlotContent(
-      'pattern_paragraph',
-      expected.pattern_paragraph,
-      actual.pattern_paragraph,
-      results,
-      'pattern_paragraph',
-    );
+    const expectedMatch = expected.pattern_paragraph.match;
+    const actualMatch = actual.pattern_paragraph.length > 0;
+    if (expectedMatch !== actualMatch) {
+      results.push({
+        path: 'pattern_paragraph',
+        matcher: 'equals',
+        expected: expectedMatch ? 'non-empty array' : 'empty array',
+        actual: actualMatch ? 'non-empty array' : 'empty array',
+        passed: false,
+      });
+    }
   }
 
   // 4. direction_cards

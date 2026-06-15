@@ -1,6 +1,6 @@
 // Synthesis layer entry point. Orchestrates SYNTHESIS.md section 8's 12-step computation order. Recognition_paragraph and pattern_paragraph slot fills (sections 5.2.1 and 5.2.2) live here as integration logic; cross_cutting_panel construction (section 5.7) is also inlined as three lines of mechanical assembly.
 
-import type { EngineOutput, InputMap, DirectionName } from '../engine';
+import type { EngineOutput, InputMap } from '../engine';
 import type {
   RenderingInstructions,
   SlotContent,
@@ -9,7 +9,6 @@ import type {
 } from './types';
 import { computeFiringSet, computeHeadline } from './headline';
 import type { FiringSetEntry } from './headline';
-import { findFirstMatchingSentence } from './predicates';
 import { computeDirectionCards } from './cards';
 import { computeChartData } from './chart_data';
 import { computeDomainsPanel } from './domains_panel';
@@ -20,13 +19,12 @@ import { computeLifeContextPanel } from './life_context_panel';
 import { computeComparisonSurfacePanel } from './comparison_surface';
 import { computeTheNarrowingsPanel } from './the_narrowings_panel';
 import { interpolate } from './interpolation';
+import { composePatternParagraph } from './pattern_paragraph_composer';
 import {
   DIRECTION_DISPLAY_NAMES,
   DIRECTION_TO_TYPE_KEY,
-  sciBand,
 } from './data/tokens';
 import { recognitionSentences } from './data/recognition_sentences';
-import { calibrationLines } from './data/calibration_lines';
 
 const CROSS_CUTTING_DISPLAY_NAMES: Record<
   'between_shapes' | 'mid_process',
@@ -75,80 +73,8 @@ function buildRecognitionParagraph(firingSet: FiringSetEntry[]): SlotContent {
 function buildPatternParagraph(
   output: EngineOutput,
   input: InputMap,
-  firingSet: FiringSetEntry[],
-  patternMatch: ReturnType<typeof findFirstMatchingSentence>,
-): SlotContent {
-  const n = firingSet.length;
-  const sci = output.constraints.sustained_constraint_intensity;
-  const duration_band = input.cross_direction.life_shape_duration;
-  const sci_band = sciBand(sci, duration_band);
-
-  const primaryDirection: DirectionName | null =
-    firingSet.length > 0 ? firingSet[0]!.direction : null;
-  const primaryDisplay =
-    primaryDirection !== null
-      ? DIRECTION_DISPLAY_NAMES[primaryDirection]
-      : '';
-
-  const top = firingSet.slice(0, 3).map((e) => DIRECTION_DISPLAY_NAMES[e.direction]);
-  
-  // Matched-direction dispatch per SYNTHESIS.md §7.1 for the four sentence IDs
-  // that interpolate {direction_display} based on their predicate's firing condition
-  // rather than the highest-pull direction overall.
-  const matchedDirectionIds = new Set([
-    'held_unexpressed_strong',
-    'held_unexpressed_moderate',
-    'depleted_band_with_held',
-    'empty_band_with_phantom',
-  ]);
-  
-  let directionForDisplay: string = primaryDisplay;
-  if (patternMatch !== null && matchedDirectionIds.has(patternMatch.id)) {
-    const matchedDir = patternMatch.matched_direction;
-    // Defensive fallback: if matched direction is null (should not happen in practice,
-    // as the predicate's firing condition put the sentence on the matched list),
-    // fall back to firingSet[0].direction to keep the dashboard renderable.
-    directionForDisplay = matchedDir !== null
-      ? DIRECTION_DISPLAY_NAMES[matchedDir]
-      : primaryDisplay;
-  }
-  
-  const interpretiveContext: Record<string, string | number> = {
-    direction_display: directionForDisplay,
-    n,
-    sci_band,
-    duration_band,
-    name1: top[0] ?? '',
-    name2: top[1] ?? '',
-    name3: top[2] ?? '',
-  };
-
-  let interpretive_text: string | null = null;
-  if (patternMatch !== null) {
-    interpretive_text = interpolate(patternMatch.sentence, interpretiveContext);
-    // Calibration line forward-hook: prepend any firing calibration sentence(s) + ' '.
-    for (const cal of calibrationLines) {
-      if (cal.predicate(output, input)) {
-        interpretive_text = `${cal.sentence} ${interpretive_text}`;
-      }
-    }
-  }
-
-  // Section 5.2.4 token templates.
-  let template: string;
-  if (n === 0) {
-    template =
-      'No directions reading materially. Constraint pattern: {sci_band}. Life shape duration: {duration_band}.';
-  } else if (n === 1) {
-    template =
-      'One direction reading materially. Constraint pattern: {sci_band}. Life shape duration: {duration_band}.';
-  } else {
-    template =
-      '{n} directions reading materially. Constraint pattern: {sci_band}. Life shape duration: {duration_band}.';
-  }
-  const token_text = interpolate(template, { n, sci_band, duration_band });
-
-  return { interpretive_text, token_text };
+): string[] {
+  return composePatternParagraph(output, input);
 }
 
 function buildCrossCuttingPanel(output: EngineOutput): CrossCuttingPanel {
@@ -174,13 +100,7 @@ export function synthesise(
   const recognition_paragraph = buildRecognitionParagraph(firingSet);
 
   // Step 4 — pattern paragraph (cross-step state begins here)
-  const patternMatch = findFirstMatchingSentence('pattern_paragraph', output, input);
-  const pattern_paragraph = buildPatternParagraph(
-    output,
-    input,
-    firingSet,
-    patternMatch,
-  );
+  const pattern_paragraph = buildPatternParagraph(output, input);
 
   // Step 5 — direction cards
   const direction_cards = computeDirectionCards(output, input, firingSet);
@@ -211,7 +131,6 @@ export function synthesise(
   const life_context_panel = computeLifeContextPanel(
     output,
     input,
-    patternMatch,
   );
 
   // Step 14 — comparison_surface_panel (§5.10); may be null.

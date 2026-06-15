@@ -445,10 +445,11 @@
       "interpretive_text": "You need to be making something that's genuinely yours, with a bit of variety and the pull of the unfamiliar, alongside a few people who really know you. What you can't settle for is only ever consuming, the same thing on repeat, or people who stay on the surface.",
       "token_text": "Creator, Experience Seeker, and Relationship Rebuilder."
     },
-    "pattern_paragraph": {
-      "interpretive_text": "Something specific held in Creator. The week is absorbed by load with no current room for it.",
-      "token_text": "3 directions reading materially. Constraint pattern: heavy. Life shape duration: long."
-    },
+    "pattern_paragraph": [
+      "There's something you want that you've never put into words.",
+      "There are people around you, but no one you really open up to.",
+      "A lot has fallen away from your life, and you'd want it back."
+    ],
     "direction_cards": [
       {
         "direction_name": "Creator",

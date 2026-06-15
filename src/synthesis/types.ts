@@ -24,7 +24,7 @@ import type {
 export type RenderingInstructions = {
   headline: HeadlineOutput;
   recognition_paragraph: SlotContent;
-  pattern_paragraph: SlotContent;
+  pattern_paragraph: string[];
   direction_cards: DirectionCardOutput[];
   direction_evidence_chart: ChartData;
   domains_panel: DomainsPanel;
@@ -282,7 +282,7 @@ export type NarrowingBandEntry = {
 
 /** Section 10 — Shape-sentence slot identifier union. Closing-line slots per section 5.8 (one per canonical ID). */
 export type SlotName =
-  | 'pattern_paragraph'
+  | 'pattern_axis'
   | 'direction_card_summary'
   | 'permission_sub_shape'
   | 'energy_constraint'

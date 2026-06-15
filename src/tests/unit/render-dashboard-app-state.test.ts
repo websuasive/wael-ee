@@ -143,7 +143,6 @@ describe('buildPlaceholderRenderingInstructions — shape', () => {
     const r = buildPlaceholderRenderingInstructions();
     const slots = [
       r.recognition_paragraph,
-      r.pattern_paragraph,
       r.direction_evidence_chart.caption,
       r.domains_panel.summary,
       r.domains_panel.intact_callout,
@@ -154,6 +153,8 @@ describe('buildPlaceholderRenderingInstructions — shape', () => {
       expect(slot.interpretive_text).toBeNull();
       expect(slot.token_text).toBe('');
     }
+    // pattern_paragraph is now string[], not SlotContent
+    expect(r.pattern_paragraph).toEqual([]);
   });
 
   it('constraints_panel.permission_sub_shape_text is null', () => {

@@ -6,7 +6,13 @@
   >
     <Headline :data="rendering.headline" />
     <RecognitionParagraph :slot-content="rendering.recognition_paragraph" />
-    <PatternParagraph :slot-content="rendering.pattern_paragraph" />
+    <div
+      v-if="rendering.pattern_paragraph.length > 0"
+      class="overview-box"
+    >
+      <h2 class="overview-box__label">Overview</h2>
+      <PatternParagraph :sentences="rendering.pattern_paragraph" />
+    </div>
     <hr class="dashboard__hero-rule">
     <TheNarrowingsPanel :data="rendering.the_narrowings_panel" />
     <DirectionEvidenceChart
@@ -73,6 +79,25 @@ const shouldShowToggle = computed(
   border: none;
   border-top: var(--border-hairline) solid var(--color-border-tertiary);
   margin: var(--space-lg) 0 var(--space-xl);
+}
+
+/* Overview box — frames the pattern paragraph as a card-style container */
+.overview-box {
+  padding: var(--space-md);
+  border: var(--border-hairline) solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  background: var(--color-background-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.overview-box__label {
+  margin: 0 0 var(--space-md) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
 }
 
 .dashboard__inactive-toggle {
