@@ -767,7 +767,7 @@
         }
       ],
       "intact_callout": {
-        "interpretive_text": "Mattering reading intact alongside multiple reductions.",
+        "interpretive_text": "Even with a lot reduced, the sense that your life matters is still intact.",
         "token_text": "Conversation depth, Being known, Mattering."
       }
     },
@@ -808,8 +808,8 @@
         "token_text": ""
       },
       "permission_sub_shape_text": {
-        "interpretive_text": "Wanting something thought about but not acted on.",
-        "token_text": "Wanting something thought about but not acted on."
+        "interpretive_text": "There's wanting here you've thought about but haven't acted on.",
+        "token_text": "There's wanting here you've thought about but haven't acted on."
       }
     },
     "cross_cutting_panel": {
@@ -876,7 +876,7 @@
     ],
     "life_texture_panel": {
       "summary": {
-        "interpretive_text": "Some texture across the week. The same pattern, repeating.",
+        "interpretive_text": "There's some texture to your weeks, but it's the same pattern on repeat.",
         "token_text": "Week reads as Mixed."
       },
       "band_label": "Mixed",
@@ -898,11 +898,11 @@
     },
     "life_context_panel": {
       "life_stage_summary": {
-        "interpretive_text": "The architecture is in place. Carrying what he carries.",
+        "interpretive_text": "Things are pretty settled right now.",
         "token_text": "Life-stage reading: Enduring."
       },
       "work_load_summary": {
-        "interpretive_text": "Paid work defines the shape. The work is who he is, not what he does.",
+        "interpretive_text": "Right now, paid work is who you are, not just what you do.",
         "token_text": "Paid work reading: Defining. Primary load: Paid work."
       },
       "sociality_summary": {
@@ -1058,7 +1058,7 @@
         }
       ],
       "summary": {
-        "interpretive_text": "Several dimensions reading high; others moderate or low.",
+        "interpretive_text": "Several areas are reading high, others moderate or low.",
         "token_text": "Bands reading: 5 high, 2 moderate."
       }
     }

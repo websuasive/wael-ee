@@ -784,7 +784,7 @@
         }
       ],
       "intact_callout": {
-        "interpretive_text": "Mattering reading intact alongside multiple reductions.",
+        "interpretive_text": "Even with a lot reduced, the sense that your life matters is still intact.",
         "token_text": "Mattering."
       }
     },
@@ -825,8 +825,8 @@
         "token_text": ""
       },
       "permission_sub_shape_text": {
-        "interpretive_text": "Wanting that isn't being let in.",
-        "token_text": "Wanting that isn't being let in."
+        "interpretive_text": "There's wanting here that isn't getting through.",
+        "token_text": "There's wanting here that isn't getting through."
       }
     },
     "cross_cutting_panel": {
@@ -881,7 +881,7 @@
     ],
     "life_texture_panel": {
       "summary": {
-        "interpretive_text": "Some texture across the week. The same pattern, repeating.",
+        "interpretive_text": "There's some texture to your weeks, but it's the same pattern on repeat.",
         "token_text": "Week reads as Mixed."
       },
       "band_label": "Mixed",
@@ -903,15 +903,15 @@
     },
     "life_context_panel": {
       "life_stage_summary": {
-        "interpretive_text": "The architecture is in place. Carrying what he carries.",
+        "interpretive_text": "Things are pretty settled right now.",
         "token_text": "Life-stage reading: Enduring."
       },
       "work_load_summary": {
-        "interpretive_text": "Paid work defines the shape. The work is who he is, not what he does.",
+        "interpretive_text": "Right now, paid work is who you are, not just what you do.",
         "token_text": "Paid work reading: Defining. Primary load: Paid work."
       },
       "sociality_summary": {
-        "interpretive_text": "Solitary by default. Relationship reading suppressed; the absence registers as felt despite the temperament.",
+        "interpretive_text": "You lean toward your own company, but the lack of closeness still gets to you - you feel it even so.",
         "token_text": "Sociality reading: Solitary by default."
       }
     },
@@ -1063,7 +1063,7 @@
         }
       ],
       "summary": {
-        "interpretive_text": "Several dimensions reading high; others moderate or low.",
+        "interpretive_text": "Several areas are reading high, others moderate or low.",
         "token_text": "Bands reading: 6 high, 1 moderate."
       }
     }

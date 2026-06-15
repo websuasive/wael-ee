@@ -102,7 +102,7 @@ describe('computeTheNarrowingsPanel — summary slot sentence matches', () => {
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
     
-    expect(panel.summary.interpretive_text).toBe('All seven dimensions reading high.');
+    expect(panel.summary.interpretive_text).toBe('All seven areas are reading high.');
   });
 
   it('all seven bands moderate → "All seven dimensions reading moderate."', () => {
@@ -119,7 +119,7 @@ describe('computeTheNarrowingsPanel — summary slot sentence matches', () => {
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
     
-    expect(panel.summary.interpretive_text).toBe('All seven dimensions reading moderate.');
+    expect(panel.summary.interpretive_text).toBe('All seven areas are sitting at moderate.');
   });
 
   it('five bands low → "Most dimensions reading low. Light across the seven."', () => {
@@ -136,7 +136,7 @@ describe('computeTheNarrowingsPanel — summary slot sentence matches', () => {
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
     
-    expect(panel.summary.interpretive_text).toBe('Most dimensions reading low. Light across the seven.');
+    expect(panel.summary.interpretive_text).toBe('Most areas are reading low - things are fairly open across the board.');
   });
 
   it('four bands high (not all) → "Several dimensions reading high; others moderate or low."', () => {
@@ -153,7 +153,7 @@ describe('computeTheNarrowingsPanel — summary slot sentence matches', () => {
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
     
-    expect(panel.summary.interpretive_text).toBe('Several dimensions reading high; others moderate or low.');
+    expect(panel.summary.interpretive_text).toBe('Several areas are reading high, others moderate or low.');
   });
 });
 
@@ -213,7 +213,7 @@ describe('computeTheNarrowingsPanel — summary token fallback', () => {
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
     
     // All-high case matches a sentence
-    expect(panel.summary.interpretive_text).toBe('All seven dimensions reading high.');
+    expect(panel.summary.interpretive_text).toBe('All seven areas are reading high.');
     // Token fallback still populated
     expect(panel.summary.token_text).toBe('Bands reading: 7 high.');
   });

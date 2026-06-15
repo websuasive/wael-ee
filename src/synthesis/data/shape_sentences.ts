@@ -130,7 +130,7 @@ export const shapeSentences: ShapeSentence[] = [
       allBandsAt(output, 'high') &&
       input.cross_direction.relational_presence === 'mostly_absent',
     sentence:
-      'All seven readings sit at high. Attention moving without much registering; mostly absent in the relationships he has.',
+      'Every part of life is stretched right now. You\'re moving through the days without much landing, and even the close relationships feel more managed than met.',
   },
   {
     id: 'compression_moderate_consuming_unfiltered',
@@ -685,28 +685,28 @@ export const shapeSentences: ShapeSentence[] = [
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'want_block',
-    sentence: "Wanting that isn't being let in.",
+    sentence: 'There\'s wanting here that isn\'t getting through.',
   },
   {
     id: 'permission_sub_shape_say_block',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'say_block',
-    sentence: "Wanting something that hasn't been said out loud.",
+    sentence: 'There\'s wanting here you haven\'t said out loud.',
   },
   {
     id: 'permission_sub_shape_act_block',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'act_block',
-    sentence: 'Wanting something thought about but not acted on.',
+    sentence: 'There\'s wanting here you\'ve thought about but haven\'t acted on.',
   },
   {
     id: 'permission_sub_shape_present',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'present',
-    sentence: 'Permission reading partial; nothing specific blocking.',
+    sentence: 'Some room here, with nothing specific blocking it.',
   },
 
   /* 7.5 — Domains intact callout sentences (indices 26–27) */
@@ -716,7 +716,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       domainFires(output, 'mattering') === false &&
       countDomainsFiring(output) >= 8,
-    sentence: 'Mattering reading intact alongside multiple reductions.',
+    sentence: "Even with a lot reduced, the sense that your life matters is still intact.",
   },
   {
     id: 'domains_structural_intact',
@@ -738,7 +738,7 @@ export const shapeSentences: ShapeSentence[] = [
       ).length;
       return allStructuralIntact && otherFiringCount >= 4;
     },
-    sentence: 'Structural foundations reading intact alongside reductions.',
+    sentence: "Even with things reduced, the foundations are still solid.",
   },
 
   /* --------------------------------------------------------------- */
@@ -790,14 +790,14 @@ export const shapeSentences: ShapeSentence[] = [
       output.cross_direction.life_texture_band === 'empty',
     // v2-final soft revision: "yet" admits both empty-band shapes.
     sentence:
-      'The week reads empty: nothing absorbing, nothing filling yet.',
+      "Your weeks are empty right now, nothing much filling them yet.",
   },
   {
     id: 'life_texture_depleted',
     slot: 'life_texture_summary',
     predicate: (output) =>
       output.cross_direction.life_texture_band === 'depleted',
-    sentence: 'The week reads absorbed by load. No texture inside the gaps.',
+    sentence: 'Your weeks are full. Work fills them, and there\'s not much in the gaps.',
   },
   {
     id: 'life_texture_mixed_varied',
@@ -805,7 +805,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_texture_band === 'mixed' &&
       output.cross_direction.week_shape.varied_week === true,
-    sentence: 'Some texture across the week. The pattern shifts week to week.',
+    sentence: 'There\'s some texture to your weeks, and the shape shifts from week to week.',
   },
   {
     id: 'life_texture_mixed_uniform',
@@ -813,7 +813,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_texture_band === 'mixed' &&
       output.cross_direction.week_shape.varied_week === false,
-    sentence: 'Some texture across the week. The same pattern, repeating.',
+    sentence: "There's some texture to your weeks, but it's the same pattern on repeat.",
   },
   {
     id: 'life_texture_textured_varied',
@@ -821,7 +821,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_texture_band === 'textured' &&
       output.cross_direction.week_shape.varied_week === true,
-    sentence: 'Substantial texture across the week, varied week to week.',
+    sentence: "Your weeks are full of texture, and they vary from one to the next.",
   },
   {
     id: 'life_texture_textured_uniform',
@@ -829,7 +829,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_texture_band === 'textured' &&
       output.cross_direction.week_shape.varied_week === false,
-    sentence: 'Substantial texture across the week, in a repeating shape.',
+    sentence: "Your weeks are full of texture, but it's the same shape repeating.",
   },
 
   /* --------------------------------------------------------------- */
@@ -845,7 +845,7 @@ export const shapeSentences: ShapeSentence[] = [
         (band === 'mixed' || band === 'textured')
       );
     },
-    sentence: 'Weeks vary from one another.',
+    sentence: "Your weeks vary from one to the next.",
   },
   {
     id: 'pattern_uniform',
@@ -878,7 +878,7 @@ export const shapeSentences: ShapeSentence[] = [
           d.expression_space === 'no_space' &&
           (d.pull >= 30 || d.pull_quality.length > 0),
       ),
-    sentence: 'The week has no current room for this.',
+    sentence: "There's no room for this in your week right now.",
   },
   {
     id: 'expression_space_relationship_rebuilder_no',
@@ -892,7 +892,7 @@ export const shapeSentences: ShapeSentence[] = [
           d.expression_space === 'no_space' &&
           (d.pull >= 30 || d.pull_quality.length > 0),
       ),
-    sentence: 'The contact for this is not in the week.',
+    sentence: "The people for this aren't in your week right now.",
   },
   {
     id: 'expression_space_experience_seeker_no',
@@ -906,7 +906,7 @@ export const shapeSentences: ShapeSentence[] = [
           d.expression_space === 'no_space' &&
           (d.pull >= 30 || d.pull_quality.length > 0),
       ),
-    sentence: 'The week reads narrow around this.',
+    sentence: "Your week's too narrow for this at the moment.",
   },
   {
     id: 'expression_space_freedom_designer_no',
@@ -920,7 +920,7 @@ export const shapeSentences: ShapeSentence[] = [
           d.expression_space === 'no_space' &&
           (d.pull >= 30 || d.pull_quality.length > 0),
       ),
-    sentence: 'No room for this in the week.',
+    sentence: "There's no room for this in your week right now.",
   },
   {
     id: 'expression_space_growth_focused_no',
@@ -934,7 +934,7 @@ export const shapeSentences: ShapeSentence[] = [
           d.expression_space === 'no_space' &&
           (d.pull >= 30 || d.pull_quality.length > 0),
       ),
-    sentence: 'The week reads no channel for this.',
+    sentence: "There's nowhere for this to go in your week right now.",
   },
   {
     id: 'expression_space_contributor_no',
@@ -963,7 +963,7 @@ export const shapeSentences: ShapeSentence[] = [
     id: 'life_stage_building',
     slot: 'life_stage_summary',
     predicate: (output) => output.cross_direction.life_stage === 'building',
-    sentence: 'Reading: building. The major moves are in front of him.',
+    sentence: 'The big moves are still ahead of you.',
   },
   {
     id: 'life_stage_consolidating',
@@ -971,7 +971,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_stage === 'consolidating',
     sentence:
-      'Reading: consolidating. Deepening what is already in place.',
+      "You're deepening what's already in place rather than building something new.",
   },
   {
     id: 'life_stage_re_evaluating',
@@ -979,7 +979,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_stage === 're_evaluating',
     sentence:
-      'Reading: re-evaluating. Whether the current architecture is right remains an open question.',
+      "Whether the current setup is right is an open question for you just now.",
   },
   {
     id: 'life_stage_transitioning',
@@ -987,21 +987,21 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.life_stage === 'transitioning',
     sentence:
-      'Reading: transitioning. A change is happening or imminent.',
+      "A change is happening, or about to.",
   },
   {
     id: 'life_stage_settled',
     slot: 'life_stage_summary',
     predicate: (output) => output.cross_direction.life_stage === 'settled',
     sentence:
-      'Reading: settled. The architecture is in place; no current change in shape.',
+      "Things are in place, with no real change of shape going on.",
   },
   {
     id: 'life_stage_enduring',
     slot: 'life_stage_summary',
     predicate: (output) => output.cross_direction.life_stage === 'enduring',
     // Composed around the term per §6.16 voice note.
-    sentence: 'The architecture is in place. Carrying what he carries.',
+    sentence: 'Things are pretty settled right now.',
   },
   {
     id: 'life_stage_drifting',
@@ -1009,7 +1009,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) => output.cross_direction.life_stage === 'drifting',
     // Composed around the term per §6.16 voice note.
     sentence:
-      'The architecture works in the sense that nothing forces a change. Whether it is right remains an open reading.',
+      "Nothing's forcing a change, but whether things are right is still an open question.",
   },
 
   /* --------------------------------------------------------------- */
@@ -1021,7 +1021,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'chosen' &&
       output.cross_direction.primary_load === 'paid_work',
-    sentence: 'Paid work reads chosen. The load is also paid work.',
+    sentence: "You've chosen the work you do, and it's also what fills your time.",
   },
   {
     id: 'work_load_chosen_caregiving',
@@ -1030,7 +1030,7 @@ export const shapeSentences: ShapeSentence[] = [
       output.cross_direction.paid_work_relationship === 'chosen' &&
       output.cross_direction.primary_load === 'caregiving',
     sentence:
-      'Paid work reads chosen. The current load is elsewhere, in caring.',
+      "You've chosen the work you do, but right now what fills your time is caring for someone.",
   },
   {
     id: 'work_load_endured_paid',
@@ -1038,7 +1038,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'endured' &&
       output.cross_direction.primary_load === 'paid_work',
-    sentence: 'Paid work reads endured. The load is paid work. Compressed.',
+    sentence: "You're putting up with the work, and it's also what fills your time. It's a squeeze.",
   },
   {
     id: 'work_load_endured_caregiving',
@@ -1047,7 +1047,7 @@ export const shapeSentences: ShapeSentence[] = [
       output.cross_direction.paid_work_relationship === 'endured' &&
       output.cross_direction.primary_load === 'caregiving',
     sentence:
-      'Paid work reads endured. The load is caring. Both compress.',
+      "You're putting up with the work, and caring fills the rest. Both are a squeeze.",
   },
   {
     id: 'work_load_consuming_paid',
@@ -1055,7 +1055,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'consuming' &&
       output.cross_direction.primary_load === 'paid_work',
-    sentence: 'Paid work consumes him. It is also the load.',
+    sentence: 'The work takes everything, and it\'s also what fills your time.',
   },
   {
     id: 'work_load_consuming_caregiving',
@@ -1063,7 +1063,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'consuming' &&
       output.cross_direction.primary_load === 'caregiving',
-    sentence: 'Paid work consumes him. The load is caring on top.',
+    sentence: 'The work takes everything, with caring on top of it.',
   },
   {
     id: 'work_load_functional_paid',
@@ -1071,7 +1071,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'functional' &&
       output.cross_direction.primary_load === 'paid_work',
-    sentence: 'Paid work reads functional. The load is paid work itself.',
+    sentence: "Work's just work, and it's also what fills your time.",
   },
   {
     id: 'work_load_functional_caregiving',
@@ -1079,7 +1079,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'functional' &&
       output.cross_direction.primary_load === 'caregiving',
-    sentence: 'Paid work neutral. The load is caring.',
+    sentence: "Work's just work; what fills your time is caring.",
   },
   {
     id: 'work_load_functional_household',
@@ -1087,7 +1087,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'functional' &&
       output.cross_direction.primary_load === 'household_admin',
-    sentence: 'Paid work neutral. The load is household administration.',
+    sentence: "Work's just work; what fills your time is keeping the household running.",
   },
   {
     id: 'work_load_functional_none',
@@ -1095,7 +1095,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'functional' &&
       output.cross_direction.primary_load === 'none',
-    sentence: 'Paid work neutral. No primary load reading.',
+    sentence: "Work's just work, and nothing in particular is filling your time right now.",
   },
   {
     id: 'work_load_between_none',
@@ -1103,7 +1103,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'between' &&
       output.cross_direction.primary_load === 'none',
-    sentence: 'Between paid work commitments. No primary load reading.',
+    sentence: "You're between jobs, with nothing in particular filling your time right now.",
   },
   {
     id: 'work_load_between_caregiving',
@@ -1111,7 +1111,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'between' &&
       output.cross_direction.primary_load === 'caregiving',
-    sentence: 'Between paid work. The load is caring.',
+    sentence: "You're between jobs, and caring fills your time.",
   },
   {
     id: 'work_load_peripheral_paid',
@@ -1120,7 +1120,7 @@ export const shapeSentences: ShapeSentence[] = [
       output.cross_direction.paid_work_relationship === 'peripheral' &&
       output.cross_direction.primary_load === 'paid_work',
     sentence:
-      'Paid work reads peripheral. Yet paid work is what is absorbing. A tension reading.',
+      "Work isn't meant to be the main thing, yet it's what's eating your time. That's a pull in two directions.",
   },
   {
     id: 'work_load_defining_paid',
@@ -1128,7 +1128,7 @@ export const shapeSentences: ShapeSentence[] = [
     predicate: (output) =>
       output.cross_direction.paid_work_relationship === 'defining' &&
       output.cross_direction.primary_load === 'paid_work',
-    sentence: 'Paid work defines the shape. The work is who he is, not what he does.',
+    sentence: 'Right now, paid work is who you are, not just what you do.',
   },
 
   /* --------------------------------------------------------------- */
@@ -1150,7 +1150,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Solitary by default; Relationship reading real and active. The pull is real despite the temperament.',
+      "You lean toward your own company, but the wanting for closeness is real and you're acting on it.",
   },
   {
     id: 'sociality_solitary_relationship_quiet',
@@ -1166,7 +1166,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Solitary by default; Relationship reading quiet. The two read consistent.',
+      "You lean toward your own company, and the wanting for closeness is quiet too. The two sit consistently.",
   },
   {
     id: 'sociality_solitary_relationship_suppressed',
@@ -1178,7 +1178,7 @@ export const shapeSentences: ShapeSentence[] = [
       return rel !== undefined && rel.pull_quality.includes('suppressed');
     },
     sentence:
-      'Solitary by default. Relationship reading suppressed; the absence registers as felt despite the temperament.',
+      "You lean toward your own company, but the lack of closeness still gets to you - you feel it even so.",
   },
   {
     id: 'sociality_social_relationship_active',
@@ -1194,7 +1194,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Social by default; Relationship reading real and active. The two read consistent.',
+      "You're drawn to people, and the wanting for closeness is real and you're acting on it. The two sit together.",
   },
   {
     id: 'sociality_social_relationship_quiet_reduced',
@@ -1212,7 +1212,7 @@ export const shapeSentences: ShapeSentence[] = [
       return countRelationalDomainsReduced(output) >= 3;
     },
     sentence:
-      'Social by default; relational domains read reduced. A disconnection pattern.',
+      "You're drawn to people, but the close relationships have thinned out. There's a disconnect there.",
   },
   {
     id: 'sociality_solitary_contribution_firing_no_group',
@@ -1228,7 +1228,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Solitary by default; Contribution reading firing without a group anchoring. The pull is to contribute, the context for it is not yet in place.',
+      "You lean toward your own company, and there's a real pull to contribute, but there's no group around it yet. The want's there, the place for it isn't.",
   },
   {
     id: 'sociality_social_contribution_firing_no_group',
@@ -1244,7 +1244,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      "Social by default; Contribution reading firing without a group anchoring. The pull and the context don't match.",
+      "You're drawn to people, and there's a real pull to contribute, but there's no group around it yet. The want and the place for it don't line up.",
   },
   {
     id: 'sociality_social_contribution_quiet_belongs',
@@ -1260,7 +1260,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Social by default; group belonging in place but Contribution reading quiet. The structure is there; the pull is not currently.',
+      "You're drawn to people and you've got a group, but the pull to contribute is quiet right now. The setup's there; the wanting isn't, just now.",
   },
   {
     id: 'sociality_balanced_relationship_active',
@@ -1275,7 +1275,7 @@ export const shapeSentences: ShapeSentence[] = [
       );
     },
     sentence:
-      'Balanced sociality; Relationship reading real and active. The two read consistent.',
+      "You're at ease both with people and on your own, and the wanting for closeness is real and you're acting on it.",
   },
   {
     id: 'sociality_balanced_relationship_reduced',
@@ -1291,27 +1291,27 @@ export const shapeSentences: ShapeSentence[] = [
       return countRelationalDomainsReduced(output) >= 3;
     },
     sentence:
-      'Balanced sociality; relational domains read thin. The pull is balanced but the texture is reduced.',
+      'You\'re at ease both with people and on your own, but the close relationships have gone a bit hollow.',
   },
   {
     id: 'sociality_balanced_default',
     slot: 'sociality_summary',
     predicate: (output) =>
       output.cross_direction.sociality_default === 'balanced',
-    sentence: 'Reading: balanced sociality.',
+    sentence: "You're at ease both with people and on your own.",
   },
   /* 7.15 (v4) — Narrowing summary slot (NEW) */
   {
     id: 'narrowing_summary_all_high',
     slot: 'narrowing_summary',
     predicate: (output) => allBandsAt(output, 'high'),
-    sentence: 'All seven dimensions reading high.',
+    sentence: 'All seven areas are reading high.',
   },
   {
     id: 'narrowing_summary_all_moderate',
     slot: 'narrowing_summary',
     predicate: (output) => allBandsAt(output, 'moderate'),
-    sentence: 'All seven dimensions reading moderate.',
+    sentence: 'All seven areas are sitting at moderate.',
   },
   {
     id: 'narrowing_summary_mostly_open',
@@ -1328,7 +1328,7 @@ export const shapeSentences: ShapeSentence[] = [
       ];
       return bands.filter((b) => b === 'low').length >= 5;
     },
-    sentence: 'Most dimensions reading low. Light across the seven.',
+    sentence: "Most areas are reading low - things are fairly open across the board.",
   },
   {
     id: 'narrowing_summary_concentrated_high',
@@ -1346,7 +1346,7 @@ export const shapeSentences: ShapeSentence[] = [
       const highCount = bands.filter((b) => b === 'high').length;
       return highCount >= 4 && !allBandsAt(output, 'high');
     },
-    sentence: 'Several dimensions reading high; others moderate or low.',
+    sentence: 'Several areas are reading high, others moderate or low.',
   },
 ];
 

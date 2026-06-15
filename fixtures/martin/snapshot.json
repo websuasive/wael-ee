@@ -784,7 +784,7 @@
         }
       ],
       "intact_callout": {
-        "interpretive_text": "Mattering reading intact alongside multiple reductions.",
+        "interpretive_text": "Even with a lot reduced, the sense that your life matters is still intact.",
         "token_text": "Mattering."
       }
     },
@@ -825,8 +825,8 @@
         "token_text": ""
       },
       "permission_sub_shape_text": {
-        "interpretive_text": "Wanting that isn't being let in.",
-        "token_text": "Wanting that isn't being let in."
+        "interpretive_text": "There's wanting here that isn't getting through.",
+        "token_text": "There's wanting here that isn't getting through."
       }
     },
     "cross_cutting_panel": {
@@ -901,7 +901,7 @@
     ],
     "life_texture_panel": {
       "summary": {
-        "interpretive_text": "The week reads absorbed by load. No texture inside the gaps.",
+        "interpretive_text": "Your weeks are full. Work fills them, and there's not much in the gaps.",
         "token_text": "Week reads as Depleted."
       },
       "band_label": "Depleted",
@@ -922,11 +922,11 @@
     },
     "life_context_panel": {
       "life_stage_summary": {
-        "interpretive_text": "Reading: consolidating. Deepening what is already in place.",
+        "interpretive_text": "You're deepening what's already in place rather than building something new.",
         "token_text": "Life-stage reading: Consolidating."
       },
       "work_load_summary": {
-        "interpretive_text": "Paid work defines the shape. The work is who he is, not what he does.",
+        "interpretive_text": "Right now, paid work is who you are, not just what you do.",
         "token_text": "Paid work reading: Defining. Primary load: Paid work."
       },
       "sociality_summary": {
@@ -1082,7 +1082,7 @@
         }
       ],
       "summary": {
-        "interpretive_text": "Several dimensions reading high; others moderate or low.",
+        "interpretive_text": "Several areas are reading high, others moderate or low.",
         "token_text": "Bands reading: 4 high, 3 moderate."
       }
     }

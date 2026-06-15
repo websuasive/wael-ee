@@ -233,12 +233,9 @@ describe('computeClosingLines — closing_stopped_expecting', () => {
       ],
     });
     const lines = computeClosingLines(out, makeInputMap(), null);
-    expect(lines).toHaveLength(2);
+    expect(lines).toHaveLength(1);
     expect(lines[0]!.text.token_text).toBe(
-      'Stopped expecting firing on Creator.',
-    );
-    expect(lines[1]!.text.token_text).toBe(
-      'Stopped expecting firing on Freedom Designer.',
+      'Stopped expecting firing on making and freedom.',
     );
   });
 
@@ -276,10 +273,9 @@ describe('computeClosingLines — closing_stopped_expecting', () => {
     });
     expect(
       computeClosingLines(out, makeInputMap(), null)[0]!.text.interpretive_text,
-    ).toBe('Quietly stopped expecting in making.');
+    ).toBe('Quietly stopped expecting much in making.');
   });
 });
-
 /* ------------------------------------------------------------------ */
 /* G — closing_phantom                                                */
 /* ------------------------------------------------------------------ */
@@ -464,7 +460,7 @@ describe('computeClosingLines — direction_engine_name', () => {
     const stopped = lines.find((l) => l.id === 'closing_stopped_expecting');
     const phantom = lines.find((l) => l.id === 'closing_phantom');
     expect(capacity?.direction_engine_name).toBe('creator');
-    expect(stopped?.direction_engine_name).toBe('creator');
+    expect(stopped?.direction_engine_name).toBeNull();
     expect(phantom?.direction_engine_name).toBe('creator');
   });
 

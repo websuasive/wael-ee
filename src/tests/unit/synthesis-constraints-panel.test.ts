@@ -160,32 +160,32 @@ describe('computeConstraintsPanel — permission_sub_shape_text', () => {
     return computeConstraintsPanel(out, makeInputMap());
   }
 
-  it('want_block → "Wanting that isn\'t being let in."', () => {
+  it('want_block → "There\'s wanting here that isn\'t getting through."', () => {
     const panel = permissionPanel('want_block');
     expect(panel.permission_sub_shape_text?.interpretive_text).toBe(
-      "Wanting that isn't being let in.",
+      "There's wanting here that isn't getting through.",
     );
     expect(panel.permission_sub_shape_text?.token_text).toBe(
-      "Wanting that isn't being let in.",
+      "There's wanting here that isn't getting through.",
     );
   });
 
   it('say_block', () => {
     expect(
       permissionPanel('say_block').permission_sub_shape_text?.interpretive_text,
-    ).toBe("Wanting something that hasn't been said out loud.");
+    ).toBe("There's wanting here you haven't said out loud.");
   });
 
   it('act_block', () => {
     expect(
       permissionPanel('act_block').permission_sub_shape_text?.interpretive_text,
-    ).toBe('Wanting something thought about but not acted on.');
+    ).toBe('There\'s wanting here you\'ve thought about but haven\'t acted on.');
   });
 
   it('present', () => {
     expect(
       permissionPanel('present').permission_sub_shape_text?.interpretive_text,
-    ).toBe('Permission reading partial; nothing specific blocking.');
+    ).toBe('Some room here, with nothing specific blocking it.');
   });
 
   it('permission fires → panel.permission_sub_shape_text non-null', () => {

@@ -809,8 +809,8 @@
         "token_text": ""
       },
       "permission_sub_shape_text": {
-        "interpretive_text": "Wanting something that hasn't been said out loud.",
-        "token_text": "Wanting something that hasn't been said out loud."
+        "interpretive_text": "There's wanting here you haven't said out loud.",
+        "token_text": "There's wanting here you haven't said out loud."
       }
     },
     "cross_cutting_panel": {
@@ -877,7 +877,7 @@
     ],
     "life_texture_panel": {
       "summary": {
-        "interpretive_text": "Some texture across the week. The same pattern, repeating.",
+        "interpretive_text": "There's some texture to your weeks, but it's the same pattern on repeat.",
         "token_text": "Week reads as Mixed."
       },
       "band_label": "Mixed",
@@ -899,15 +899,15 @@
     },
     "life_context_panel": {
       "life_stage_summary": {
-        "interpretive_text": "Reading: consolidating. Deepening what is already in place.",
+        "interpretive_text": "You're deepening what's already in place rather than building something new.",
         "token_text": "Life-stage reading: Consolidating."
       },
       "work_load_summary": {
-        "interpretive_text": "Paid work consumes him. It is also the load.",
+        "interpretive_text": "The work takes everything, and it's also what fills your time.",
         "token_text": "Paid work reading: Consuming. Primary load: Paid work."
       },
       "sociality_summary": {
-        "interpretive_text": "Solitary by default; Contribution reading firing without a group anchoring. The pull is to contribute, the context for it is not yet in place.",
+        "interpretive_text": "You lean toward your own company, and there's a real pull to contribute, but there's no group around it yet. The want's there, the place for it isn't.",
         "token_text": "Sociality reading: Solitary by default."
       }
     },

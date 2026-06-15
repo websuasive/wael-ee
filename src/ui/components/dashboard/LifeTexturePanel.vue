@@ -29,9 +29,7 @@
     </p>
 
     <p class="life-texture-panel__annotation">
-      <TermIndicator :term="`${data.band_label} (week)`">
-        {{ data.band_label }}
-      </TermIndicator>, {{ data.load_state_label }}
+      {{ data.band_label }}, {{ data.load_state_label }}
     </p>
 
     <div

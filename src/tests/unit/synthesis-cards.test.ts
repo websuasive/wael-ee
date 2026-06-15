@@ -5,7 +5,7 @@ import type { EngineOutput, InputMap, DirectionName } from '@/engine';
 import type { DirectionCardOutput } from '@/synthesis/types';
 import { computeDirectionCards } from '@/synthesis/cards';
 import { computeFiringSet } from '@/synthesis/headline';
-import { recognitionSentences } from '@/synthesis/data/recognition_sentences';
+import { directionDescriptions } from '@/synthesis/data/recognition_sentences';
 import {
   makeEngineOutput,
   makeInputMap,
@@ -352,37 +352,37 @@ describe('computeDirectionCards — meaning_sentence', () => {
 
   it('making → recognitionSentences[creator]', () => {
     expect(meaningFor('creator', 'Creator').interpretive_text).toBe(
-      recognitionSentences['creator'],
+      directionDescriptions['creator'],
     );
   });
 
   it('freedom → recognitionSentences[freedom_designer]', () => {
     expect(meaningFor('freedom_designer', 'Freedom Designer').interpretive_text).toBe(
-      recognitionSentences['freedom_designer'],
+      directionDescriptions['freedom_designer'],
     );
   });
 
   it('relationship → recognitionSentences[relationship_rebuilder]', () => {
     expect(
       meaningFor('relationship_rebuilder', 'Relationship Rebuilder').interpretive_text,
-    ).toBe(recognitionSentences['relationship_rebuilder']);
+    ).toBe(directionDescriptions['relationship_rebuilder']);
   });
 
   it('growth → recognitionSentences[growth_focused]', () => {
     expect(meaningFor('growth_focused', 'Growth Focused').interpretive_text).toBe(
-      recognitionSentences['growth_focused'],
+      directionDescriptions['growth_focused'],
     );
   });
 
   it('experience → recognitionSentences[experience_seeker]', () => {
     expect(meaningFor('experience_seeker', 'Experience Seeker').interpretive_text).toBe(
-      recognitionSentences['experience_seeker'],
+      directionDescriptions['experience_seeker'],
     );
   });
 
   it('contribution → recognitionSentences[contributor]', () => {
     expect(meaningFor('contributor', 'Contributor').interpretive_text).toBe(
-      recognitionSentences['contributor'],
+      directionDescriptions['contributor'],
     );
   });
 
