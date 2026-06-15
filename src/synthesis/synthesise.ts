@@ -14,7 +14,6 @@ import { computeDirectionCards } from './cards';
 import { computeChartData } from './chart_data';
 import { computeDomainsPanel } from './domains_panel';
 import { computeConstraintsPanel } from './constraints_panel';
-import { computeClosingLines } from './closing_lines';
 import { computeExperienceCandidates } from './experience_candidates';
 import { computeLifeTexturePanel } from './life_texture_panel';
 import { computeLifeContextPanel } from './life_context_panel';
@@ -198,10 +197,7 @@ export function synthesise(
   // Step 9 — cross-cutting panel
   const cross_cutting_panel = buildCrossCuttingPanel(output);
 
-  // Step 10 — closing lines (consumes patternMatch for deduplication)
-  const closing_lines = computeClosingLines(output, input, patternMatch);
-
-  // Step 11 — experience candidate directions
+  // Step 10 — experience candidate directions
   const experience_candidate_directions = computeExperienceCandidates(
     output,
     input,
@@ -212,7 +208,11 @@ export function synthesise(
   const life_texture_panel = computeLifeTexturePanel(output, input);
 
   // Step 13 — life_context_panel (§5.12)
-  const life_context_panel = computeLifeContextPanel(output, input);
+  const life_context_panel = computeLifeContextPanel(
+    output,
+    input,
+    patternMatch,
+  );
 
   // Step 14 — comparison_surface_panel (§5.10); may be null.
   const comparison_surface_panel = computeComparisonSurfacePanel(output, input);
@@ -230,7 +230,6 @@ export function synthesise(
     domains_panel,
     constraints_panel,
     cross_cutting_panel,
-    closing_lines,
     experience_candidate_directions,
     life_texture_panel,
     life_context_panel,

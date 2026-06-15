@@ -6,7 +6,6 @@ import type {
   DirectionCardOutput,
   ChartBubble,
   ConstraintLine,
-  ClosingLine,
   ExperienceCandidate,
   ShapeSentence,
   CalibrationLine,
@@ -169,19 +168,6 @@ const constraintLines: ConstraintLine[] = [
   },
 ];
 
-const closingLines: ClosingLine[] = [
-  {
-    id: 'closing_between_shapes',
-    direction_engine_name: null,
-    text: slot('between shapes'),
-  },
-  {
-    id: 'closing_phantom',
-    direction_engine_name: 'creator',
-    text: slot('phantom'),
-  },
-];
-
 const experienceCandidates: ExperienceCandidate[] = [
   {
     direction_name: 'experience_seeker',
@@ -277,7 +263,6 @@ const example: RenderingInstructions = {
       { band_field: 'attention', display_name: 'Attention', full_name: 'Attention Narrowing', character_name: 'The Surface Man', band: 'moderate', intensity: 66, observation: 'Attention bandwidth is moderately limited.' },
     ],
   },
-  closing_lines: closingLines,
   experience_candidate_directions: experienceCandidates,
 };
 

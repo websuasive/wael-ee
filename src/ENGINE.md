@@ -1415,6 +1415,8 @@ type ExpressionSpaceValue =
 
 When the Pull quality precondition is not satisfied for a direction, `pull_quality` is an empty array. The rendering layer reads this as "no pull quality to report on this direction." `expression_space` is always populated (per §4.5); it never reads as null or absent.
 
+**Composition rule note.** saturated is not emitted when phantom or phantom_partial fires for the same direction (the combination is incoherent: worn out on something never had). Phantom is the surviving reading in that pairing.
+
 #### DomainPresenceOutput
 
 The domains array always contains exactly 12 entries, one per domain, in the canonical order defined in section 3.2. The `value` field uses `intact` for domains that do not fire (current_state >= 60). The raw current_state value is returned alongside the banded value.

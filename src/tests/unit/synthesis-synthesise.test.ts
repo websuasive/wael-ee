@@ -22,7 +22,6 @@ describe('synthesise — smoke / baseline', () => {
     const r = synthesise(makeEngineOutput(), makeInputMap());
     expect(Object.keys(r).sort()).toEqual(
       [
-        'closing_lines',
         'comparison_surface_panel',
         'constraints_panel',
         'cross_cutting_panel',
@@ -52,12 +51,6 @@ describe('synthesise — smoke / baseline', () => {
     for (const c of r.direction_cards) {
       expect(c.visual_state).toBe('not_firing');
     }
-  });
-
-  it('baseline closing_lines is []', () => {
-    expect(synthesise(makeEngineOutput(), makeInputMap()).closing_lines).toEqual(
-      [],
-    );
   });
 
   it('baseline experience_candidate_directions is []', () => {
@@ -303,7 +296,7 @@ describe('synthesise — pattern_paragraph calibration hook', () => {
 /* ------------------------------------------------------------------ */
 
 describe('synthesise — closing line deduplication', () => {
-  it('between_shapes_clean fires + cross_cutting between_shapes fires → closing_between_shapes suppressed', () => {
+  it('between_shapes_clean fires + cross_cutting between_shapes fires → closing_between_shapes suppressed in LifeContextPanel', () => {
     const out = makeEngineOutput({
       directions: [{ direction: 'creator', pull: 80, pull_quality: ['real'] }],
       cross_cutting: { between_shapes: true },
@@ -313,54 +306,8 @@ describe('synthesise — closing line deduplication', () => {
     expect(r.pattern_paragraph.interpretive_text).toBe(
       'Recent change in life shape, no replacement structure yet in place.',
     );
-    expect(r.closing_lines.map((l) => l.id)).not.toContain(
-      'closing_between_shapes',
-    );
-  });
-
-  it('active_with_tension on making suppresses closing_capacity_strain for making only', () => {
-    const out = makeEngineOutput({
-      directions: [
-        {
-          direction: 'creator',
-          pull: 80,
-          pull_quality: ['real'],
-          quadrant: 'active',
-          pull_state: ['capacity_strain'],
-        },
-        {
-          direction: 'freedom_designer',
-          pull: 60,
-          pull_state: ['capacity_strain'],
-        },
-      ],
-    });
-    const r = synthesise(out, makeInputMap());
-    // pattern_paragraph fired active_with_tension (matched_direction = making).
-    const capacityLines = r.closing_lines.filter(
-      (l) => l.id === 'closing_capacity_strain',
-    );
-    expect(capacityLines).toHaveLength(1);
-    expect(capacityLines[0]!.text.token_text).toBe(
-      'Capacity strain firing on Freedom Designer.',
-    );
-  });
-
-  it('desired_direction_partial on making suppresses closing_phantom for making only', () => {
-    const out = makeEngineOutput({
-      directions: [
-        { direction: 'creator', pull: 80, pull_quality: ['phantom_partial'] },
-        { direction: 'freedom_designer', pull: 60, pull_quality: ['phantom'] },
-      ],
-    });
-    const r = synthesise(out, makeInputMap());
-    const phantomLines = r.closing_lines.filter(
-      (l) => l.id === 'closing_phantom',
-    );
-    expect(phantomLines).toHaveLength(1);
-    expect(phantomLines[0]!.text.token_text).toBe(
-      'Freedom Designer named as a desired direction.',
-    );
+    // between_shapes now renders in LifeContextPanel, not closing_lines
+    expect(r.life_context_panel.closing_between_shapes).toBeNull();
   });
 });
 

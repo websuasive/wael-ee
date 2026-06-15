@@ -992,3 +992,79 @@ describe('computeDirectionCards — purity', () => {
     expect(JSON.stringify(fs)).toBe(fsBefore);
   });
 });
+
+/* ------------------------------------------------------------------ */
+/* M — closing_observation (capacity_strain / stopped_expecting)        */
+/* ------------------------------------------------------------------ */
+
+describe('computeDirectionCards — closing_observation', () => {
+  it('capacity_strain in pull_state → shows sentence from library', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 80,
+          pull_quality: ['real'],
+          pull_state: ['capacity_strain'],
+        },
+      ],
+    });
+    const cards = buildAndCompute(out);
+    const creator = findCard(cards, 'Creator');
+    expect(creator?.closing_observation).toBe(
+      'You want more of this, but you also want less on your plate overall.',
+    );
+  });
+
+  it('stopped_expecting in pull_state → shows sentence from library', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 80,
+          pull_quality: ['real'],
+          pull_state: ['stopped_expecting'],
+        },
+      ],
+    });
+    const cards = buildAndCompute(out);
+    const creator = findCard(cards, 'Creator');
+    expect(creator?.closing_observation).toBe(
+      "You've quietly stopped expecting much here.",
+    );
+  });
+
+  it('neither capacity_strain nor stopped_expecting → closing_observation is null', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 80,
+          pull_quality: ['real'],
+          pull_state: [],
+        },
+      ],
+    });
+    const cards = buildAndCompute(out);
+    const creator = findCard(cards, 'Creator');
+    expect(creator?.closing_observation).toBeNull();
+  });
+
+  it('both capacity_strain and stopped_expecting → capacity_strain wins (checked first)', () => {
+    const out = makeEngineOutput({
+      directions: [
+        {
+          direction: 'creator',
+          pull: 80,
+          pull_quality: ['real'],
+          pull_state: ['capacity_strain', 'stopped_expecting'],
+        },
+      ],
+    });
+    const cards = buildAndCompute(out);
+    const creator = findCard(cards, 'Creator');
+    expect(creator?.closing_observation).toBe(
+      'You want more of this, but you also want less on your plate overall.',
+    );
+  });
+});

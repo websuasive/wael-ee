@@ -30,7 +30,6 @@ export type RenderingInstructions = {
   domains_panel: DomainsPanel;
   constraints_panel: ConstraintsPanel;
   cross_cutting_panel: CrossCuttingPanel;
-  closing_lines: ClosingLine[];
   experience_candidate_directions: ExperienceCandidate[];
   /** Section 5.11. Always present. */
   life_texture_panel: LifeTexturePanel;
@@ -70,6 +69,7 @@ export type DirectionCardOutput = {
   meaning_sentence: SlotContent;
   fields: CardField[];
   visual_state: 'named' | 'firing_not_named' | 'not_firing';
+  closing_observation?: string | null; // Per-direction closing observation (capacity_strain or stopped_expecting)
 };
 
 /** Section 5.4 — Direction-evidence chart. */
@@ -227,6 +227,8 @@ export type LifeContextPanel = {
   life_stage_summary: SlotContent;
   work_load_summary: SlotContent;
   sociality_summary: SlotContent;
+  closing_between_shapes?: SlotContent | null; // Whole-situation closing line: between_shapes
+  closing_mid_process?: SlotContent | null; // Whole-situation closing line: mid_process
 };
 
 /* ------------------------------------------------------------------ */

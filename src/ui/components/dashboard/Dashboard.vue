@@ -31,7 +31,6 @@
       <ConstraintsPanel :data="rendering.constraints_panel" />
       <DomainsPanel :data="rendering.domains_panel" />
     </div>
-    <ClosingLines :lines="rendering.closing_lines" />
   </main>
 </template>
 
@@ -50,7 +49,6 @@ import LifeTexturePanel from './LifeTexturePanel.vue';
 import ConstraintsPanel from './ConstraintsPanel.vue';
 import DomainsPanel from './DomainsPanel.vue';
 import TheNarrowingsPanel from './TheNarrowingsPanel.vue';
-import ClosingLines from './ClosingLines.vue';
 
 const props = defineProps<{ rendering: RenderingInstructions }>();
 

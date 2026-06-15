@@ -63,6 +63,20 @@
         </template>
       </template>
     </p>
+
+    <p
+      v-if="data.closing_between_shapes && shouldRenderSlot(data.closing_between_shapes)"
+      class="life-context-panel__paragraph life-context-panel__closing-line"
+    >
+      {{ data.closing_between_shapes.interpretive_text ?? data.closing_between_shapes.token_text }}
+    </p>
+
+    <p
+      v-if="data.closing_mid_process && shouldRenderSlot(data.closing_mid_process)"
+      class="life-context-panel__paragraph life-context-panel__closing-line"
+    >
+      {{ data.closing_mid_process.interpretive_text ?? data.closing_mid_process.token_text }}
+    </p>
   </section>
 </template>
 
@@ -120,5 +134,10 @@ const socialitySummarySegments = computed<TermScanSegment[]>(() => {
   margin: 0;
   font-size: var(--text-base);
   color: var(--color-text-primary);
+}
+
+.life-context-panel__closing-line {
+  font-style: italic;
+  color: var(--color-text-secondary);
 }
 </style>

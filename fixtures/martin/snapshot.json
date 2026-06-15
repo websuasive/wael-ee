@@ -478,7 +478,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Experience Seeker",
@@ -508,7 +509,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Relationship Rebuilder",
@@ -538,7 +540,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": null
       },
       {
         "direction_name": "Freedom Designer",
@@ -568,7 +571,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Contributor",
@@ -598,7 +602,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": null
       },
       {
         "direction_name": "Growth Focused",
@@ -628,7 +633,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": null
       }
     ],
     "direction_evidence_chart": {
@@ -717,15 +723,15 @@
           "domains": [
             {
               "domain_name": "Time as yours",
-              "intensity": 70
+              "intensity": 30
             },
             {
               "domain_name": "Energy as resource",
-              "intensity": 60
+              "intensity": 40
             },
             {
               "domain_name": "Felt aliveness",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Body",
@@ -733,27 +739,27 @@
             },
             {
               "domain_name": "Curiosity",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Making",
-              "intensity": 90
+              "intensity": 10
             },
             {
               "domain_name": "Conversation depth",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Being known",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Friendship",
-              "intensity": 85
+              "intensity": 15
             },
             {
               "domain_name": "Intimacy",
-              "intensity": 60
+              "intensity": 40
             }
           ],
           "domain_engine_names": [
@@ -775,7 +781,7 @@
           "domains": [
             {
               "domain_name": "Spiritual",
-              "intensity": 90
+              "intensity": 10
             }
           ],
           "domain_engine_names": [
@@ -856,24 +862,6 @@
         }
       ]
     },
-    "closing_lines": [
-      {
-        "id": "closing_between_shapes",
-        "direction_engine_name": null,
-        "text": {
-          "interpretive_text": "Between shapes; the new shape isn't fully there yet.",
-          "token_text": "Recent life shape change; no replacement structure."
-        }
-      },
-      {
-        "id": "closing_stopped_expecting",
-        "direction_engine_name": null,
-        "text": {
-          "interpretive_text": "Quietly stopped expecting much in making, experience and freedom.",
-          "token_text": "Stopped expecting firing on making, experience and freedom."
-        }
-      }
-    ],
     "experience_candidate_directions": [
       {
         "direction_name": "Creator",
@@ -941,7 +929,12 @@
       "sociality_summary": {
         "interpretive_text": null,
         "token_text": "Sociality reading: Solitary by default."
-      }
+      },
+      "closing_between_shapes": {
+        "interpretive_text": "Your life's changed recently, and it's not settled yet.",
+        "token_text": ""
+      },
+      "closing_mid_process": null
     },
     "comparison_surface_panel": {
       "summary": {

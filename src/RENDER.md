@@ -93,13 +93,12 @@ Panel ordering is treated as architecturally meaningful: the editorial arc ident
     <ConstraintsPanel />                  (consumes constraints_panel)
     <DomainsPanel />                      (consumes domains_panel; spiritual extension at §4.8)
   </div>
-  <ClosingLines />                        (consumes closing_lines array)
 </Dashboard>
 
 <TermPopover />                           (singleton; mounted at App root; triggered globally)
 ```
 
-The render layer does not surface `cross_cutting_panel` as its own visible component in the man-facing dashboard. Closing lines (which synthesis derives in part from cross-cutting state) are the man-facing surface of these readings. The `cross_cutting_panel` field remains part of `RenderingInstructions` for the experience layer (downstream) and for the inspection UI (development-time).
+The render layer does not surface `cross_cutting_panel` as its own visible component in the man-facing dashboard. The `cross_cutting_panel` field remains part of `RenderingInstructions` for the experience layer (downstream) and for the inspection UI (development-time).
 
 The `experience_candidate_directions` field is NOT rendered in the dashboard. It is a synthesis output for the experience-suggestion layer (downstream).
 
@@ -168,7 +167,6 @@ Dashboard holds a single `showInactive` ref (default: false) that controls wheth
       <ConstraintsPanel :data="rendering.constraints_panel" />
       <DomainsPanel :data="rendering.domains_panel" />
     </div>
-    <ClosingLines :lines="rendering.closing_lines" />
   </main>
 </template>
 ```
@@ -566,13 +564,13 @@ type DomainsPanel = {
 }
 ```
 
-Each domain's `intensity` is `100 − engine.current_state` — i.e., how reduced the domain reads. Higher intensity = more reduced (longer bar). The framing matches the panel's "what's reduced" heading: heavily reduced domains read as long bars, barely-reduced domains as short bars.
+Each domain's `intensity` is `engine.current_state` — i.e., how PRESENT the domain reads. Higher intensity = more present (longer bar); heavily reduced domains read as short bars, intact-leaning domains as long bars. The framing matches the panel's "Life Domains" heading.
 
 The empty-SlotContent rule applies to `summary` and `intact_callout`.
 
 #### 4.8.2 Card framing
 
-The panel is wrapped in `<section class="dashboard-card domains-panel" aria-labelledby="domains-heading">`. The h2 inside uses the shared `dashboard-card__label` class (small-caps tertiary). The heading text is sourced from `static_copy.ts` key `domains_panel_heading` (default: `What's reduced`); the same h2 carries `id="domains-heading"` for the section's `aria-labelledby`.
+The panel is wrapped in `<section class="dashboard-card domains-panel" aria-labelledby="domains-heading">`. The h2 inside uses the shared `dashboard-card__label` class (small-caps tertiary). The heading text is sourced from `static_copy.ts` key `domains_panel_heading` (default: `Life Domains`); the same h2 carries `id="domains-heading"` for the section's `aria-labelledby`.
 
 The panel is full container width; it stacks with the other contextual-zone panels at all widths (per the Phase 4d-1 grid convention).
 
@@ -586,7 +584,7 @@ The panel renders three distinct treatments based on group type:
 - **Bar row.** 2-column grid `[domain_name (140px)][bar track (1fr)]`. There is no right-hand value cell; the bar itself is the only quantitative surface.
 - **Domain name.** Sans, `var(--text-sm)`, `var(--color-text-primary)`. Display-name identifier — not term-scanned. Exception: the "Spiritual" display label is label-level-wrapped in a `<TermIndicator>` per §5.2, mapping to the term key `Spiritual (domain)`. The other eleven domain display labels remain tooltip-bare at this catch-up.
 - **Bar.** Track height 6px, `background: var(--color-border-tertiary)`, `border-radius: 3px`, `overflow: hidden`. Fill width = `intensity%`; fill colour per §4.8.4.
-- **Bar accessibility.** Track is `role="progressbar"` with `aria-valuemin="0"`, `aria-valuemax="100"`, `aria-valuenow="{intensity}"`, and `aria-valuetext="{domain_name}: {intensity}% reduced"`.
+- **Bar accessibility.** Track is `role="progressbar"` with `aria-valuemin="0"`, `aria-valuemax="100"`, `aria-valuenow="{intensity}"`, and `aria-valuetext="{domain_name}: {intensity}% present"`.
 
 **Non-reduced groups** (`never_been_part_of_his_life`, plus the Intact callout): Each renders with the label-plus-list pattern.
 
@@ -659,18 +657,13 @@ The empty-SlotContent rule applies to `summary`, `intact_callout`, and `permissi
 
 #### 4.9.2 Card framing
 
-The panel is wrapped in `<section class="dashboard-card constraints-panel" aria-labelledby="constraints-heading">`. The h2 inside uses the shared `dashboard-card__label` class. The heading text is sourced from `static_copy.ts` key `constraints_panel_heading` (default: `What's heavy`); the same h2 carries `id="constraints-heading"`.
+The panel is wrapped in `<section class="dashboard-card constraints-panel" aria-labelledby="constraints-heading">`. The h2 inside uses the shared `dashboard-card__label` class. The heading text is sourced from `static_copy.ts` key `constraints_panel_heading` (default: `Your Capacity`); the same h2 carries `id="constraints-heading"`.
 
 The panel is full container width and stacks with the other contextual-zone panels at all widths.
 
 #### 4.9.3 Line rendering
 
-Each entry in `constraint_lines` renders as a 3-column grid row: `[constraint_name (90px)][bar track (1fr)][band_label (130px)]`.
-
-- **Constraint name.** Sans, `var(--text-sm)`, `var(--color-text-secondary)`, weight 500. Display-name identifier — not routed through the term scanner (see §5.4).
-- **Bar.** Identical visual treatment to `DomainsPanel` bars: track height 6px, `background: var(--color-border-tertiary)`, `border-radius: 3px`, `overflow: hidden`. Fill width = `intensity%`; fill colour `var(--color-constraint-bar)` (§4.9.4).
-- **Bar accessibility.** Track is `role="progressbar"` with `aria-valuemin="0"`, `aria-valuemax="100"`, `aria-valuenow="{intensity}"`, and `aria-valuetext="{constraint_name}: {band_label}"` (qualitative band rather than a numeric percentage — the band carries the editorial reading).
-- **Band label.** Sans, `var(--text-sm)`, `var(--color-text-primary)`, right-aligned. Routed through the term scanner: tokens like *shifted*, *heavy depletion*, *blocked*, *partial* may surface as term indicators when defined in `term_explanations.ts`.
+Each entry in `constraint_lines` renders as a 2-line row: line 1 is the constraint name and intensity bar; line 2 is a per-constraint interpretive sentence (second-person, sourced from the shape-sentence library keyed by constraint + band) rendered below the bar. The band_label is not displayed visually; it is retained in the data contract and in the bar's aria-valuetext only. The permission sub-shape sentence renders under the permission row like the other per-constraint sentences (no longer a separate panel-bottom block).
 
 Lines are stacked vertically with `var(--space-sm)` between rows.
 
@@ -680,70 +673,33 @@ Lines are stacked vertically with `var(--space-sm)` between rows.
 
 #### 4.9.5 Permission sub-shape, intact callout, summary
 
-Below the constraint lines, the panel renders three optional prose blocks (each gated by the empty-SlotContent rule), in this order:
+The panel renders two optional prose blocks below the constraint lines (each gated by the empty-SlotContent rule), in this order:
 
-1. **`permission_sub_shape_text`** — when the Permission constraint fires, the synthesis layer emits a sub-shape line describing the particular pattern (per `SYNTHESIS.md` §5.6 / §7.4). Italic sans, `var(--text-sm)`, `var(--color-text-secondary)`. Term scanner applies.
-2. **`intact_callout`** — when emitted, listing constraint dimensions reading intact alongside the depletions. Italic sans, `var(--text-sm)`, `var(--color-text-secondary)`. Term scanner applies.
-3. **`summary`** — short footnote. Sans, `var(--text-sm)`, `var(--color-text-tertiary)`. Term scanner applies.
+1. **`intact_callout`** — when emitted, listing constraint dimensions reading intact alongside the depletions. Italic sans, `var(--text-sm)`, `var(--color-text-secondary)`. Term scanner applies.
+2. **`summary`** — short footnote. Sans, `var(--text-sm)`, `var(--color-text-tertiary)`. Term scanner applies.
+
+The permission sub-shape sentence renders under the permission constraint row as a per-constraint interpretive sentence (see §4.9.3), not as a separate panel-bottom block.
 
 #### 4.9.6 Bar transitions
 
 Same rule as `DomainsPanel` (§4.8.7): `transition: width 0.2s ease` with `@media (prefers-reduced-motion: reduce)` overriding to `none`. See §7.5.
 
-### 4.10 ClosingLines
+### 4.10 ClosingLines (retired)
 
-**Props:**
-```typescript
-{
-    lines: ClosingLine[]  // already deduplicated by synthesis layer
-}
-```
+**Status:** The closing-lines footer has been retired.
 
-**Behaviour:**
+The ClosingLines component and the "Closing observations" section no longer exist. Former closing observations now render as:
+- `closing_observation` on direction cards (capacity_strain/stopped_expecting observations)
+- In the Current Shape panel (life_context_panel) for between_shapes and mid_process
+- Via the card state caption for phantom ("Wanted, but it hasn't turned into anything yet.")
 
-The component first computes `renderableLines` as the subset of `lines` for which `shouldRenderSlot(line.text)` is true (the empty-SlotContent rule applies per line, per `SYNTHESIS.md` §5.8 / §2.3). If `renderableLines.length === 0`, the component renders nothing. Otherwise, it branches on the renderable count:
-
-- `renderableLines.length >= 2` → **card-framed ledger**. Multiple closing observations carry enough collective weight to warrant a "ledger" treatment.
-- `renderableLines.length === 1` → **bare epigram**. A lone closing line in a fully-framed card reads as a placeholder; rendering it as italic, centred, editorial prose treats it as a deliberate single observation rather than a half-empty card.
-
-This adaptive framing was introduced in Phase 4d-3.
-
-**Section wrapping:** Either branch wraps the lines in `<section aria-labelledby="closing-heading">` with an `<h2 id="closing-heading">` inside; the section landmark is constant. What varies is whether the heading and the section frame are visible.
-
-**4.10.1 Card-framed ledger (`renderableLines.length >= 2`)**
-
-- Section element receives the `dashboard-card` class (so the standard card frame and padding apply).
-- `<h2>` receives the `dashboard-card__label` class — visible heading rendered as small-caps tertiary letterspaced, sourced from `static_copy.ts` key `closing_heading` (default: `Closing observations`).
-- Each line renders as `<p class="closing-lines__line">` in:
-  - `font-family: var(--font-serif)`
-  - `font-size: var(--text-lg)`
-  - `line-height: var(--leading-normal)`
-  - `color: var(--color-text-primary)`
-  - `margin: 0 0 var(--space-md) 0`, with `:last-child { margin-bottom: 0 }` so the trailing line sits flush with the card's bottom padding.
-
-**4.10.2 Bare epigram (`renderableLines.length === 1`)**
-
-- Section element receives the `closing-lines--single` class (no card frame, no card padding).
-- `<h2>` receives the `sr-only` class — heading present in the DOM and announced to AT, but visually hidden.
-- The single line renders as `<p class="closing-lines__line">` with the single-variant overrides:
-  - `font-family: var(--font-serif)`
-  - `font-size: var(--text-base)` (smaller than the multi-line `var(--text-lg)`, in keeping with the editorial register)
-  - `font-style: italic`
-  - `color: var(--color-text-secondary)`
-  - `margin: 0`
-  - `text-align: center`
-
-The component itself contributes `margin-bottom: var(--space-xl)` below the component.
-
-**Term scanner:** Both variants route each line's `text.interpretive_text ?? text.token_text` through the term scanner (§5.4), so terms like *capacity strain*, *stopped expecting*, or *between shapes* surface as inline indicators wherever they appear.
-
-**Accessibility:** The section's `aria-labelledby` always points to the heading element regardless of which class it carries, so the landmark is announced consistently to AT. In the single-line variant, the visually-hidden heading still contributes the section's accessible name.
+See `SYNTHESIS.md` §5.8 for details on the retirement and the new rendering locations.
 
 ### 4.11 Footer
 
 **Status:** Removed from dashboard.
 
-The footer disclaimer text ("This is what the responses read as. The architecture reads patterns; it doesn't tell anyone what to do. The next step is the man's.") has been removed. The `Footer.vue` component is no longer rendered in the dashboard component tree. The dashboard now ends at `ClosingLines` (§4.10).
+The footer disclaimer text ("This is what the responses read as. The architecture reads patterns; it doesn't tell anyone what to do. The next step is the man's.") has been removed. The `Footer.vue` component is no longer rendered in the dashboard component tree. The dashboard now ends after the comparison surface panel.
 
 
 ### 4.12 LifeTexturePanel
@@ -783,25 +739,21 @@ The panel is full container width; it stacks with the other contextual-zone pane
 The panel renders in the following sequence (top to bottom):
 
 1. **Section heading** (h2 from static_copy.ts; see §4.12.2).
-2. **summary SlotContent.** The panel's architectural reading line (the headline of the panel). Sans, `var(--text-base)`, `var(--color-text-primary)`. Term scanner applies. When empty, the slot is omitted per the empty-SlotContent rule (the band_label still renders below as the architectural reading via the token form). Summary-above-data placement follows the framing-sentence convention noted at the top of §4.
-3. **Annotation row.** A small one-line annotation rendering `band_label` and `load_state_label` joined by a comma. Sans, `var(--text-sm)`, `var(--color-text-secondary)`, weight 500. Example: "Mixed week, loaded by work and weekends." The `band_label` is label-level-wrapped in a `<TermIndicator>` per §5.2 (mapping `empty`/`depleted`/`mixed`/`textured` to the corresponding `... (week)` term keys); the `load_state_label` remains tooltip-bare at this catch-up (no term explanation exists for the joint load state composition labels per `SYNTHESIS.md` §6.14). The annotation row always renders (both labels are always populated per synthesis).
-4. **flags_present chip group** (when array is non-empty). Renders as a row of pill-style chips, each chip carrying one display label. Visual: rounded pill (`border-radius: var(--radius-sm)`), background `var(--color-background-secondary)`, border `var(--border-hairline) solid var(--color-border-tertiary)`, padding-inline `var(--space-xs)`, padding-block `var(--space-xxs)`. Text: sans, `var(--text-sm)`, `var(--color-text-primary)`. Display-name identifiers; not term-scanned. The chip group is preceded by a small inline label "Present:" in `var(--color-text-tertiary)`, weight 500, `var(--text-xs)` (or this inline label is omitted in favour of visual register alone if the build prefers; see honest concerns).
-5. **flags_absent chip group** (when array is non-empty). Identical chip markup to flags_present but with muted visual register: background unchanged, border `var(--color-border-tertiary)` at lower saturation, text colour `var(--color-text-tertiary)`. Display-name identifiers; not term-scanned. The chip group is preceded by an inline label "Absent:" in `var(--color-text-tertiary)`, weight 500, `var(--text-xs)`. The visual differentiation (saturation drop between present and absent) communicates "what is there" vs "what is not there" without requiring a separate explanatory label.
-6. **pattern_note SlotContent** (when not empty). Italic sans, `var(--text-sm)`, `var(--color-text-secondary)`. The panel's closing observational read. Term scanner applies. Empty-SlotContent rule applies.
+2. **summary SlotContent.** The panel's architectural reading line (the headline of the panel). Sans, `var(--text-base)`, `var(--color-text-primary)`. Term scanner applies. When empty, the slot is omitted per the empty-SlotContent rule. Summary-above-data placement follows the framing-sentence convention noted at the top of §4.
+3. **flags_present chip group** (when array is non-empty). Renders as a row of pill-style chips, each chip carrying one display label. Visual: rounded pill (`border-radius: var(--radius-sm)`), background `var(--color-background-secondary)`, border `var(--border-hairline) solid var(--color-border-tertiary)`, padding-inline `var(--space-xs)`, padding-block `var(--space-xxs)`. Text: sans, `var(--text-sm)`, `var(--color-text-primary)`. Display-name identifiers; not term-scanned. The chip group is preceded by a small inline label "Present:" in `var(--color-text-tertiary)`, weight 500, `var(--text-xs)`.
+4. **flags_absent chip group** (when array is non-empty). Identical chip markup to flags_present but with muted visual register: background unchanged, border `var(--color-border-tertiary)` at lower saturation, text colour `var(--color-text-tertiary)`. Display-name identifiers; not term-scanned. The chip group is preceded by an inline label "Absent:" in `var(--color-text-tertiary)`, weight 500, `var(--text-xs)`. The visual differentiation (saturation drop between present and absent) communicates "what is there" vs "what is not there" without requiring a separate explanatory label.
 
-**Rationale for summary-first.** The architectural reading flow is summary → labels → data → pattern. The man reads the architectural reading line first (so he understands what the panel is saying); the categorical labels annotate the reading; the flag chip groups show the structural data behind it; the pattern observation closes the panel. The summary slot carries the architectural reading the man should encounter first; structural data sits in the middle as supporting detail; the pattern observation is a closing read that benefits from the data being visible.
+**Rationale for summary-first.** The architectural reading flow is summary → data. The man reads the architectural reading line first (so he understands what the panel is saying); the flag chip groups show the structural data behind it. The summary slot carries the architectural reading the man should encounter first; structural data sits below as supporting detail.
 
-**Visual register.** The panel adopts a banner-style register (summary headline plus annotation row plus chip groups plus pattern note). This distinguishes it visually from the bar-rendered `ConstraintsPanel` and `DomainsPanel`, from the prose-only `LifeContextPanel`, and from the categorical-pills `TheNarrowingsPanel`. The chip groups in particular are the panel's distinguishing visual element.
+**Visual register.** The panel adopts a banner-style register (summary headline plus chip groups). This distinguishes it visually from the bar-rendered `ConstraintsPanel` and `DomainsPanel`, from the prose-only `LifeContextPanel`, and from the categorical-pills `TheNarrowingsPanel`. The chip groups are the panel's distinguishing visual element.
 
 #### 4.12.4 Responsive behaviour
 
-New panel follows the existing token-driven responsive pattern. No per-component media queries. Chip groups wrap naturally at narrow widths via CSS `flex-wrap: wrap`. The annotation row may break across two lines on narrow viewports; this is acceptable.
+New panel follows the existing token-driven responsive pattern. No per-component media queries. Chip groups wrap naturally at narrow widths via CSS `flex-wrap: wrap`.
 
 #### 4.12.5 Accessibility
 
 The chip group ARIA treatment uses `role="list"` on the chip group container and `role="listitem"` on each chip, providing screen reader users with structured list navigation across the flag entries. The "Present:" and "Absent:" inline labels read as the list's preceding text via standard reading order; alternative `aria-labelledby` markup is not required.
-
-The annotation row is plain text without ARIA decoration; the `band_label` carries its term-indicator `?` icon per the standard TermIndicator pattern (focusable button; Enter/Space activation; popover). The row reads naturally in document order.
 
 ### 4.13 LifeContextPanel
 
@@ -891,7 +843,7 @@ The panel renders only when `comparison_surface_panel !== null`; the parent Dash
 
 The panel is wrapped in `<section class="dashboard-card comparison-surface-panel" aria-labelledby="comparison-surface-heading">`. The h2 inside uses the shared `dashboard-card__label` class. Heading text from `static_copy.ts` key `comparison_surface_panel_heading` (default: `Named and surfaced`); same h2 carries `id="comparison-surface-heading"`.
 
-The panel sits outside the `panel-grid` wrapper (per §3 component tree). It is a standalone section between the contextual zone and `ClosingLines`. Full container width.
+The panel sits outside the `panel-grid` wrapper (per §3 component tree). It is a standalone section after the contextual zone. Full container width.
 
 #### 4.14.3 Section layout (three sequential sections, uniform visual register)
 
@@ -1292,7 +1244,6 @@ The render layer targets viewports from 320px (small mobile) to 1920px+ (desktop
 | DirectionCards grid | `grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))`, `align-items: start` — collapses to a single column when the viewport is narrower than ~280px + gutters | same multi-column auto-fit; typically 2–3 columns at desktop widths |
 | DirectionCard tap target | header `min-height: var(--control-height-lg)` (48px) | header `min-height: var(--control-height-md)` (40px) at the 600px breakpoint |
 | PanelGrid (`.panel-grid`: contextual-zone panels) | stacked, single column (`flex-direction: column`, gap `var(--space-lg)`) | same — stacked at all widths since Phase 4d-1 |
-| ClosingLines | same on both: `var(--text-lg)` (16px) | same |
 | TermPopover position | below anchor | above anchor |
 
 The `--text-5xl`, `--text-3xl`, `--text-4xl`, and `--text-xl` tokens shift their resolved values inside the mobile media query; component CSS uses the token name and lets the cascade handle the responsive shift. No component-level media queries are needed for type scale.
@@ -1514,7 +1465,7 @@ Per synthesis fallback rules, most of these slots are typically populated (token
 
 ### 8.2 Empty firing set
 
-When the firing set is empty, the Headline renders `situation_text` instead of `direction_names`. The RecognitionParagraph renders nothing (its token is empty by design). The PatternParagraph renders the empty-pulls shape sentence. All six cards render with `visual_state: 'not_firing'`. The chart renders all six bubbles in the low-opacity treatment. ClosingLines may still fire (stopped_expecting on individual directions per synthesis spec rules).
+When the firing set is empty, the Headline renders `situation_text` instead of `direction_names`. The RecognitionParagraph renders nothing (its token is empty by design). The PatternParagraph renders the empty-pulls shape sentence. All six cards render with `visual_state: 'not_firing'`. The chart renders all six bubbles in the low-opacity treatment.
 
 This is not an error case; it's a valid architectural reading. The dashboard renders calmly.
 
@@ -1572,7 +1523,7 @@ Synthesis call errors (when `RenderingInstructions` computation throws) are caug
 
 If the input object is shaped unexpectedly (for example, a slot is missing, a card has unexpected fields), the render layer's defensive defaults apply:
 
-- Missing top-level fields (for example, `closing_lines` is undefined): treated as empty array or absent. The component v-if guards on field presence.
+- Missing top-level fields (for example, a field is undefined): treated as empty array or absent. The component v-if guards on field presence.
 - Extra fields: ignored.
 - Wrong types (for example, a string where an object is expected): the component tries to render and may visibly degrade. Vue's runtime will warn in development; the production behaviour depends on the specific component.
 
@@ -1582,7 +1533,7 @@ The synthesis layer's contract is the source of truth; if it produces malformed 
 
 ### 8.7 Nullable top-level panel (comparison_surface_panel)
 
-When `rendering.comparison_surface_panel === null`, the parent Dashboard component omits the `<ComparisonSurfacePanel />` element entirely via `v-if` (per §3 component tree). The subsequent panel (`ClosingLines`) flows up naturally with no gap, placeholder, or empty section markup.
+When `rendering.comparison_surface_panel === null`, the parent Dashboard component omits the `<ComparisonSurfacePanel />` element entirely via `v-if` (per §3 component tree). The dashboard ends after the comparison surface panel.
 
 The synthesis-emitted null case is documented in `SYNTHESIS.md`: `comparison_surface_panel` is null if and only if `InputMap.self_report.named_absences.length === 0` AND no Surfaced candidates exist. On every other reading, the panel renders (with possibly some empty sub-sections per §4.14.3 empty-section omission).
 
@@ -1607,7 +1558,6 @@ src/ui/
 │   │   ├── LifeTexturePanel.vue
 │   │   ├── ComparisonSurfacePanel.vue
 │   │   ├── TheNarrowingsPanel.vue
-│   │   ├── ClosingLines.vue
 │   │   └── Footer.vue                   # removed; no longer rendered
 │   ├── shared/
 │   │   ├── TermPopover.vue              # singleton popover
@@ -1649,8 +1599,8 @@ Static copy keys in `static_copy.ts`:
 
 - `chart_heading` (default: 'Direction evidence')
 - `cards_heading` (default: 'Direction cards')
-- `domains_panel_heading` (default: 'What's reduced')
-- `constraints_panel_heading` (default: 'What's heavy')
+- `domains_panel_heading` (default: 'Life Domains')
+- `constraints_panel_heading` (default: 'Your Capacity')
 - `closing_heading` (default: 'Closing observations')
 
 Four new panel-heading keys:
@@ -1750,7 +1700,7 @@ The render spec composes with the cohort as it stands: fixture-specific verifica
 - **Chart rendering on very narrow viewports (≤ 600px).** At narrow widths, all bubble labels are hidden (the existing rule). The `<title>` elements remain for screen readers. Axis titles ("Moving toward it" / "How strongly it's calling") may need to abbreviate or hide on the narrowest viewports (320px) — confirm during build. Tick labels and gridlines remain visible.
 - **Loading state animation.** The "quiet pulse" animation is described in plain language; the specific implementation (CSS animation, easing curve, duration) is left to the implementer's judgement, guided by the editorial register. Worth getting visual confirmation during the build.
 - **Accessibility coverage of the chart.** SVG accessibility is hard. The `role="img"` + `aria-label` approach is the minimum; whether screen reader users can meaningfully interact with the chart's data is an open question. May need a tabular fallback for screen readers.
-- **The footer's copy: resolved.** The footer disclaimer text has been removed. The dashboard ends at `ClosingLines` (§4.10). The `Footer.vue` component is no longer rendered in the dashboard. Disposition settled 17 May 2026.
+- **The footer's copy: resolved.** The footer disclaimer text has been removed. The dashboard ends after the comparison surface panel. The `Footer.vue` component is no longer rendered in the dashboard. Disposition settled 17 May 2026.
 - **Inspection UI integration.** The render layer's components are man-facing. The inspection UI may want to render the same dashboard components (against fixture data) for development. Whether the dashboard components are reusable in the inspection UI, or whether the inspection UI has its own simpler renders, is an open question.
 - **Direction-colour palette evolution — resolved.** RENDER.md previously specified a two-tone treatment (single accent + neutral grey) and listed the per-direction palette as an open question. Phase 4d-7 generalised the accent treatment to apply to every card: named cards take the direction's active token; non-named cards take a rank-mapped inactive grey from `--color-direction-inactive-{1..6}`. Chart bubble fills share the same per-card colours by construction (parent `cardColors` map and the chart's bubble-fill logic both reduce to the same active/rank-keyed token references). The original concern — chart-readability in dense fixtures — is settled; the cross-product theming foundation (experience suggestions tied to specific directions) is in place via the direction-keyed active tokens. The palette is no longer an open question.
 - **Malformed-input degradation.** Section 8.6 documents the render layer's defensive defaults. The exact per-component behaviour under malformed input (for example, a card missing its `fields` array; a SlotContent with `interpretive_text` set but `token_text` missing) is not exhaustively specified. Real-world malformation should be rare (synthesis is type-checked); when it surfaces, behaviour is iterated case-by-case rather than spec'd in advance.

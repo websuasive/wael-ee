@@ -408,7 +408,7 @@ describe('Phase 6 — life_stage_summary (7 cases, one per enum value)', () => {
     it(`life_stage='${stage}' fires '${expectedId}'`, () => {
       const output = makeEngineOutput({ cross_direction: { life_stage: stage } });
       const input = makeInputMap();
-      const panel = computeLifeContextPanel(output, input);
+      const panel = computeLifeContextPanel(output, input, null);
       const match = shapeSentences.find(
         (s) =>
           s.slot === 'life_stage_summary' &&
@@ -490,7 +490,7 @@ describe('Phase 6 — work_load_summary (13 authored cells)', () => {
         },
       });
       const input = makeInputMap();
-      const panel = computeLifeContextPanel(output, input);
+      const panel = computeLifeContextPanel(output, input, null);
       const match = shapeSentences.find(
         (s) =>
           s.slot === 'work_load_summary' &&
@@ -569,7 +569,7 @@ describe('Phase 6 — sociality_summary (11 predicates)', () => {
 
   function findFired(output: EngineOutput): string | null {
     const input = makeInputMap();
-    const panel = computeLifeContextPanel(output, input);
+    const panel = computeLifeContextPanel(output, input, null);
     const match = shapeSentences.find(
       (s) =>
         s.slot === 'sociality_summary' &&
@@ -1207,5 +1207,82 @@ describe('Phase 6 — §5.10.2 cascade spillover (F1)', () => {
       return r.reading_type;
     });
     expect(types).toEqual(['absent_flag', 'absent_flag', 'absent_flag']);
+  });
+});
+
+/* ------------------------------------------------------------------ */
+/* Whole-situation closing lines (between_shapes, mid_process)          */
+/* ------------------------------------------------------------------ */
+
+describe('Phase 6 — closing_between_shapes in LifeContextPanel', () => {
+  it('between_shapes fires → shows sentence from library', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { between_shapes: true },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, null);
+    expect(panel.closing_between_shapes).toEqual({
+      interpretive_text: "Your life's changed recently, and it's not settled yet.",
+      token_text: '',
+    });
+  });
+
+  it('between_shapes_clean match → suppresses between_shapes', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { between_shapes: true },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, {
+      id: 'between_shapes_clean',
+      matched_direction: null,
+      sentence: '',
+    });
+    expect(panel.closing_between_shapes).toBeNull();
+  });
+
+  it('no between_shapes → closing_between_shapes is null', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { between_shapes: false },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, null);
+    expect(panel.closing_between_shapes).toBeNull();
+  });
+});
+
+describe('Phase 6 — closing_mid_process in LifeContextPanel', () => {
+  it('mid_process fires → shows sentence from library', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { mid_process: true },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, null);
+    expect(panel.closing_mid_process).toEqual({
+      interpretive_text:
+        "You've recently started reaching for change, and it's early days yet.",
+      token_text: '',
+    });
+  });
+
+  it('active_going_through_motions match → suppresses mid_process', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { mid_process: true },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, {
+      id: 'active_going_through_motions',
+      matched_direction: null,
+      sentence: '',
+    });
+    expect(panel.closing_mid_process).toBeNull();
+  });
+
+  it('no mid_process → closing_mid_process is null', () => {
+    const output = makeEngineOutput({
+      cross_cutting: { mid_process: false },
+    });
+    const input = makeInputMap();
+    const panel = computeLifeContextPanel(output, input, null);
+    expect(panel.closing_mid_process).toBeNull();
   });
 });

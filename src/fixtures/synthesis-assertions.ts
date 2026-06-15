@@ -14,8 +14,6 @@ import type {
   ExpectedConstraintLineAssertions,
   ExpectedConstraintsPanelAssertions,
   ExpectedCrossCuttingPanelAssertions,
-  ExpectedClosingLineAssertions,
-  ExpectedClosingLinesAssertions,
   ExpectedExperienceCandidateAssertions,
   ExpectedExperienceCandidatesAssertions,
   ExpectedLifeTexturePanelAssertions,
@@ -608,51 +606,6 @@ function walkCrossCuttingPanel(
   }
 }
 
-function walkClosingLines(
-  expected: ExpectedClosingLinesAssertions,
-  actual: RenderingInstructions['closing_lines'],
-  results: AssertionResult[],
-): void {
-  for (const key of Object.keys(expected)) {
-    const lineExpected = expected[key]!;
-    const lineActual = actual.find((l) => l.id === key);
-    const basePath = `closing_lines.${key}`;
-    if (isSentinel(lineExpected)) {
-      if (lineExpected === '<PRESENT>' || lineExpected === '<ABSENT>') {
-        results.push(
-          membershipResult(basePath, lineExpected, lineActual !== undefined),
-        );
-      } else {
-        results.push(applyLeafSentinel(basePath, lineExpected, lineActual));
-      }
-      continue;
-    }
-    if (lineActual === undefined) {
-      results.push(missingEntryResult(basePath, key));
-      continue;
-    }
-    const subExpected = lineExpected as ExpectedClosingLineAssertions;
-    for (const field of Object.keys(subExpected)) {
-      const fieldExpected = (subExpected as Record<string, unknown>)[field];
-      if (field === 'text') {
-        walkSlotContent(
-          joinPath(basePath, field),
-          fieldExpected as ExpectedSlotContentAssertions,
-          lineActual.text,
-          results,
-        );
-      } else {
-        const fieldActual = (lineActual as unknown as Record<string, unknown>)[
-          field
-        ];
-        results.push(
-          applyMatcher(joinPath(basePath, field), fieldExpected, fieldActual),
-        );
-      }
-    }
-  }
-}
-
 function walkExperienceCandidates(
   expected: ExpectedExperienceCandidatesAssertions,
   actual: RenderingInstructions['experience_candidate_directions'],
@@ -964,12 +917,7 @@ export function runSynthesisAssertions(
     );
   }
 
-  // 9. closing_lines
-  if (expected.closing_lines !== undefined) {
-    walkClosingLines(expected.closing_lines, actual.closing_lines, results);
-  }
-
-  // 10. experience_candidate_directions
+  // 9. experience_candidate_directions
   if (expected.experience_candidate_directions !== undefined) {
     walkExperienceCandidates(
       expected.experience_candidate_directions,

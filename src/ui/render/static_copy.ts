@@ -5,8 +5,8 @@
 export const staticCopy: Record<string, string> = {
   chart_heading: 'Direction evidence',
   cards_heading: 'Direction cards',
-  domains_panel_heading: "What's reduced",
-  constraints_panel_heading: "What's heavy",
+  domains_panel_heading: "Life Domains",
+  constraints_panel_heading: "Your Capacity",
   closing_heading: 'Closing observations',
   life_context_panel_heading: 'The current shape',
   life_texture_panel_heading: "The week's texture",

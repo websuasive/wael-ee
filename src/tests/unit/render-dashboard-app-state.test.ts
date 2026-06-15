@@ -101,12 +101,11 @@ describe('useDashboardAppState — ready→error preserves rendering', () => {
 });
 
 describe('buildPlaceholderRenderingInstructions — shape', () => {
-  it('has all 14 top-level fields', () => {
+  it('has all 13 top-level fields', () => {
     const r = buildPlaceholderRenderingInstructions();
     const keys = Object.keys(r).sort();
     expect(keys).toEqual(
       [
-        'closing_lines',
         'comparison_surface_panel',
         'constraints_panel',
         'cross_cutting_panel',

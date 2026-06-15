@@ -246,13 +246,13 @@ describe('B1 — allocation-phantom gate-widening and branch re-pointing', () =>
       expect(creator.pull_quality).not.toContain('behaviourally_divergent');
     });
 
-    it('CO-FIRING with saturated: both conditions satisfied → contains both saturated and phantom', () => {
+    it('Phantom suppresses saturated (incoherent co-firing)', () => {
       const input = makeMinimalInputMap('creator', 50);
       input.directions.creator.saturation = 'yes';
       const result = computeDirectionOutputs(input, makeDomainOutputs(), 0);
       const creator = findDirection(result, 'creator');
-      expect(creator.pull_quality).toContain('saturated');
       expect(creator.pull_quality).toContain('phantom');
+      expect(creator.pull_quality).not.toContain('saturated');
     });
 
     it('PHANTOM BLOCKS BEHAVIOURALLY_DIVERGENT: phantom fires, bdiv suppressed', () => {

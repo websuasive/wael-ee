@@ -48,7 +48,7 @@ describe('computeDomainsPanel — reduced_groups', () => {
   it('one domain reduced_wants_back → one group with one name', () => {
     const out = makeEngineOutput({
       domains: allIntactDomains({
-        time_as_yours: { fires: true, value: 'reduced_wants_back' },
+        time_as_yours: { fires: true, value: 'reduced_wants_back', current_state: 0 },
       }),
     });
     const panel = computeDomainsPanel(out, makeInputMap());
@@ -56,7 +56,7 @@ describe('computeDomainsPanel — reduced_groups', () => {
       {
         value_label: 'Reduced, wants back',
         value_engine_name: 'reduced_wants_back',
-        domains: [{ domain_name: 'Time as yours', intensity: 100 }],
+        domains: [{ domain_name: 'Time as yours', intensity: 0 }],
         domain_engine_names: ['time_as_yours'],
       },
     ]);
@@ -134,7 +134,7 @@ describe('computeDomainsPanel — reduced_groups', () => {
     ).toEqual(['Body']);
   });
 
-  it('domain intensity = 100 - engine current_state (current_state 40 → intensity 60)', () => {
+  it('domain intensity = current_state (current_state 40 → intensity 40)', () => {
     const out = makeEngineOutput({
       domains: allIntactDomains({
         time_as_yours: {
@@ -145,10 +145,10 @@ describe('computeDomainsPanel — reduced_groups', () => {
       }),
     });
     const panel = computeDomainsPanel(out, makeInputMap());
-    expect(panel.reduced_groups[0]!.domains[0]!.intensity).toBe(60);
+    expect(panel.reduced_groups[0]!.domains[0]!.intensity).toBe(40);
   });
 
-  it('domain intensity at boundaries (current_state 0 → 100, current_state 100 → 0)', () => {
+  it('domain intensity at boundaries (current_state 0 → 0, current_state 100 → 100)', () => {
     const out = makeEngineOutput({
       domains: allIntactDomains({
         time_as_yours: {
@@ -167,8 +167,8 @@ describe('computeDomainsPanel — reduced_groups', () => {
     const byName = Object.fromEntries(
       panel.reduced_groups[0]!.domains.map((d) => [d.domain_name, d.intensity]),
     );
-    expect(byName['Time as yours']).toBe(100);
-    expect(byName['Energy as resource']).toBe(0);
+    expect(byName['Time as yours']).toBe(0);
+    expect(byName['Energy as resource']).toBe(100);
   });
 
   it('domain entries pair domain_name with engine domain key (parallel order to domain_engine_names)', () => {
@@ -192,7 +192,7 @@ describe('computeDomainsPanel — reduced_groups', () => {
       'Mattering',
     ]);
     expect(group.domain_engine_names).toEqual(['time_as_yours', 'mattering']);
-    expect(group.domains.map((d) => d.intensity)).toEqual([70, 30]);
+    expect(group.domains.map((d) => d.intensity)).toEqual([30, 70]);
   });
 
   it('value labels use DOMAIN_VALUE_LABELS (reduced_wants_back → "Reduced, wants back")', () => {

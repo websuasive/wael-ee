@@ -472,7 +472,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": null
       },
       {
         "direction_name": "Freedom Designer",
@@ -502,7 +503,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": null
       },
       {
         "direction_name": "Experience Seeker",
@@ -532,7 +534,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Growth Focused",
@@ -562,7 +565,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "firing_not_named"
+        "visual_state": "firing_not_named",
+        "closing_observation": null
       },
       {
         "direction_name": "Relationship Rebuilder",
@@ -592,7 +596,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "firing_not_named"
+        "visual_state": "firing_not_named",
+        "closing_observation": null
       },
       {
         "direction_name": "Contributor",
@@ -622,7 +627,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": null
       }
     ],
     "direction_evidence_chart": {
@@ -711,11 +717,11 @@
           "domains": [
             {
               "domain_name": "Time as yours",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Energy as resource",
-              "intensity": 65
+              "intensity": 35
             },
             {
               "domain_name": "Felt aliveness",
@@ -723,11 +729,11 @@
             },
             {
               "domain_name": "Body",
-              "intensity": 55
+              "intensity": 45
             },
             {
               "domain_name": "Being known",
-              "intensity": 60
+              "intensity": 40
             },
             {
               "domain_name": "Friendship",
@@ -735,11 +741,11 @@
             },
             {
               "domain_name": "Intimacy",
-              "intensity": 55
+              "intensity": 45
             },
             {
               "domain_name": "Mattering",
-              "intensity": 45
+              "intensity": 55
             }
           ],
           "domain_engine_names": [
@@ -759,7 +765,7 @@
           "domains": [
             {
               "domain_name": "Spiritual",
-              "intensity": 85
+              "intensity": 15
             }
           ],
           "domain_engine_names": [
@@ -840,16 +846,6 @@
         }
       ]
     },
-    "closing_lines": [
-      {
-        "id": "closing_stopped_expecting",
-        "direction_engine_name": null,
-        "text": {
-          "interpretive_text": "Quietly stopped expecting much in experience.",
-          "token_text": "Stopped expecting firing on Experience Seeker."
-        }
-      }
-    ],
     "experience_candidate_directions": [
       {
         "direction_name": "Creator",
@@ -918,7 +914,9 @@
       "sociality_summary": {
         "interpretive_text": "You lean toward your own company, and there's a real pull to contribute, but there's no group around it yet. The want's there, the place for it isn't.",
         "token_text": ""
-      }
+      },
+      "closing_between_shapes": null,
+      "closing_mid_process": null
     },
     "comparison_surface_panel": {
       "summary": {

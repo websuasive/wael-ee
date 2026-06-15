@@ -187,7 +187,10 @@ function computePullQuality(
     direction !== reachRetrospective &&
     direction !== reachCounterfactual;
 
-  if (saturated) result.push('saturated');
+  // Saturated is incoherent when co-firing with phantom/phantom_partial
+  // (worn out on something never had). Suppress saturated in that pairing;
+  // phantom is the coherent reading and survives.
+  if (saturated && !phantom && !phantomPartial) result.push('saturated');
   if (phantom) result.push('phantom');
   if (phantomPartial) result.push('phantom_partial');
   if (suppressedStandard || suppressedDeep) result.push('suppressed');

@@ -478,7 +478,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Relationship Rebuilder",
@@ -508,7 +509,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": "You've quietly stopped expecting much here."
       },
       {
         "direction_name": "Contributor",
@@ -538,7 +540,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "named"
+        "visual_state": "named",
+        "closing_observation": null
       },
       {
         "direction_name": "Growth Focused",
@@ -568,7 +571,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "firing_not_named"
+        "visual_state": "firing_not_named",
+        "closing_observation": null
       },
       {
         "direction_name": "Creator",
@@ -598,7 +602,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": null
       },
       {
         "direction_name": "Experience Seeker",
@@ -628,7 +633,8 @@
             "intensity": null
           }
         ],
-        "visual_state": "not_firing"
+        "visual_state": "not_firing",
+        "closing_observation": null
       }
     ],
     "direction_evidence_chart": {
@@ -717,15 +723,15 @@
           "domains": [
             {
               "domain_name": "Time as yours",
-              "intensity": 80
+              "intensity": 20
             },
             {
               "domain_name": "Energy as resource",
-              "intensity": 60
+              "intensity": 40
             },
             {
               "domain_name": "Felt aliveness",
-              "intensity": 80
+              "intensity": 20
             },
             {
               "domain_name": "Body",
@@ -733,23 +739,23 @@
             },
             {
               "domain_name": "Curiosity",
-              "intensity": 80
+              "intensity": 20
             },
             {
               "domain_name": "Conversation depth",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Being known",
-              "intensity": 75
+              "intensity": 25
             },
             {
               "domain_name": "Friendship",
-              "intensity": 85
+              "intensity": 15
             },
             {
               "domain_name": "Intimacy",
-              "intensity": 80
+              "intensity": 20
             }
           ],
           "domain_engine_names": [
@@ -770,11 +776,11 @@
           "domains": [
             {
               "domain_name": "Making",
-              "intensity": 90
+              "intensity": 10
             },
             {
               "domain_name": "Spiritual",
-              "intensity": 85
+              "intensity": 15
             }
           ],
           "domain_engine_names": [
@@ -856,16 +862,6 @@
         }
       ]
     },
-    "closing_lines": [
-      {
-        "id": "closing_stopped_expecting",
-        "direction_engine_name": null,
-        "text": {
-          "interpretive_text": "Quietly stopped expecting much in freedom and relationship.",
-          "token_text": "Stopped expecting firing on freedom and relationship."
-        }
-      }
-    ],
     "experience_candidate_directions": [
       {
         "direction_name": "Freedom Designer",
@@ -922,7 +918,9 @@
       "sociality_summary": {
         "interpretive_text": "You lean toward your own company, but the lack of closeness still gets to you - you feel it even so.",
         "token_text": ""
-      }
+      },
+      "closing_between_shapes": null,
+      "closing_mid_process": null
     },
     "comparison_surface_panel": {
       "summary": {

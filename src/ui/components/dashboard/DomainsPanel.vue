@@ -46,7 +46,7 @@
               :aria-valuemin="0"
               :aria-valuemax="100"
               :aria-valuenow="domain.intensity"
-              :aria-valuetext="`${domain.domain_name}: ${domain.intensity}% reduced`"
+              :aria-valuetext="`${domain.domain_name}: ${domain.intensity}% present`"
             >
               <div
                 class="domains-panel__bar-fill"

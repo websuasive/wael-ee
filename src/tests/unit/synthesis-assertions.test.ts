@@ -144,110 +144,6 @@ describe('runSynthesisAssertions — leaf sentinels', () => {
 });
 
 /* ------------------------------------------------------------------ */
-/* B — <PRESENT> / <ABSENT> for closing_lines                          */
-/* ------------------------------------------------------------------ */
-
-describe('runSynthesisAssertions — closing_lines membership', () => {
-  it('<PRESENT> when actual has the line → pass', () => {
-    // Note: pull_quality includes both 'phantom' and 'real' so the
-    // pattern_paragraph desired_direction_full/partial predicates do NOT match
-    // (they require no real/suppressed/saturated/behaviourally_divergent in
-    // any direction), and therefore do not suppress closing_phantom.
-    const actual = build({
-      directions: [
-        { direction: 'creator', pull: 80, pull_quality: ['phantom', 'real'] },
-      ],
-    });
-    const r = runSynthesisAssertions(
-      { closing_lines: { closing_phantom: '<PRESENT>' } },
-      actual,
-    );
-    expect(r.passed).toBe(1);
-  });
-
-  it('<PRESENT> when actual lacks the line → fail', () => {
-    const actual = build();
-    const r = runSynthesisAssertions(
-      { closing_lines: { closing_phantom: '<PRESENT>' } },
-      actual,
-    );
-    expect(r.failed).toBe(1);
-  });
-
-  it('<ABSENT> when actual lacks the line → pass', () => {
-    const actual = build();
-    const r = runSynthesisAssertions(
-      { closing_lines: { closing_phantom: '<ABSENT>' } },
-      actual,
-    );
-    expect(r.passed).toBe(1);
-  });
-
-  it('<ABSENT> when actual has the line → fail', () => {
-    const actual = build({
-      directions: [
-        { direction: 'creator', pull: 80, pull_quality: ['phantom', 'real'] },
-      ],
-    });
-    const r = runSynthesisAssertions(
-      { closing_lines: { closing_phantom: '<ABSENT>' } },
-      actual,
-    );
-    expect(r.failed).toBe(1);
-  });
-
-  it('single key present → pass', () => {
-    const actual = build({
-      directions: [
-        { direction: 'creator', pull: 80, pull_quality: ['phantom', 'real'] },
-      ],
-    });
-    const r = runSynthesisAssertions(
-      {
-        closing_lines: {
-          closing_phantom: '<PRESENT>',
-        },
-      },
-      actual,
-    );
-    expect(r.failed).toBe(0);
-    expect(r.passed).toBe(1);
-  });
-
-  it('sub-object on present line → asserts sub-fields', () => {
-    const actual = build({
-      directions: [
-        { direction: 'creator', pull: 80, pull_quality: ['phantom', 'real'] },
-      ],
-    });
-    const r = runSynthesisAssertions(
-      {
-        closing_lines: {
-          closing_phantom: { direction_engine_name: 'creator' },
-        },
-      },
-      actual,
-    );
-    expect(r.passed).toBe(1);
-    expect(r.failed).toBe(0);
-  });
-
-  it('sub-object on absent line → fail with a missing-entry reason', () => {
-    const actual = build();
-    const r = runSynthesisAssertions(
-      {
-        closing_lines: {
-          closing_phantom: { direction_engine_name: 'creator' },
-        },
-      },
-      actual,
-    );
-    expect(r.failed).toBe(1);
-    expect(r.results[0]!.reason).toContain('missing entry');
-  });
-});
-
-/* ------------------------------------------------------------------ */
 /* C — <PRESENT>/<ABSENT> for experience_candidate_directions          */
 /* ------------------------------------------------------------------ */
 
@@ -534,14 +430,13 @@ describe('runSynthesisAssertions — multi-block walk', () => {
       domains_panel: { summary: { token_text: '<NON_NULL>' } },
       constraints_panel: { sustained_constraint_intensity: { between: [0, 100] } },
       cross_cutting_panel: { outputs: { between_shapes: true } },
-      closing_lines: { closing_phantom: '<PRESENT>' },
       experience_candidate_directions: { creator: '<PRESENT>' },
     };
     const r = runSynthesisAssertions(expected, actual);
-    // 11 leaf assertions across 10 blocks.
-    expect(r.total).toBe(11);
+    // 10 leaf assertions across 9 blocks.
+    expect(r.total).toBe(10);
     expect(r.failed).toBe(0);
-    expect(r.passed).toBe(11);
+    expect(r.passed).toBe(10);
   });
 });
 
@@ -559,14 +454,12 @@ describe('formatSynthesisFailures', () => {
     const actual = build();
     const r = runSynthesisAssertions(
       {
-        closing_lines: { closing_phantom: '<PRESENT>' },
         cross_cutting_panel: { outputs: { between_shapes: true } },
       },
       actual,
     );
     const out = formatSynthesisFailures(r);
-    expect(out).toMatch(/^2 of 2 assertions failed:/);
-    expect(out).toContain('closing_lines.closing_phantom');
+    expect(out).toMatch(/^1 of 1 assertions failed:/);
     expect(out).toContain('cross_cutting_panel.outputs.between_shapes');
   });
 });

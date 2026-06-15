@@ -16,6 +16,13 @@ import {
 } from './data/tokens';
 import { directionDescriptions } from './data/recognition_sentences';
 import { SELF_REPORT_ITEMS } from './data/self_report_items';
+import { shapeSentences } from './data/shape_sentences';
+
+function sentenceForId(id: 'closing_capacity_strain' | 'closing_stopped_expecting'): string | null {
+  const slot = `closing_line_${id}` as const;
+  const entry = shapeSentences.find((s) => s.id === id && s.slot === slot);
+  return entry ? entry.sentence : null;
+}
 
 type CardPredicate = (d: DirectionOutput) => boolean;
 
@@ -305,6 +312,14 @@ export function computeDirectionCards(
         ? 'firing_not_named'
         : 'not_firing';
 
+    // Per-direction closing observation (capacity_strain or stopped_expecting)
+    let closing_observation: string | null = null;
+    if (d.pull_state.includes('capacity_strain')) {
+      closing_observation = sentenceForId('closing_capacity_strain');
+    } else if (d.pull_state.includes('stopped_expecting')) {
+      closing_observation = sentenceForId('closing_stopped_expecting');
+    }
+
     const card: DirectionCardOutput = {
       direction_name: DIRECTION_DISPLAY_NAMES[d.direction],
       direction_engine_name: d.direction,
@@ -312,6 +327,7 @@ export function computeDirectionCards(
       meaning_sentence: buildMeaningSentence(d),
       fields: buildFields(d, input),
       visual_state,
+      closing_observation,
     };
 
     return card;

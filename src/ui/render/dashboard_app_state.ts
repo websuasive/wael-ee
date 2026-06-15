@@ -128,7 +128,6 @@ export function buildPlaceholderRenderingInstructions(): RenderingInstructions {
         { name: 'Mid-process', output_engine_name: 'mid_process' as const, fires: false },
       ],
     },
-    closing_lines: [],
     experience_candidate_directions: [],
     life_texture_panel: {
       summary: emptySlot(),

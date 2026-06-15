@@ -42,7 +42,7 @@ export function computeDomainsPanel(
         value_engine_name: value,
         domains: inGroup.map((m) => ({
           domain_name: DOMAIN_DISPLAY_NAMES[m.domain],
-          intensity: 100 - m.current_state,
+          intensity: m.current_state,
         })),
         domain_engine_names: inGroup.map((m) => m.domain),
       },

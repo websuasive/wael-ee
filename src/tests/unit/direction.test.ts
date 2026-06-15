@@ -1399,7 +1399,7 @@ describe('O. Suppressed deep one-off failure tests', () => {
 
 describe('P. Pull-quality co-firing', () => {
   // RECALIBRATION PENDING: Phantom threshold (allocation≥50) is provisional pending real £70 data.
-  it('Saturated + Phantom (in push order)', () => {
+  it('Phantom suppresses saturated (incoherent co-firing)', () => {
     const q = pullQualityFor(
       {
         stated_allocation: 50,
@@ -1412,11 +1412,11 @@ describe('P. Pull-quality co-firing', () => {
       },
       { sustained: 40, direction_chosen: 'none' },
     );
-    expect(q).toEqual(['saturated', 'phantom']);
+    expect(q).toEqual(['phantom']);
   });
 
   // RECALIBRATION PENDING: Phantom_partial threshold (allocation≥35) is provisional pending real £70 data.
-  it('Saturated + Phantom (partial)', () => {
+  it('Phantom partial suppresses saturated (incoherent co-firing)', () => {
     const q = pullQualityFor(
       {
         stated_allocation: 35,
@@ -1429,7 +1429,7 @@ describe('P. Pull-quality co-firing', () => {
       },
       { sustained: 40, direction_chosen: 'none' },
     );
-    expect(q).toEqual(['saturated', 'phantom_partial']);
+    expect(q).toEqual(['phantom_partial']);
   });
 
   it('Saturated + Suppressed', () => {
@@ -1468,7 +1468,7 @@ describe('P. Pull-quality co-firing', () => {
 
   // B1-d REGRESSION CHECK: Phantom must block behaviourally_divergent.
   // RECALIBRATION PENDING: Phantom threshold (allocation≥50) is provisional pending real £70 data.
-  it('Saturated + Phantom blocks Behaviourally divergent', () => {
+  it('Phantom suppresses saturated and blocks behaviourally divergent', () => {
     const q = pullQualityFor(
       {
         stated_allocation: 50,
@@ -1487,7 +1487,7 @@ describe('P. Pull-quality co-firing', () => {
         reach: { freedom_designer: 'yes' },
       },
     );
-    expect(q).toEqual(['saturated', 'phantom']);
+    expect(q).toEqual(['phantom']);
     expect(q).not.toContain('behaviourally_divergent');
   });
 

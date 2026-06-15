@@ -49,7 +49,6 @@ type RenderingInstructions = {
     domains_panel: DomainsPanel
     constraints_panel: ConstraintsPanel
     cross_cutting_panel: CrossCuttingPanel
-    closing_lines: ClosingLine[]
     experience_candidate_directions: ExperienceCandidate[]
     life_texture_panel: LifeTexturePanel
     life_context_panel: LifeContextPanel
@@ -230,11 +229,9 @@ type DirectionCardOutput = {
     direction_engine_name: DirectionName  // typed engine name; render-layer convenience
     summary: SlotContent
     meaning_sentence: SlotContent
-    fields: Array<{ label: string, value: string, intensity: number | null }>
-    expression_space_caption: SlotContent
-    held_attributed_line: string | null
+    fields: CardField[]
     visual_state: 'named' | 'firing_not_named' | 'not_firing'
-    surfaced_finding?: string  // §7.17 surfaced finding sentence when architecture surfaces this direction but man did not name it
+    closing_observation?: string | null  // Per-direction closing observation (capacity_strain or stopped_expecting)
 }
 
 direction_cards: DirectionCardOutput[]
@@ -263,6 +260,8 @@ Each field also carries an `intensity: number | null` (0–100) used by the rend
 
 Mutual exclusion is guaranteed by the engine (a direction emits exactly one of the two values when `specificity = "strong"`).
 
+(Not currently implemented; documented for a planned/possible future addition.)
+
 **expression_space_caption.** Each direction card gains an `expression_space_caption: SlotContent` slot reading the per-direction `expression_space` boolean. The caption appears below the fields table and above the summary line.
 
 The caption is informational and asymmetric by design: it fires only when `expression_space === "no_space"`. The `has_space` case is the default architectural state (the week has room for the direction); naming it explicitly on every read direction would be visual noise without information. The `no_space` case is the architecturally informative one (the channel is missing) and earns its own short caption.
@@ -274,7 +273,11 @@ Fill order:
 
 This means expression_space_caption renders only when the week reads no current room for a direction that is otherwise materially present. The asymmetry reduces visual clutter in the render layer (most directions on most fixtures will not surface a caption) and concentrates the caption's attention on the architecturally significant cases.
 
+(Not currently implemented; documented for a planned/possible future addition.)
+
 **surfaced_finding.** Optional field populated when the architecture surfaces a direction that the man did not name in his self-report. The field holds one of the §7.17 surfaced finding sentences. When the architecture surfaces this direction (direction is in the firing set) AND the direction was not in the man's named list (no self-report item with a matching direction anchor), the synthesis layer attaches the appropriate sentence: "You didn't name this one, but the architecture reads it firing." When the direction is named (confirmed) or quiet, the field is undefined. The render layer displays this as an italic closing sentence on the card, below the existing per-direction observations.
+
+(Not currently implemented; documented for a planned/possible future addition.)
 
 `meaning_sentence` is populated per section 3.3: take the direction's engine name, map to TypeKey via section 6.7, look up in `recognition_sentences.ts`. If an entry exists, set `interpretive_text` to that sentence; `token_text` is the empty string (no useful token rendering for an absent type description). If no entry exists, both are null/empty and the slot renders blank.
 
@@ -448,67 +451,17 @@ type CrossCuttingOutput = {
 }
 ```
 
-This is data-only. The cross-cutting closing lines render in section 5.8, not here. The panel is a structured display of which cross-cutting outputs fire vs don't, for inspection completeness.
+This is data-only. The cross-cutting closing lines formerly rendered in the footer (section 5.8, now retired) are now rendered as: between_shapes and mid_process in the Current Shape panel (section 5.12), and capacity_strain/stopped_expecting on direction cards (section 5.2). The panel is a structured display of which cross-cutting outputs fire vs don't, for inspection completeness.
 
-### 5.8 closing_lines
+### 5.8 closing_lines (retired)
 
-```typescript
-type ClosingLine = {
-    id: string  // one of the canonical IDs declared below
-    text: SlotContent
-    direction_engine_name: DirectionName | null  // typed engine name; render-layer convenience
-}
+The closing-lines footer has been retired. Former closing observations now render as follows:
 
-closing_lines: ClosingLine[]
-```
+- `closing_capacity_strain` and `closing_stopped_expecting`: now render as `closing_observation` on direction cards (section 5.2)
+- `closing_between_shapes` and `closing_mid_process`: now render in the Current Shape panel (life_context_panel, section 5.12)
+- `closing_phantom`: redundant with the card state caption ("Wanted, but it hasn't turned into anything yet.") which always shows for phantom/phantom_partial directions (section 5.2, cardStateSentence)
 
-Canonical closing line IDs. The synthesis layer uses these IDs consistently across the closing line firing-order list, deduplication rule, token fallback table, and section 7.3 sentence library:
-
-- `closing_between_shapes`
-- `closing_mid_process`
-- `closing_capacity_strain`
-- `closing_stopped_expecting`
-- `closing_phantom`
-
-The `id` field on each ClosingLine in the output uses these canonical forms.
-
-For each firing closing line, fill order is: shape sentences for slot `closing_line_{id}`, then token fallback.
-
-Closing lines fire in this fixed order:
-
-1. `closing_between_shapes` (single line; fires when `cross_cutting.between_shapes.fires = true`)
-2. `closing_mid_process` (single line; fires when `cross_cutting.mid_process.fires = true`)
-3. `closing_capacity_strain` (one line per direction d where `d.pull_state` contains `"capacity_strain"`, regardless of firing-set membership; ordered by `d.pull` descending)
-4. `closing_stopped_expecting` (one line per direction d where `d.pull_state` contains `"stopped_expecting"`, regardless of firing-set membership; ordered by `d.pull` descending)
-5. `closing_phantom` (one line per firing direction d where `d.pull_quality` contains `"phantom"` or `"phantom_partial"`, ordered by `d.pull` descending)
-
-Architectural rationale for steps 3 and 4: `stopped_expecting` and `capacity_strain` are pull_state values that fire on direction-level conditions independent of pull magnitude. A man can have `stopped_expecting` on a low-pull quiet direction. The architecture's reading should surface as a closing line; gating it by firing-set membership would drop real signal.
-
-Step 6 (phantom callout) is reachable for phantom-only profiles because phantom and phantom_partial directions enter the firing set per section 4 step 1.
-
-**Closing line deduplication.** When the pattern_paragraph slot's matched shape sentence covers a reading that a closing line would echo, the closing line is suppressed. Two kinds of suppression apply:
-
-*Cross-cutting suppressions* (apply to the entire closing line, regardless of direction):
-
-- When `active_going_through_motions` matches in pattern_paragraph, suppress `closing_mid_process`.
-- When `between_shapes_clean` matches in pattern_paragraph, suppress `closing_between_shapes`.
-
-*Per-direction suppressions* (apply only to the closing line for the same direction the shape sentence matched on):
-
-- When `active_with_tension` matches in pattern_paragraph on direction d, suppress `closing_capacity_strain` for direction d only. Other directions with capacity_strain in pull_state still produce closing lines.
-- When `desired_direction_partial` or `desired_direction_full` matches in pattern_paragraph on direction d, suppress `closing_phantom` for direction d only. Other phantom or phantom_partial directions still produce closing lines.
-
-The shape sentence at the top of the dashboard carries the reading; the closing line would echo it. The per-direction qualifier matters: a profile with multiple phantom directions still wants `closing_phantom` for the secondary ones, since only the primary appears in the shape sentence.
-
-Token fallbacks per closing line (per-direction lines use a single direction name):
-
-| ID | Token |
-|---|---|
-| `closing_between_shapes` | "Recent life shape change; no replacement structure." |
-| `closing_mid_process` | "Active quadrant with recent and awkward reaching." |
-| `closing_capacity_strain` | "Capacity strain firing on {direction_display}." |
-| `closing_stopped_expecting` | "Stopped expecting firing on {direction_display}." |
-| `closing_phantom` | "{direction_display} named as a desired direction." |
+The closing_held_unattributed ID was never implemented (spec-only).
 
 ### 5.9 experience_candidate_directions
 

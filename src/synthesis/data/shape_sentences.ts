@@ -640,8 +640,7 @@ export const shapeSentences: ShapeSentence[] = [
       existsDirection(output, input, (d) =>
         d.pull_state.includes('capacity_strain'),
       ),
-    sentence:
-      'Pulling toward more in {direction_lower}, and toward less weight overall.',
+    sentence: 'You want more of this, but you also want less on your plate overall.',
   },
   {
     id: 'closing_stopped_expecting',
@@ -650,7 +649,7 @@ export const shapeSentences: ShapeSentence[] = [
       existsDirection(output, input, (d) =>
         d.pull_state.includes('stopped_expecting'),
       ),
-    sentence: 'Quietly stopped expecting much in {direction_lower}.',
+    sentence: "You've quietly stopped expecting much here.",
   },
   {
     id: 'closing_phantom',
@@ -670,13 +669,13 @@ export const shapeSentences: ShapeSentence[] = [
     id: 'closing_between_shapes',
     slot: 'closing_line_closing_between_shapes',
     predicate: (output) => crossCuttingFires(output, 'between_shapes'),
-    sentence: "Between shapes; the new shape isn't fully there yet.",
+    sentence: "Your life's changed recently, and it's not settled yet.",
   },
   {
     id: 'closing_mid_process',
     slot: 'closing_line_closing_mid_process',
     predicate: (output) => crossCuttingFires(output, 'mid_process'),
-    sentence: 'The reaching is recent and still finding its form.',
+    sentence: "You've recently started reaching for change, and it's early days yet.",
   },
 
   /* 7.4 — Permission sub-shape sentences (indices 22–25) */

@@ -92,6 +92,12 @@
           </template>
         </template>
       </p>
+      <p
+        v-if="card.closing_observation"
+        class="direction-card__closing-observation"
+      >
+        {{ card.closing_observation }}
+      </p>
     </div>
   </article>
 </template>
@@ -310,6 +316,14 @@ const qualitySegments = computed<TermScanSegment[]>(() =>
 }
 
 .direction-card__quality {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin: var(--space-sm) 0 0;
+}
+
+.direction-card__closing-observation {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-style: italic;

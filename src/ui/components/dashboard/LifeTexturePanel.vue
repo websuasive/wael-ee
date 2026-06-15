@@ -28,10 +28,6 @@
       </template>
     </p>
 
-    <p class="life-texture-panel__annotation">
-      {{ data.band_label }}, {{ data.load_state_label }}
-    </p>
-
     <div
       v-if="data.flags_present.length > 0"
       class="life-texture-panel__chip-group"
@@ -113,13 +109,6 @@ const summarySegments = computed<TermScanSegment[]>(() => {
   margin: 0;
   font-size: var(--text-base);
   color: var(--color-text-primary);
-}
-
-.life-texture-panel__annotation {
-  margin: 0;
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  font-weight: 500;
 }
 
 .life-texture-panel__chip-group {
