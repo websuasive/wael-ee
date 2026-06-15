@@ -160,61 +160,71 @@ describe('computeConstraintsPanel — permission_sub_shape_text', () => {
     return computeConstraintsPanel(out, makeInputMap());
   }
 
-  it('want_block → "There\'s wanting here that isn\'t getting through."', () => {
+  it('want_block → "There\'s something you won\'t let yourself want."', () => {
     const panel = permissionPanel('want_block');
-    expect(panel.permission_sub_shape_text?.interpretive_text).toBe(
-      "There's wanting here that isn't getting through.",
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
     );
-    expect(panel.permission_sub_shape_text?.token_text).toBe(
-      "There's wanting here that isn't getting through.",
+    expect(permissionLine?.sentence.interpretive_text).toBe(
+      "There's something you won't let yourself want.",
+    );
+    expect(permissionLine?.sentence.token_text).toBe(
+      "There's something you won't let yourself want.",
     );
   });
 
   it('say_block', () => {
-    expect(
-      permissionPanel('say_block').permission_sub_shape_text?.interpretive_text,
-    ).toBe("There's wanting here you haven't said out loud.");
+    const panel = permissionPanel('say_block');
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
+    );
+    expect(permissionLine?.sentence.interpretive_text).toBe(
+      "There's something you want you haven't said out loud.",
+    );
   });
 
   it('act_block', () => {
-    expect(
-      permissionPanel('act_block').permission_sub_shape_text?.interpretive_text,
-    ).toBe('There\'s wanting here you\'ve thought about but haven\'t acted on.');
+    const panel = permissionPanel('act_block');
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
+    );
+    expect(permissionLine?.sentence.interpretive_text).toBe(
+      'There\'s something you want you\'ve not done anything about.',
+    );
   });
 
   it('present', () => {
-    expect(
-      permissionPanel('present').permission_sub_shape_text?.interpretive_text,
-    ).toBe('Some room here, with nothing specific blocking it.');
+    const panel = permissionPanel('present');
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
+    );
+    expect(permissionLine?.sentence.interpretive_text).toBe(
+      'You\'re not holding yourself back.',
+    );
   });
 
-  it('permission fires → panel.permission_sub_shape_text non-null', () => {
+  it('permission fires → permission row has sentence', () => {
     const out = makeEngineOutput({
       constraints: { sustained_constraint_intensity: 50, ...ALL_FIRING },
     });
     const panel = computeConstraintsPanel(out, makeInputMap());
-    expect(panel.permission_sub_shape_text).not.toBeNull();
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
+    );
+    expect(permissionLine?.sentence.interpretive_text).not.toBeNull();
   });
 
-  it('permission does not fire → panel.permission_sub_shape_text === null', () => {
+  it('permission does not fire → no permission row', () => {
     const out = makeEngineOutput({
       constraints: { sustained_constraint_intensity: 0, ...ALL_INTACT },
     });
     const panel = computeConstraintsPanel(out, makeInputMap());
-    expect(panel.permission_sub_shape_text).toBeNull();
+    const permissionLine = panel.constraint_lines.find(
+      (l) => l.constraint_engine_name === 'permission',
+    );
+    expect(permissionLine).toBeUndefined();
   });
 
-  it('constraint_lines no longer carry permission_sub_shape_text', () => {
-    const out = makeEngineOutput({
-      constraints: { sustained_constraint_intensity: 50, ...ALL_FIRING },
-    });
-    const lines = computeConstraintsPanel(out, makeInputMap()).constraint_lines;
-    for (const line of lines) {
-      expect(
-        Object.prototype.hasOwnProperty.call(line, 'permission_sub_shape_text'),
-      ).toBe(false);
-    }
-  });
 });
 
 /* ------------------------------------------------------------------ */

@@ -136,7 +136,6 @@ export function buildPlaceholderRenderingInstructions(): RenderingInstructions {
       flags_present: [],
       flags_absent: [],
       load_state_label: 'Uncluttered',
-      pattern_note: emptySlot(),
     },
     life_context_panel: {
       life_stage_summary: emptySlot(),

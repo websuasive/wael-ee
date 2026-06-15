@@ -68,7 +68,7 @@ export function computeDomainsPanel(
       intactMatch !== null
         ? interpolate(intactMatch.sentence, { names: intactNames.join(', ') })
         : null,
-    token_text: intactToken,
+    token_text: intactMatch === null ? intactToken : '',
   };
 
   // summary
@@ -91,7 +91,7 @@ export function computeDomainsPanel(
       summaryMatch !== null
         ? interpolate(summaryMatch.sentence, { r, n_intact, o })
         : null,
-    token_text: summaryToken,
+    token_text: summaryMatch === null ? summaryToken : '',
   };
 
   return { summary, reduced_groups, intact_callout };

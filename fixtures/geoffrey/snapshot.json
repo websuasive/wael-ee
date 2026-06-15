@@ -785,7 +785,7 @@
       ],
       "intact_callout": {
         "interpretive_text": "Even with a lot reduced, the sense that your life matters is still intact.",
-        "token_text": "Mattering."
+        "token_text": ""
       }
     },
     "constraints_panel": {
@@ -798,25 +798,41 @@
           "constraint_name": "Energy",
           "constraint_engine_name": "energy",
           "band_label": "heavy depletion",
-          "intensity": 10
+          "intensity": 10,
+          "sentence": {
+            "interpretive_text": "You've got energy for getting through, and little left after.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Time",
           "constraint_engine_name": "time",
           "band_label": "heavy time pressure",
-          "intensity": 20
+          "intensity": 20,
+          "sentence": {
+            "interpretive_text": "You've got almost no time that's your own. The week's full before you start.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Body",
           "constraint_engine_name": "body_capacity",
           "band_label": "shifted",
-          "intensity": 65
+          "intensity": 65,
+          "sentence": {
+            "interpretive_text": "Your body's changed. It still does plenty, but not what it once did.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Permission",
           "constraint_engine_name": "permission",
           "band_label": "blocked",
-          "intensity": 25
+          "intensity": 25,
+          "sentence": {
+            "interpretive_text": "There's something you won't let yourself want.",
+            "token_text": "There's something you won't let yourself want."
+          }
         }
       ],
       "sustained_constraint_intensity": 73,
@@ -824,10 +840,7 @@
         "interpretive_text": null,
         "token_text": ""
       },
-      "permission_sub_shape_text": {
-        "interpretive_text": "There's wanting here that isn't getting through.",
-        "token_text": "There's wanting here that isn't getting through."
-      }
+      "permission_sub_shape_text": null
     },
     "cross_cutting_panel": {
       "outputs": [
@@ -882,7 +895,7 @@
     "life_texture_panel": {
       "summary": {
         "interpretive_text": "There's some texture to your weeks, but it's the same pattern on repeat.",
-        "token_text": "Week reads as Mixed."
+        "token_text": ""
       },
       "band_label": "Mixed",
       "flags_present": [
@@ -895,24 +908,20 @@
         "Active body",
         "Solo practice"
       ],
-      "load_state_label": "Loaded (work and weekends)",
-      "pattern_note": {
-        "interpretive_text": "The same shape week after week.",
-        "token_text": ""
-      }
+      "load_state_label": "Loaded (work and weekends)"
     },
     "life_context_panel": {
       "life_stage_summary": {
         "interpretive_text": "Things are pretty settled right now.",
-        "token_text": "Life-stage reading: Enduring."
+        "token_text": ""
       },
       "work_load_summary": {
         "interpretive_text": "Right now, paid work is who you are, not just what you do.",
-        "token_text": "Paid work reading: Defining. Primary load: Paid work."
+        "token_text": ""
       },
       "sociality_summary": {
         "interpretive_text": "You lean toward your own company, but the lack of closeness still gets to you - you feel it even so.",
-        "token_text": "Sociality reading: Solitary by default."
+        "token_text": ""
       }
     },
     "comparison_surface_panel": {
@@ -1064,7 +1073,7 @@
       ],
       "summary": {
         "interpretive_text": "Several areas are reading high, others moderate or low.",
-        "token_text": "Bands reading: 6 high, 1 moderate."
+        "token_text": ""
       }
     }
   },

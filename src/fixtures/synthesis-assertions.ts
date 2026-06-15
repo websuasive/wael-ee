@@ -707,15 +707,6 @@ function walkLifeTexturePanel(
       'life_texture_summary',
     );
   }
-  if (expected.pattern_note !== undefined) {
-    walkSlotContent(
-      'life_texture_panel.pattern_note',
-      expected.pattern_note,
-      actual.pattern_note,
-      results,
-      'life_texture_pattern_note',
-    );
-  }
   for (const field of ['band_label', 'flags_present', 'flags_absent', 'load_state_label'] as const) {
     if ((expected as Record<string, unknown>)[field] !== undefined) {
       results.push(

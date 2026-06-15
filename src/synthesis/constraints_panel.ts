@@ -21,23 +21,28 @@ export function computeConstraintsPanel(
   input: InputMap,
 ): ConstraintsPanel {
   const constraint_lines: ConstraintLine[] = [];
-  let permission_sub_shape_text: SlotContent | null = null;
   for (const name of CONSTRAINT_ORDER) {
     const c = output.constraints[name];
     if (!c.fires) continue;
 
+    let sentence: SlotContent;
     if (name === 'permission') {
       const match = findFirstMatchingSentence(
         'permission_sub_shape',
         output,
         input,
       );
-      if (match !== null) {
-        permission_sub_shape_text = {
-          interpretive_text: match.sentence,
-          token_text: match.sentence,
-        };
-      }
+      sentence =
+        match !== null
+          ? { interpretive_text: match.sentence, token_text: match.sentence }
+          : { interpretive_text: null, token_text: '' };
+    } else {
+      const slotName = `${name}_constraint` as 'energy_constraint' | 'time_constraint' | 'body_capacity_constraint';
+      const match = findFirstMatchingSentence(slotName, output, input);
+      sentence =
+        match !== null
+          ? { interpretive_text: match.sentence, token_text: '' }
+          : { interpretive_text: null, token_text: '' };
     }
 
     constraint_lines.push({
@@ -45,6 +50,7 @@ export function computeConstraintsPanel(
       constraint_engine_name: name,
       band_label: lookupBand(name, c.band),
       intensity: c.value,
+      sentence,
     });
   }
 
@@ -71,7 +77,7 @@ export function computeConstraintsPanel(
     sustained_constraint_intensity:
       output.constraints.sustained_constraint_intensity,
     intact_callout,
-    permission_sub_shape_text,
+    permission_sub_shape_text: null,
   };
 }
 

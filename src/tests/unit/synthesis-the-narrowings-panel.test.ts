@@ -193,12 +193,12 @@ describe('computeTheNarrowingsPanel — summary token fallback', () => {
       },
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
-    
-    // All-moderate case matches a sentence, but verify token fallback still correct
-    expect(panel.summary.token_text).toBe('Bands reading: 7 moderate.');
+
+    // All-moderate case matches a sentence, so token is empty (true fallback)
+    expect(panel.summary.token_text).toBe('');
   });
 
-  it('token fallback populated even when sentence matches', () => {
+  it('token fallback empty when sentence matches', () => {
     const out = makeEngineOutput({
       cross_direction: {
         structural_narrowing_band: 'high',
@@ -211,11 +211,11 @@ describe('computeTheNarrowingsPanel — summary token fallback', () => {
       },
     });
     const panel = computeTheNarrowingsPanel(out, makeInputMap());
-    
+
     // All-high case matches a sentence
     expect(panel.summary.interpretive_text).toBe('All seven areas are reading high.');
-    // Token fallback still populated
-    expect(panel.summary.token_text).toBe('Bands reading: 7 high.');
+    // Token fallback empty (true fallback behavior)
+    expect(panel.summary.token_text).toBe('');
   });
 
   it('mixed bands produce correct token format', () => {

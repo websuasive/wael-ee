@@ -425,10 +425,10 @@ Each `ConstraintLine` also carries an `intensity: number` (0–100) passed throu
 
 | Sub-shape | Sentence |
 |---|---|
-| `want_block` | "Wanting that isn't being let in." |
-| `say_block` | "Wanting something that hasn't been said out loud." |
-| `act_block` | "Wanting something thought about but not acted on." |
-| `present` | "Permission reading partial; nothing specific blocking." |
+| `want_block` | "There's something you won't let yourself want." |
+| `say_block` | "There's something you want you haven't said out loud." |
+| `act_block` | "There's something you want you've not done anything about." |
+| `present` | "You're not holding yourself back." |
 
 `intact_callout` fires when one or more constraints have `fires = false`. Token fallback: `"{names} reading intact."`
 
@@ -1320,10 +1320,10 @@ Complete enumeration over sub_shape values when permission fires (the firing con
 
 | Sub-shape | Sentence |
 |---|---|
-| `want_block` | Wanting that isn't being let in. |
-| `say_block` | Wanting something that hasn't been said out loud. |
-| `act_block` | Wanting something thought about but not acted on. |
-| `present` | Permission reading partial; nothing specific blocking. |
+| `want_block` | There's something you won't let yourself want. |
+| `say_block` | There's something you want you haven't said out loud. |
+| `act_block` | There's something you want you've not done anything about. |
+| `present` | You're not holding yourself back. |
 
 ### 7.5 Life-texture summary slot
 

@@ -22,45 +22,40 @@
         <dt class="constraints-panel__name">
           {{ line.constraint_name }}
         </dt>
-        <div
-          class="constraints-panel__bar-track"
-          role="progressbar"
-          :aria-valuemin="0"
-          :aria-valuemax="100"
-          :aria-valuenow="line.intensity"
-          :aria-valuetext="`${line.constraint_name}: ${line.band_label}`"
-        >
+        <div class="constraints-panel__bar-column">
           <div
-            class="constraints-panel__bar-fill"
-            :style="{ width: `${line.intensity}%` }"
-          />
+            class="constraints-panel__bar-track"
+            role="progressbar"
+            :aria-valuemin="0"
+            :aria-valuemax="100"
+            :aria-valuenow="line.intensity"
+            :aria-valuetext="`${line.constraint_name}: ${line.band_label}`"
+          >
+            <div
+              class="constraints-panel__bar-fill"
+              :style="{ width: `${line.intensity}%` }"
+            />
+          </div>
+          <dd
+            v-if="shouldRenderSlot(line.sentence)"
+            class="constraints-panel__sentence"
+          >
+            <template
+              v-for="(seg, i) in lineSentenceSegments(line)"
+              :key="i"
+            >
+              <TermIndicator
+                v-if="seg.kind === 'term'"
+                :term="seg.value"
+              />
+              <template v-else>
+                {{ seg.value }}
+              </template>
+            </template>
+          </dd>
         </div>
-        <dd class="constraints-panel__band">
-          {{ line.band_label }}
-        </dd>
       </div>
     </dl>
-
-    <p
-      v-if="
-        data.permission_sub_shape_text &&
-          shouldRenderSlot(data.permission_sub_shape_text)
-      "
-      class="constraints-panel__permission-sub-shape"
-    >
-      <template
-        v-for="(seg, i) in permissionSubShapeSegments"
-        :key="i"
-      >
-        <TermIndicator
-          v-if="seg.kind === 'term'"
-          :term="seg.value"
-        />
-        <template v-else>
-          {{ seg.value }}
-        </template>
-      </template>
-    </p>
 
     <p
       v-if="shouldRenderSlot(data.intact_callout)"
@@ -107,7 +102,7 @@
 // Term scanner runs on band_labels, permission_sub_shape_text, intact_callout,
 // and summary. constraint_name (display-name) is not scanned per section 5.4.
 import { computed } from 'vue';
-import type { ConstraintsPanel as ConstraintsPanelData } from '../../../synthesis';
+import type { ConstraintsPanel as ConstraintsPanelData, SlotContent } from '../../../synthesis';
 import { staticCopy } from '../../render/static_copy';
 import { shouldRenderSlot } from '../../render/should_render_slot';
 import {
@@ -121,12 +116,10 @@ const props = defineProps<{ data: ConstraintsPanelData }>();
 
 const headingText = staticCopy.constraints_panel_heading;
 
-const permissionSubShapeSegments = computed<TermScanSegment[]>(() => {
-  const slot = props.data.permission_sub_shape_text;
-  if (slot === null) return [];
-  const text = slot.interpretive_text ?? slot.token_text;
+const lineSentenceSegments = (line: { sentence: SlotContent }): TermScanSegment[] => {
+  const text = line.sentence.interpretive_text ?? line.sentence.token_text;
   return scanTermsInString(text);
-});
+};
 
 const intactCalloutSegments = computed<TermScanSegment[]>(() => {
   const text =
@@ -166,9 +159,9 @@ const summarySegments = computed<TermScanSegment[]>(() => {
 
 .constraints-panel__line {
   display: grid;
-  grid-template-columns: 90px 1fr 130px;
+  grid-template-columns: 90px 1fr;
   gap: var(--space-sm);
-  align-items: center;
+  align-items: start;
 }
 
 .constraints-panel__name {
@@ -177,6 +170,12 @@ const summarySegments = computed<TermScanSegment[]>(() => {
   color: var(--color-text-secondary);
   font-weight: 500;
   margin: 0;
+}
+
+.constraints-panel__bar-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
 .constraints-panel__bar-track {
@@ -199,15 +198,13 @@ const summarySegments = computed<TermScanSegment[]>(() => {
   }
 }
 
-.constraints-panel__band {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
+.constraints-panel__sentence {
   margin: 0;
-  text-align: right;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
 }
 
-.constraints-panel__permission-sub-shape,
 .constraints-panel__intact {
   margin: 0;
   font-size: var(--text-sm);

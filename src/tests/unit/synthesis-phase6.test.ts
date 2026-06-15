@@ -385,9 +385,6 @@ describe('Phase 6 — life_texture_panel composition (4 bands × 2 varied_week)'
       expect(idFor('life_texture_summary', panel.summary.interpretive_text)).toBe(
         c.expected_summary_id,
       );
-      expect(
-        idFor('life_texture_pattern_note', panel.pattern_note.interpretive_text),
-      ).toBe(c.expected_pattern_id);
     });
   }
 });

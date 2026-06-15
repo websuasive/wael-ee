@@ -71,24 +71,6 @@
         </li>
       </ul>
     </div>
-
-    <p
-      v-if="shouldRenderSlot(data.pattern_note)"
-      class="life-texture-panel__pattern-note"
-    >
-      <template
-        v-for="(seg, i) in patternNoteSegments"
-        :key="i"
-      >
-        <TermIndicator
-          v-if="seg.kind === 'term'"
-          :term="seg.value"
-        />
-        <template v-else>
-          {{ seg.value }}
-        </template>
-      </template>
-    </p>
   </section>
 </template>
 
@@ -111,13 +93,6 @@ const headingText = staticCopy.life_texture_panel_heading;
 const summarySegments = computed<TermScanSegment[]>(() => {
   const text =
     props.data.summary.interpretive_text ?? props.data.summary.token_text;
-  return scanTermsInString(text);
-});
-
-const patternNoteSegments = computed<TermScanSegment[]>(() => {
-  const text =
-    props.data.pattern_note.interpretive_text ??
-    props.data.pattern_note.token_text;
   return scanTermsInString(text);
 });
 </script>
@@ -186,12 +161,5 @@ const patternNoteSegments = computed<TermScanSegment[]>(() => {
   background: var(--color-background-secondary);
   border: var(--border-hairline) solid var(--color-border-tertiary);
   color: var(--color-text-tertiary);
-}
-
-.life-texture-panel__pattern-note {
-  margin: 0;
-  font-size: var(--text-sm);
-  font-style: italic;
-  color: var(--color-text-secondary);
 }
 </style>

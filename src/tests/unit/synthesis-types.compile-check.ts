@@ -144,24 +144,28 @@ const constraintLines: ConstraintLine[] = [
     constraint_engine_name: 'energy',
     band_label: 'Full',
     intensity: 80,
+    sentence: { interpretive_text: null, token_text: '' },
   },
   {
     constraint_name: 'time',
     constraint_engine_name: 'time',
     band_label: 'Moderate',
     intensity: 50,
+    sentence: { interpretive_text: null, token_text: '' },
   },
   {
     constraint_name: 'body_capacity',
     constraint_engine_name: 'body_capacity',
     band_label: 'Full',
     intensity: 75,
+    sentence: { interpretive_text: null, token_text: '' },
   },
   {
     constraint_name: 'permission',
     constraint_engine_name: 'permission',
     band_label: 'Partial',
     intensity: 40,
+    sentence: { interpretive_text: null, token_text: '' },
   },
 ];
 
@@ -248,7 +252,6 @@ const example: RenderingInstructions = {
     flags_present: ['sees people', 'makes things'],
     flags_absent: ['work dominates', 'weekends consumed'],
     load_state_label: 'No primary load',
-    pattern_note: slot('pattern note'),
   },
   life_context_panel: {
     life_stage_summary: slot('life stage summary'),

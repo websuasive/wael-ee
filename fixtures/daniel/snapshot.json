@@ -783,25 +783,41 @@
           "constraint_name": "Energy",
           "constraint_engine_name": "energy",
           "band_label": "moderate",
-          "intensity": 50
+          "intensity": 50,
+          "sentence": {
+            "interpretive_text": "You've got energy for what you have to do, not much past that.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Time",
           "constraint_engine_name": "time",
           "band_label": "heavy time pressure",
-          "intensity": 30
+          "intensity": 30,
+          "sentence": {
+            "interpretive_text": "You've got almost no time that's your own. The week's full before you start.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Body",
           "constraint_engine_name": "body_capacity",
           "band_label": "shifted",
-          "intensity": 65
+          "intensity": 65,
+          "sentence": {
+            "interpretive_text": "Your body's changed. It still does plenty, but not what it once did.",
+            "token_text": ""
+          }
         },
         {
           "constraint_name": "Permission",
           "constraint_engine_name": "permission",
           "band_label": "partial",
-          "intensity": 40
+          "intensity": 40,
+          "sentence": {
+            "interpretive_text": "There's something you want you haven't said out loud.",
+            "token_text": "There's something you want you haven't said out loud."
+          }
         }
       ],
       "sustained_constraint_intensity": 56.25,
@@ -809,10 +825,7 @@
         "interpretive_text": null,
         "token_text": ""
       },
-      "permission_sub_shape_text": {
-        "interpretive_text": "There's wanting here you haven't said out loud.",
-        "token_text": "There's wanting here you haven't said out loud."
-      }
+      "permission_sub_shape_text": null
     },
     "cross_cutting_panel": {
       "outputs": [
@@ -873,7 +886,7 @@
     "life_texture_panel": {
       "summary": {
         "interpretive_text": "Your weeks are full of texture, but it's the same shape repeating.",
-        "token_text": "Week reads as Textured."
+        "token_text": ""
       },
       "band_label": "Textured",
       "flags_present": [
@@ -886,24 +899,20 @@
         "Active body",
         "Belongs to a group"
       ],
-      "load_state_label": "Loaded (weekends)",
-      "pattern_note": {
-        "interpretive_text": "The same shape week after week.",
-        "token_text": ""
-      }
+      "load_state_label": "Loaded (weekends)"
     },
     "life_context_panel": {
       "life_stage_summary": {
         "interpretive_text": "A change is happening, or about to.",
-        "token_text": "Life-stage reading: Transitioning."
+        "token_text": ""
       },
       "work_load_summary": {
         "interpretive_text": "Work's just work, and it's also what fills your time.",
-        "token_text": "Paid work reading: Functional. Primary load: Paid work."
+        "token_text": ""
       },
       "sociality_summary": {
         "interpretive_text": "You lean toward your own company, and there's a real pull to contribute, but there's no group around it yet. The want's there, the place for it isn't.",
-        "token_text": "Sociality reading: Solitary by default."
+        "token_text": ""
       }
     },
     "comparison_surface_panel": {

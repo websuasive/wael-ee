@@ -35,7 +35,6 @@ describe('LifeTexturePanel — data contract', () => {
       flags_present: ['Variety', 'Sociality'],
       flags_absent: ['Paid work'],
       load_state_label: 'loaded by work and weekends',
-      pattern_note: makeSlotContent('Weeks vary.'),
     };
 
     expect(mockData.band_label).toBe('Mixed');
@@ -49,19 +48,6 @@ describe('LifeTexturePanel — data contract', () => {
 /* ------------------------------------------------------------------ */
 
 describe('LifeTexturePanel — SlotContent handling', () => {
-  it('empty pattern_note: shouldRenderSlot returns false', () => {
-    const mockData: LifeTexturePanelData = {
-      summary: makeSlotContent('The week reads as mixed.'),
-      band_label: 'Mixed',
-      flags_present: ['Variety'],
-      flags_absent: [],
-      load_state_label: 'loaded by work',
-      pattern_note: makeEmptySlotContent(),
-    };
-
-    expect(shouldRenderSlot(mockData.pattern_note)).toBe(false);
-  });
-
   it('empty flags_present array: length is 0', () => {
     const mockData: LifeTexturePanelData = {
       summary: makeSlotContent('The week reads as empty.'),
@@ -69,7 +55,6 @@ describe('LifeTexturePanel — SlotContent handling', () => {
       flags_present: [],
       flags_absent: ['Variety', 'Sociality', 'Paid work'],
       load_state_label: 'not loaded',
-      pattern_note: makeSlotContent('Weeks uniform.'),
     };
 
     expect(mockData.flags_present.length).toBe(0);
@@ -82,7 +67,6 @@ describe('LifeTexturePanel — SlotContent handling', () => {
       flags_present: ['Variety', 'Sociality', 'Paid work'],
       flags_absent: [],
       load_state_label: 'loaded by work',
-      pattern_note: makeSlotContent('Weeks vary.'),
     };
 
     expect(mockData.flags_absent.length).toBe(0);

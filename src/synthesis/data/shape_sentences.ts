@@ -685,28 +685,72 @@ export const shapeSentences: ShapeSentence[] = [
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'want_block',
-    sentence: 'There\'s wanting here that isn\'t getting through.',
+    sentence: 'There\'s something you won\'t let yourself want.',
   },
   {
     id: 'permission_sub_shape_say_block',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'say_block',
-    sentence: 'There\'s wanting here you haven\'t said out loud.',
+    sentence: 'There\'s something you want you haven\'t said out loud.',
   },
   {
     id: 'permission_sub_shape_act_block',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'act_block',
-    sentence: 'There\'s wanting here you\'ve thought about but haven\'t acted on.',
+    sentence: 'There\'s something you want you\'ve not done anything about.',
   },
   {
     id: 'permission_sub_shape_present',
     slot: 'permission_sub_shape',
     predicate: (output) =>
       output.constraints.permission.sub_shape === 'present',
-    sentence: 'Some room here, with nothing specific blocking it.',
+    sentence: 'You\'re not holding yourself back.',
+  },
+
+  /* 7.5 — Per-constraint band sentences */
+  {
+    id: 'energy_moderate',
+    slot: 'energy_constraint',
+    predicate: (output) =>
+      output.constraints.energy.band === 'moderate',
+    sentence: 'You\'ve got energy for what you have to do, not much past that.',
+  },
+  {
+    id: 'energy_heavy_depletion',
+    slot: 'energy_constraint',
+    predicate: (output) =>
+      output.constraints.energy.band === 'heavy_depletion',
+    sentence: 'You\'ve got energy for getting through, and little left after.',
+  },
+  {
+    id: 'time_moderate',
+    slot: 'time_constraint',
+    predicate: (output) =>
+      output.constraints.time.band === 'moderate',
+    sentence: 'You\'ve got some time that\'s your own, but most of it\'s spoken for.',
+  },
+  {
+    id: 'time_heavy_time_pressure',
+    slot: 'time_constraint',
+    predicate: (output) =>
+      output.constraints.time.band === 'heavy_time_pressure',
+    sentence: 'You\'ve got almost no time that\'s your own. The week\'s full before you start.',
+  },
+  {
+    id: 'body_shifted',
+    slot: 'body_capacity_constraint',
+    predicate: (output) =>
+      output.constraints.body_capacity.band === 'shifted',
+    sentence: 'Your body\'s changed. It still does plenty, but not what it once did.',
+  },
+  {
+    id: 'body_limited',
+    slot: 'body_capacity_constraint',
+    predicate: (output) =>
+      output.constraints.body_capacity.band === 'limited',
+    sentence: 'Your body sets the limit now. A lot runs into what it can\'t do.',
   },
 
   /* 7.5 — Domains intact callout sentences (indices 26–27) */

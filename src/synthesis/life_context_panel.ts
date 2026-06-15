@@ -24,7 +24,7 @@ function composeSubSlot(
   const match = findFirstMatchingSentence(slotName, output, input);
   return {
     interpretive_text: match !== null ? match.sentence : null,
-    token_text: interpolate(tokenTemplate, tokenContext),
+    token_text: match === null ? interpolate(tokenTemplate, tokenContext) : '',
   };
 }
 

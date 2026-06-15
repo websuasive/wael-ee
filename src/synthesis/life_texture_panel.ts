@@ -30,7 +30,7 @@ export function computeLifeTexturePanel(
     cross.week_shape.weekends_consumed,
   );
 
-  // §5.11 summary: §7.5 shape sentences. Token fallback always populated:
+  // §5.11 summary: §7.5 shape sentences. Token fallback when no shape sentence fires:
   // "Week reads as {band_label}."
   const summaryMatch = findFirstMatchingSentence(
     'life_texture_summary',
@@ -39,18 +39,7 @@ export function computeLifeTexturePanel(
   );
   const summary: SlotContent = {
     interpretive_text: summaryMatch !== null ? summaryMatch.sentence : null,
-    token_text: interpolate('Week reads as {band_label}.', { band_label }),
-  };
-
-  // §5.11 pattern_note: §7.6 shape sentences. Token fallback empty (drops slot).
-  const patternMatch = findFirstMatchingSentence(
-    'life_texture_pattern_note',
-    output,
-    input,
-  );
-  const pattern_note: SlotContent = {
-    interpretive_text: patternMatch !== null ? patternMatch.sentence : null,
-    token_text: '',
+    token_text: summaryMatch === null ? interpolate('Week reads as {band_label}.', { band_label }) : '',
   };
 
   return {
@@ -59,6 +48,5 @@ export function computeLifeTexturePanel(
     flags_present,
     flags_absent,
     load_state_label,
-    pattern_note,
   };
 }

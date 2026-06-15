@@ -127,6 +127,7 @@ export type ConstraintLine = {
   constraint_engine_name: 'energy' | 'time' | 'body_capacity' | 'permission';
   band_label: string;
   intensity: number;
+  sentence: SlotContent;
 };
 
 /** Section 5.7 — Cross-cutting panel (renamed from spec's CrossCuttingOutput to avoid collision with engine type). */
@@ -216,8 +217,6 @@ export type LifeTexturePanel = {
   flags_absent: string[];
   /** Joint load-state display label (§6.14). */
   load_state_label: string;
-  /** Varied/uniform reading (§7.6). */
-  pattern_note: SlotContent;
 };
 
 /* ------------------------------------------------------------------ */
@@ -284,6 +283,9 @@ export type SlotName =
   | 'pattern_paragraph'
   | 'direction_card_summary'
   | 'permission_sub_shape'
+  | 'energy_constraint'
+  | 'time_constraint'
+  | 'body_capacity_constraint'
   | 'domains_intact_callout'
   | 'domains_summary'
   | 'chart_caption'

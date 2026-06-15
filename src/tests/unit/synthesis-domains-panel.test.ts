@@ -265,7 +265,7 @@ describe('computeDomainsPanel — intact_callout', () => {
     expect(panel.intact_callout.interpretive_text).toBe(
       'Even with a lot reduced, the sense that your life matters is still intact.',
     );
-    expect(panel.intact_callout.token_text).toBe('Mattering.');
+    expect(panel.intact_callout.token_text).toBe('');
   });
 });
 

@@ -45,7 +45,7 @@ function composeNarrowingSummary(
   output: EngineOutput,
   input: InputMap,
 ): SlotContent {
-  // §7.15 narrowing_summary slot. Token fallback per §5.13.1.
+  // §7.15 narrowing_summary slot. Token fallback when no shape sentence fires.
   const summaryMatch = findFirstMatchingSentence(
     'narrowing_summary',
     output,
@@ -53,7 +53,7 @@ function composeNarrowingSummary(
   );
   const summary: SlotContent = {
     interpretive_text: summaryMatch !== null ? summaryMatch.sentence : null,
-    token_text: buildNarrowingSummaryToken(output),
+    token_text: summaryMatch === null ? buildNarrowingSummaryToken(output) : '',
   };
   return summary;
 }
